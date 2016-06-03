@@ -1,0 +1,5 @@
+# begin LFP file C:\Users\pastika\Xilinx\test\HF_ngCCM_Control_Emulator_V2\control_emulator.lfp
+designfile control_emulator.v
+parttype xcr3064xl-vq44-10
+bus_delimiter 0;
+set_busdelim_onsave 1;

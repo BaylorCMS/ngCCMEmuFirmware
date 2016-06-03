@@ -1,0 +1,51 @@
+Pin Freeze File:  version P.20131013
+
+3064XL44VQ XCR3064XL-10-VQ44
+GPIO_Extra0 S:PIN28
+aux2 S:PIN22
+aux3 S:PIN23
+aux_in S:PIN20
+clk_in_j1 S:PIN37
+clk_select S:PIN44
+ext_clk_in S:PIN38
+int_clk_in S:PIN39
+mode_select S:PIN2
+pgood S:PIN30
+qie_reset_in S:PIN35
+qie_reset_source S:PIN42
+reset_switch S:PIN25
+aux_out S:PIN21
+clk_out_p2 S:PIN27
+peltEnab1 S:PIN8
+peltEnab2 S:PIN11
+penable S:PIN31
+qie_reset_out S:PIN5
+reset_out S:PIN3
+wte_out S:PIN6
+
+
+;The remaining section of the .gyd file is for documentation purposes only.
+;It shows where your internal equations were placed in the last successful fit.
+
+PARTITION FB1_1 miscControls/delay_reg<13> miscControls/delay_reg<12> miscControls/delay_reg<6> miscControls/delay_reg<5>
+		 miscControls/delay_reg<4> miscControls/delay_reg<3> miscControls/delay_reg<2> miscControls/delay_reg<11>
+		 reset_out_extClk_intCtrl penable miscControls/delay_reg<9> miscControls/delay_reg<1>
+		 reset_out_extClk_extCtrl miscControls/delay_reg<7> clk_out_p2 reset_out_intClk_intCtrl
+		
+PARTITION FB2_1 fcl_extClk_intCtrl/upc/out<1> fcl_extClk_intCtrl/upc/out<2> fcl_extClk_intCtrl/upc/out<3> fcl_extClk_intCtrl/upc/out<5>
+		 fcl_extClk_intCtrl/upc/out<6> fcl_extClk_intCtrl/upc/out<7> fcl_extClk_intCtrl/upc/out<8> fcl_extClk_intCtrl/upc/out<9>
+		 wte_out_extClk_intCtrl fcl_extClk_intCtrl/upc/out<4> reset_out fcl_extClk_intCtrl/upc/out<10>
+		 fcl_extClk_intCtrl/upc/out<11> qie_reset_out wte_out qie_reset_out_extClk_intCtrl
+		
+PARTITION FB3_1 reset_out_intClk_extCtrl
+PARTITION FB3_3 miscControls/delay_reg<8>
+PARTITION FB3_5 miscControls/delay_reg<10> miscControls/delay_reg<16> miscControls/delay_reg<17> miscControls/delay_reg<18>
+		
+PARTITION FB3_10 aux_out N_PZ_323 miscControls/delay_reg<14> miscControls/delay_reg<15>
+		 miscControls/penable_reg miscControls/delay_reg<0> fcl_extClk_intCtrl/upc/out<0>
+PARTITION FB4_1 fcl_intClk_intCtrl/upc/out<0> peltEnab1 fcl_intClk_intCtrl/upc/out<8> wte_out_intClk_intCtrl
+		 peltEnab2 fcl_intClk_intCtrl/upc/out<7> fcl_intClk_intCtrl/upc/out<6> fcl_intClk_intCtrl/upc/out<5>
+		 fcl_intClk_intCtrl/upc/out<11> qie_reset_out_intClk_intCtrl fcl_intClk_intCtrl/upc/out<10> fcl_intClk_intCtrl/upc/out<9>
+		 fcl_intClk_intCtrl/upc/out<4> fcl_intClk_intCtrl/upc/out<3> fcl_intClk_intCtrl/upc/out<2> fcl_intClk_intCtrl/upc/out<1>
+		
+

@@ -1,0 +1,1199 @@
+<html><body>
+<pre>
+ 
+cpldfit:  version P.20131013                        Xilinx Inc.
+                                  Fitter Report
+Design Name: control_emulator                    Date:  6- 2-2016, 12:12PM
+Device Used: XCR3064XL-10-VQ44
+Fitting Status: Successful
+
+*************************  Mapped Resource Summary  **************************
+
+Macrocells     Product Terms    Function Block   Registers      Pins           
+Used/Tot       Used/Tot         Inps Used/Tot    Used/Tot       Used/Tot       
+61 /64  ( 95%) 136 /192  ( 71%) 94  /160  ( 59%) 52 /64  ( 81%) 21 /32  ( 66%)
+
+** Function Block Resources **
+
+Function  Mcells    FB Inps   Pterms    IO        GCK       
+Block     Used/Tot  Used/Tot  Used/Tot  Used/Tot  Used/Tot  
+FB1        16/16*    26/40     21/48     2/ 7      2/2*
+FB2        16/16*    25/40     47/48     3/ 7      1/2
+FB3        13/16     26/40     29/48     1/ 7      2/2*
+FB4        16/16*    17/40     39/48     2/ 7      1/2
+           -----    -------   -------    -----
+Total      61/64     94/160   136/192    8/28 
+
+* - Resource is exhausted
+
+** Local Control Term Resources **
+
+        LCT0     LCT1     LCT2     LCT3     LCT4     LCT5     LCT6     LCT7
+FB1                                                                    uct1     
+FB2                                                                             
+FB3                                                                             
+FB4                                                                             
+
+Legend:
+ce   - clock enable
+clk  - clock
+oe   - output enable
+sr   - set/reset
+uct1 - universal control term clock
+uct2 - universal control term output enable
+uct3 - universal control term preset
+uct4 - universal control term reset
+LCT0 - oe and/or sr can be mapped to this local control term
+LCT1 - oe and/or sr can be mapped to this local control term
+LCT2 - oe and/or sr can be mapped to this local control term
+LCT3 - sr can be mapped to this local control term
+LCT4 - ce and/or clk and/or sr can be mapped to this local control term
+LCT5 - clk and/or sr can be mapped to this local control term
+LCT6 - clk and/or oe can be mapped to this local control term
+LCT7 - clk can be mapped to this local control term
+
+** Global Control Resources **
+
+GCK         UCLK        UOE         UPST        URST        
+Used/Tot    Used/Tot    Used/Tot    Used/Tot    Used/Tot
+3/4         1/1         0/1         0/1         0/1
+
+GCK  - Global Clock
+UCLK - Universal Control Term Clock
+UOE  - Universal Control Term Output Enable
+UPST - Universal Control Term Preset
+URST - Universal Control Term Reset
+
+Signal 'int_clk_in' mapped onto global clock net GCK1.
+Signal 'ext_clk_in' mapped onto global clock net GCK2.
+Signal 'clk_in_j1' mapped onto global clock net GCK3.
+
+** Pin Resources **
+
+Signal Type    Required     Mapped  |  Pin Type            Used     Total 
+------------------------------------|-------------------------------------
+Input         :   10          10    |  I/O              :    18       28
+Output        :    8           8    |  GCK/I            :     3        4
+Bidirectional :    0           0    |  
+GCK           :    3           3    |  
+                 ----        ----
+        Total    21           21 
+
+End of Mapped Resource Summary
+**************************  Errors and Warnings  ***************************
+
+WARNING:Cpld - Unable to retrieve the path to the iSE Project Repository. Will
+   use the default filename of 'control_emulator.ise'.
+INFO:Cpld - Inferring BUFG constraint for signal 'clk_in_j1' based upon the LOC
+   constraint 'P37'. It is recommended that you declare this BUFG explicitedly
+   in your design. Note that for certain device families the output of a BUFG
+   constraint can not drive a gated clock, and the BUFG constraint will be
+   ignored.
+INFO:Cpld - Inferring BUFG constraint for signal 'ext_clk_in' based upon the LOC
+   constraint 'P38'. It is recommended that you declare this BUFG explicitedly
+   in your design. Note that for certain device families the output of a BUFG
+   constraint can not drive a gated clock, and the BUFG constraint will be
+   ignored.
+INFO:Cpld - Inferring BUFG constraint for signal 'int_clk_in' based upon the LOC
+   constraint 'P39'. It is recommended that you declare this BUFG explicitedly
+   in your design. Note that for certain device families the output of a BUFG
+   constraint can not drive a gated clock, and the BUFG constraint will be
+   ignored.
+WARNING:Cpld:1007 - Removing unused input(s) 'GPIO_Extra1'.  The input(s) are
+   unused after optimization. Please verify functionality via simulation.
+WARNING:Cpld:1007 - Removing unused input(s) 'alt1'.  The input(s) are unused
+   after optimization. Please verify functionality via simulation.
+WARNING:Cpld:1007 - Removing unused input(s) 'alt2'.  The input(s) are unused
+   after optimization. Please verify functionality via simulation.
+WARNING:Cpld:1007 - Removing unused input(s) 'reset_in'.  The input(s) are
+   unused after optimization. Please verify functionality via simulation.
+WARNING:Cpld:1007 - Removing unused input(s) 'wte_in'.  The input(s) are unused
+   after optimization. Please verify functionality via simulation.
+*************************  Summary of Mapped Logic  ************************
+
+** 8 Outputs **
+
+Signal                          Total Total Loc     Pin   Pin       Pin     Slew Reg Init
+Name                            Pts   Inps          No.   Type      Use     Rate State
+penable                         2     3     FB1_10  31    I/O       O       FAST 
+clk_out_p2                      3     5     FB1_15  27    I/O       O       FAST 
+reset_out                       4     6     FB2_11  3     I/O       O       FAST 
+qie_reset_out                   4     7     FB2_14  5     I/O       O       FAST 
+wte_out                         3     5     FB2_15  6     I/O       O       FAST 
+aux_out                         1     1     FB3_10  21    I/O       O       FAST 
+peltEnab1                       1     1     FB4_2   8     I/O       O       FAST 
+peltEnab2                       1     1     FB4_5   11    I/O       O       FAST 
+
+** 53 Buried Nodes **
+
+Signal                          Total Total Loc     Reg Init
+Name                            Pts   Inps          State
+miscControls/delay_reg<13>      3     16    FB1_1   RESET
+miscControls/delay_reg<12>      2     14    FB1_2   RESET
+miscControls/delay_reg<6>       2     8     FB1_3   RESET
+miscControls/delay_reg<5>       2     7     FB1_4   RESET
+miscControls/delay_reg<4>       2     6     FB1_5   RESET
+miscControls/delay_reg<3>       2     5     FB1_6   RESET
+miscControls/delay_reg<2>       2     4     FB1_7   RESET
+miscControls/delay_reg<11>      2     13    FB1_8   RESET
+reset_out_extClk_intCtrl        1     1     FB1_9   RESET
+miscControls/delay_reg<9>       2     11    FB1_11  RESET
+miscControls/delay_reg<1>       2     3     FB1_12  RESET
+reset_out_extClk_extCtrl        1     2     FB1_13  RESET
+miscControls/delay_reg<7>       2     9     FB1_14  RESET
+reset_out_intClk_intCtrl        1     1     FB1_16  RESET
+fcl_extClk_intCtrl/upc/out<1>   2     4     FB2_1   RESET
+fcl_extClk_intCtrl/upc/out<2>   3     5     FB2_2   RESET
+fcl_extClk_intCtrl/upc/out<3>   3     6     FB2_3   RESET
+fcl_extClk_intCtrl/upc/out<5>   3     8     FB2_4   RESET
+fcl_extClk_intCtrl/upc/out<6>   3     9     FB2_5   RESET
+fcl_extClk_intCtrl/upc/out<7>   3     10    FB2_6   RESET
+fcl_extClk_intCtrl/upc/out<8>   3     11    FB2_7   RESET
+fcl_extClk_intCtrl/upc/out<9>   3     12    FB2_8   RESET
+wte_out_extClk_intCtrl          3     15    FB2_9   RESET
+fcl_extClk_intCtrl/upc/out<4>   3     7     FB2_10  RESET
+fcl_extClk_intCtrl/upc/out<10>  3     13    FB2_12  RESET
+fcl_extClk_intCtrl/upc/out<11>  3     14    FB2_13  RESET
+qie_reset_out_extClk_intCtrl    1     14    FB2_16  RESET
+reset_out_intClk_extCtrl        1     2     FB3_1   RESET
+miscControls/delay_reg<8>       6     18    FB3_3   RESET
+miscControls/delay_reg<10>      5     18    FB3_5   RESET
+miscControls/delay_reg<16>      3     18    FB3_6   RESET
+miscControls/delay_reg<17>      3     19    FB3_7   RESET
+miscControls/delay_reg<18>      2     19    FB3_8   RESET
+N_PZ_323                        6     12    FB3_11  
+miscControls/delay_reg<14>      3     16    FB3_12  RESET
+miscControls/delay_reg<15>      3     17    FB3_13  RESET
+miscControls/penable_reg        3     14    FB3_14  RESET
+miscControls/delay_reg<0>       3     14    FB3_15  RESET
+fcl_extClk_intCtrl/upc/out<0>   1     3     FB3_16  RESET
+fcl_intClk_intCtrl/upc/out<0>   1     3     FB4_1   RESET
+
+Signal                          Total Total Loc     Reg Init
+Name                            Pts   Inps          State
+fcl_intClk_intCtrl/upc/out<8>   3     11    FB4_3   RESET
+wte_out_intClk_intCtrl          3     15    FB4_4   RESET
+fcl_intClk_intCtrl/upc/out<7>   3     10    FB4_6   RESET
+fcl_intClk_intCtrl/upc/out<6>   3     9     FB4_7   RESET
+fcl_intClk_intCtrl/upc/out<5>   3     8     FB4_8   RESET
+fcl_intClk_intCtrl/upc/out<11>  3     14    FB4_9   RESET
+qie_reset_out_intClk_intCtrl    1     14    FB4_10  RESET
+fcl_intClk_intCtrl/upc/out<10>  3     13    FB4_11  RESET
+fcl_intClk_intCtrl/upc/out<9>   3     12    FB4_12  RESET
+fcl_intClk_intCtrl/upc/out<4>   3     7     FB4_13  RESET
+fcl_intClk_intCtrl/upc/out<3>   3     6     FB4_14  RESET
+fcl_intClk_intCtrl/upc/out<2>   3     5     FB4_15  RESET
+fcl_intClk_intCtrl/upc/out<1>   2     4     FB4_16  RESET
+
+** 13 Inputs **
+
+Signal                          Loc     Pin   Pin       Pin     
+Name                                    No.   Type      Use     
+qie_reset_in                    FB1_1   35    I/O       I                
+pgood                           FB1_11  30    I/O       I                
+GPIO_Extra0                     FB1_14  28    I/O       I                
+qie_reset_source                FB2_1   42    I/O       I                
+clk_select                      FB2_3   44    I/O       I                
+mode_select                     FB2_10  2     I/O       I                
+reset_switch                    FB3_2   25    I/O       I                
+aux3                            FB3_4   23    I/O       I                
+aux2                            FB3_9   22    I/O       I                
+aux_in                          FB3_11  20    I/O       I                
+clk_in_j1                               37    GCK/I     GCK/I            
+int_clk_in                              39    GCK/I     GCK/I            
+ext_clk_in                              38    GCK/I     GCK/I            
+
+Legend:
+Pin No. - ~ - User Assigned
+PU          - Pull Up
+**************************  Function Block Details  ************************
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Loc          - Location where logic was mapped in device
+Pin Type/Use - I  - Input            GCK - Global clock
+               O  - Output           (b) - Buried macrocell
+Pin No.      - ~  - User Assigned
+*********************************** FB1  ***********************************
+Number of function block inputs used/remaining:               26/14
+Number of foldback NANDs used/remaining:                      0/8
+Number of function block local control terms used/remaining:  1/7
+Number of PLA product terms used/remaining:                   21/27
+Number of function block global clocks used/remaining:  2/0
+Signal                        Total Loc     Pin  Pin     Pin   GCK 
+Name                          Pt            No.  Type    Use       
+miscControls/delay_reg<13>    3     FB1_1   35   I/O     I     
+miscControls/delay_reg<12>    2     FB1_2   34   I/O     (b)   
+miscControls/delay_reg<6>     2     FB1_3        (b)     (b)   
+miscControls/delay_reg<5>     2     FB1_4        (b)     (b)   
+miscControls/delay_reg<4>     2     FB1_5        (b)     (b)   
+miscControls/delay_reg<3>     2     FB1_6        (b)     (b)   
+miscControls/delay_reg<2>     2     FB1_7        (b)     (b)   
+miscControls/delay_reg<11>    2     FB1_8   33   I/O     (b)   
+reset_out_extClk_intCtrl      1     FB1_9   32   TDO/I/O (b)   ext_clk_in
+penable                       2     FB1_10  31   I/O     O     
+miscControls/delay_reg<9>     2     FB1_11  30   I/O     I     
+miscControls/delay_reg<1>     2     FB1_12       (b)     (b)   
+reset_out_extClk_extCtrl      1     FB1_13       (b)     (b)   ext_clk_in
+miscControls/delay_reg<7>     2     FB1_14  28   I/O     I     
+clk_out_p2                    3     FB1_15  27   I/O     O     
+reset_out_intClk_intCtrl      1     FB1_16       (b)     (b)   int_clk_in
+
+Signals Used by Logic in Function Block
+  1: GPIO_Extra0                10: miscControls/delay_reg<10>  19: miscControls/delay_reg<5> 
+  2: N_PZ_323                   11: miscControls/delay_reg<11>  20: miscControls/delay_reg<6> 
+  3: aux_in                     12: miscControls/delay_reg<12>  21: miscControls/delay_reg<7> 
+  4: clk_in_j1                  13: miscControls/delay_reg<17>  22: miscControls/delay_reg<8> 
+  5: clk_out_p2                 14: miscControls/delay_reg<18>  23: miscControls/delay_reg<9> 
+  6: clk_select                 15: miscControls/delay_reg<1>   24: miscControls/penable_reg 
+  7: ext_clk_in                 16: miscControls/delay_reg<2>   25: mode_select 
+  8: int_clk_in                 17: miscControls/delay_reg<3>   26: reset_switch 
+  9: miscControls/delay_reg<0>  18: miscControls/delay_reg<4>  
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+miscControls/delay_reg<13> 
+                  ....X...XXXXXXXXXXXXXXX................. 16      
+miscControls/delay_reg<12> 
+                  .X..X...XXX...XXXXXXXXX................. 14      
+miscControls/delay_reg<6> 
+                  .X..X...X.....XXXXX..................... 8       
+miscControls/delay_reg<5> 
+                  .X..X...X.....XXXX...................... 7       
+miscControls/delay_reg<4> 
+                  .X..X...X.....XXX....................... 6       
+miscControls/delay_reg<3> 
+                  .X..X...X.....XX........................ 5       
+miscControls/delay_reg<2> 
+                  .X..X...X.....X......................... 4       
+miscControls/delay_reg<11> 
+                  .X..X...XX....XXXXXXXXX................. 13      
+reset_out_extClk_intCtrl 
+                  .........................X.............. 1       
+penable           ..X....................XX............... 3       
+miscControls/delay_reg<9> 
+                  .X..X...X.....XXXXXXXX.................. 11      
+miscControls/delay_reg<1> 
+                  .X..X...X............................... 3       
+reset_out_extClk_extCtrl 
+                  X........................X.............. 2       
+miscControls/delay_reg<7> 
+                  .X..X...X.....XXXXXX.................... 9       
+clk_out_p2        ...X.XXX................X............... 5       
+reset_out_intClk_intCtrl 
+                  .........................X.............. 1       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB2  ***********************************
+Number of function block inputs used/remaining:               25/15
+Number of foldback NANDs used/remaining:                      0/8
+Number of function block local control terms used/remaining:  0/8
+Number of PLA product terms used/remaining:                   47/1
+Number of function block global clocks used/remaining:  1/1
+Signal                        Total Loc     Pin  Pin     Pin   GCK 
+Name                          Pt            No.  Type    Use       
+fcl_extClk_intCtrl/upc/out<1> 2     FB2_1   42   I/O     I     ext_clk_in
+fcl_extClk_intCtrl/upc/out<2> 3     FB2_2   43   I/O     (b)   ext_clk_in
+fcl_extClk_intCtrl/upc/out<3> 3     FB2_3   44   I/O     I     ext_clk_in
+fcl_extClk_intCtrl/upc/out<5> 3     FB2_4        (b)     (b)   ext_clk_in
+fcl_extClk_intCtrl/upc/out<6> 3     FB2_5        (b)     (b)   ext_clk_in
+fcl_extClk_intCtrl/upc/out<7> 3     FB2_6        (b)     (b)   ext_clk_in
+fcl_extClk_intCtrl/upc/out<8> 3     FB2_7        (b)     (b)   ext_clk_in
+fcl_extClk_intCtrl/upc/out<9> 3     FB2_8        (b)     (b)   ext_clk_in
+wte_out_extClk_intCtrl        3     FB2_9   1    TDI/I/O (b)   ext_clk_in
+fcl_extClk_intCtrl/upc/out<4> 3     FB2_10  2    I/O     I     ext_clk_in
+reset_out                     4     FB2_11  3    I/O     O     
+fcl_extClk_intCtrl/upc/out<10>
+                              3     FB2_12       (b)     (b)   ext_clk_in
+fcl_extClk_intCtrl/upc/out<11>
+                              3     FB2_13       (b)     (b)   ext_clk_in
+qie_reset_out                 4     FB2_14  5    I/O     O     
+wte_out                       3     FB2_15  6    I/O     O     
+qie_reset_out_extClk_intCtrl  1     FB2_16       (b)     (b)   ext_clk_in
+
+Signals Used by Logic in Function Block
+  1: clk_select                      10: fcl_extClk_intCtrl/upc/out<5>  18: qie_reset_out_intClk_intCtrl 
+  2: ext_clk_in                      11: fcl_extClk_intCtrl/upc/out<6>  19: qie_reset_source 
+  3: fcl_extClk_intCtrl/upc/out<0>   12: fcl_extClk_intCtrl/upc/out<7>  20: reset_out_extClk_extCtrl 
+  4: fcl_extClk_intCtrl/upc/out<10>  13: fcl_extClk_intCtrl/upc/out<8>  21: reset_out_extClk_intCtrl 
+  5: fcl_extClk_intCtrl/upc/out<11>  14: fcl_extClk_intCtrl/upc/out<9>  22: reset_out_intClk_extCtrl 
+  6: fcl_extClk_intCtrl/upc/out<1>   15: mode_select                    23: reset_out_intClk_intCtrl 
+  7: fcl_extClk_intCtrl/upc/out<2>   16: qie_reset_in                   24: wte_out_extClk_intCtrl 
+  8: fcl_extClk_intCtrl/upc/out<3>   17: qie_reset_out_extClk_intCtrl   25: wte_out_intClk_intCtrl 
+  9: fcl_extClk_intCtrl/upc/out<4>  
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+fcl_extClk_intCtrl/upc/out<1> 
+                  ..X..X..........X...X................... 4       
+fcl_extClk_intCtrl/upc/out<2> 
+                  ..X..XX.........X...X................... 5       
+fcl_extClk_intCtrl/upc/out<3> 
+                  ..X..XXX........X...X................... 6       
+fcl_extClk_intCtrl/upc/out<5> 
+                  ..X..XXXXX......X...X................... 8       
+fcl_extClk_intCtrl/upc/out<6> 
+                  ..X..XXXXXX.....X...X................... 9       
+fcl_extClk_intCtrl/upc/out<7> 
+                  ..X..XXXXXXX....X...X................... 10      
+fcl_extClk_intCtrl/upc/out<8> 
+                  ..X..XXXXXXXX...X...X................... 11      
+fcl_extClk_intCtrl/upc/out<9> 
+                  ..X..XXXXXXXXX..X...X................... 12      
+wte_out_extClk_intCtrl 
+                  ..XXXXXXXXXXXX..X...X..X................ 15      
+fcl_extClk_intCtrl/upc/out<4> 
+                  ..X..XXXX.......X...X................... 7       
+reset_out         X.............X....XXXX................. 6       
+fcl_extClk_intCtrl/upc/out<10> 
+                  ..XX.XXXXXXXXX..X...X................... 13      
+fcl_extClk_intCtrl/upc/out<11> 
+                  ..XXXXXXXXXXXX..X...X................... 14      
+qie_reset_out     XX............XXXXX..................... 7       
+wte_out           X.............XX.......XX............... 5       
+qie_reset_out_extClk_intCtrl 
+                  ..XXXXXXXXXXXX..X...X................... 14      
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB3  ***********************************
+Number of function block inputs used/remaining:               26/14
+Number of foldback NANDs used/remaining:                      0/8
+Number of function block local control terms used/remaining:  0/8
+Number of PLA product terms used/remaining:                   29/19
+Number of function block global clocks used/remaining:  2/0
+Signal                        Total Loc     Pin  Pin     Pin   GCK 
+Name                          Pt            No.  Type    Use       
+reset_out_intClk_extCtrl      1     FB3_1   26   TCK/I/O (b)   clk_in_j1
+(unused)                      0     FB3_2   25   I/O     I     
+miscControls/delay_reg<8>     6     FB3_3        (b)     (b)   
+(unused)                      0     FB3_4   23   I/O     I     
+miscControls/delay_reg<10>    5     FB3_5        (b)     (b)   
+miscControls/delay_reg<16>    3     FB3_6        (b)     (b)   
+miscControls/delay_reg<17>    3     FB3_7        (b)     (b)   
+miscControls/delay_reg<18>    2     FB3_8        (b)     (b)   
+(unused)                      0     FB3_9   22   I/O     I     
+aux_out                       1     FB3_10  21   I/O     O     
+N_PZ_323                      6     FB3_11  20   I/O     I     
+miscControls/delay_reg<14>    3     FB3_12  19   I/O     (b)   
+miscControls/delay_reg<15>    3     FB3_13  18   I/O     (b)   
+miscControls/penable_reg      3     FB3_14       (b)     (b)   
+miscControls/delay_reg<0>     3     FB3_15       (b)     (b)   
+fcl_extClk_intCtrl/upc/out<0> 1     FB3_16       (b)     (b)   ext_clk_in
+
+Signals Used by Logic in Function Block
+  1: GPIO_Extra0                    10: miscControls/delay_reg<15>  19: miscControls/delay_reg<6> 
+  2: N_PZ_323                       11: miscControls/delay_reg<16>  20: miscControls/delay_reg<7> 
+  3: fcl_extClk_intCtrl/upc/out<0>  12: miscControls/delay_reg<17>  21: miscControls/delay_reg<8> 
+  4: miscControls/delay_reg<0>      13: miscControls/delay_reg<18>  22: miscControls/delay_reg<9> 
+  5: miscControls/delay_reg<10>     14: miscControls/delay_reg<1>   23: pgood 
+  6: miscControls/delay_reg<11>     15: miscControls/delay_reg<2>   24: qie_reset_out_extClk_intCtrl 
+  7: miscControls/delay_reg<12>     16: miscControls/delay_reg<3>   25: reset_out_extClk_intCtrl 
+  8: miscControls/delay_reg<13>     17: miscControls/delay_reg<4>   26: reset_switch 
+  9: miscControls/delay_reg<14>     18: miscControls/delay_reg<5>  
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+reset_out_intClk_extCtrl 
+                  X........................X.............. 2       
+miscControls/delay_reg<8> 
+                  ...XXXXXXXXXXXXXXXXX.X.................. 18      
+miscControls/delay_reg<10> 
+                  ...X.XXXXXXXXXXXXXXXXX.................. 18      
+miscControls/delay_reg<16> 
+                  ...XXXXXXX.XXXXXXXXXXX.................. 18      
+miscControls/delay_reg<17> 
+                  ...XXXXXXXXXXXXXXXXXXX.................. 19      
+miscControls/delay_reg<18> 
+                  ...XXXXXXXXXXXXXXXXXXX.................. 19      
+aux_out           ......................X................. 1       
+N_PZ_323          ....XXXXXXXXX......XXX.................. 12      
+miscControls/delay_reg<14> 
+                  ...XXXXX...XXXXXXXXXXX.................. 16      
+miscControls/delay_reg<15> 
+                  ...XXXXXX..XXXXXXXXXXX.................. 17      
+miscControls/penable_reg 
+                  .X.XX..XXXX..XXXXXX.X................... 14      
+miscControls/delay_reg<0> 
+                  .X.XX..XXXX..XXXXXX.X................... 14      
+fcl_extClk_intCtrl/upc/out<0> 
+                  ..X....................XX............... 3       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB4  ***********************************
+Number of function block inputs used/remaining:               17/23
+Number of foldback NANDs used/remaining:                      0/8
+Number of function block local control terms used/remaining:  0/8
+Number of PLA product terms used/remaining:                   39/9
+Number of function block global clocks used/remaining:  1/1
+Signal                        Total Loc     Pin  Pin     Pin   GCK 
+Name                          Pt            No.  Type    Use       
+fcl_intClk_intCtrl/upc/out<0> 1     FB4_1   7    TMS/I/O (b)   int_clk_in
+peltEnab1                     1     FB4_2   8    I/O     O     
+fcl_intClk_intCtrl/upc/out<8> 3     FB4_3        (b)     (b)   int_clk_in
+wte_out_intClk_intCtrl        3     FB4_4   10   I/O     (b)   int_clk_in
+peltEnab2                     1     FB4_5   11   I/O     O     
+fcl_intClk_intCtrl/upc/out<7> 3     FB4_6        (b)     (b)   int_clk_in
+fcl_intClk_intCtrl/upc/out<6> 3     FB4_7        (b)     (b)   int_clk_in
+fcl_intClk_intCtrl/upc/out<5> 3     FB4_8        (b)     (b)   int_clk_in
+fcl_intClk_intCtrl/upc/out<11>
+                              3     FB4_9   12   I/O     (b)   int_clk_in
+qie_reset_out_intClk_intCtrl  1     FB4_10  13   I/O     (b)   int_clk_in
+fcl_intClk_intCtrl/upc/out<10>
+                              3     FB4_11  14   I/O     (b)   int_clk_in
+fcl_intClk_intCtrl/upc/out<9> 3     FB4_12  15   I/O     (b)   int_clk_in
+fcl_intClk_intCtrl/upc/out<4> 3     FB4_13       (b)     (b)   int_clk_in
+fcl_intClk_intCtrl/upc/out<3> 3     FB4_14       (b)     (b)   int_clk_in
+fcl_intClk_intCtrl/upc/out<2> 3     FB4_15       (b)     (b)   int_clk_in
+fcl_intClk_intCtrl/upc/out<1> 2     FB4_16       (b)     (b)   int_clk_in
+
+Signals Used by Logic in Function Block
+  1: aux2                             7: fcl_intClk_intCtrl/upc/out<2>  13: fcl_intClk_intCtrl/upc/out<8> 
+  2: aux3                             8: fcl_intClk_intCtrl/upc/out<3>  14: fcl_intClk_intCtrl/upc/out<9> 
+  3: fcl_intClk_intCtrl/upc/out<0>    9: fcl_intClk_intCtrl/upc/out<4>  15: qie_reset_out_intClk_intCtrl 
+  4: fcl_intClk_intCtrl/upc/out<10>  10: fcl_intClk_intCtrl/upc/out<5>  16: reset_out_intClk_intCtrl 
+  5: fcl_intClk_intCtrl/upc/out<11>  11: fcl_intClk_intCtrl/upc/out<6>  17: wte_out_intClk_intCtrl 
+  6: fcl_intClk_intCtrl/upc/out<1>   12: fcl_intClk_intCtrl/upc/out<7> 
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+fcl_intClk_intCtrl/upc/out<0> 
+                  ..X...........XX........................ 3       
+peltEnab1         X....................................... 1       
+fcl_intClk_intCtrl/upc/out<8> 
+                  ..X..XXXXXXXX.XX........................ 11      
+wte_out_intClk_intCtrl 
+                  ..XXXXXXXXXXXXXXX....................... 15      
+peltEnab2         .X...................................... 1       
+fcl_intClk_intCtrl/upc/out<7> 
+                  ..X..XXXXXXX..XX........................ 10      
+fcl_intClk_intCtrl/upc/out<6> 
+                  ..X..XXXXXX...XX........................ 9       
+fcl_intClk_intCtrl/upc/out<5> 
+                  ..X..XXXXX....XX........................ 8       
+fcl_intClk_intCtrl/upc/out<11> 
+                  ..XXXXXXXXXXXXXX........................ 14      
+qie_reset_out_intClk_intCtrl 
+                  ..XXXXXXXXXXXXXX........................ 14      
+fcl_intClk_intCtrl/upc/out<10> 
+                  ..XX.XXXXXXXXXXX........................ 13      
+fcl_intClk_intCtrl/upc/out<9> 
+                  ..X..XXXXXXXXXXX........................ 12      
+fcl_intClk_intCtrl/upc/out<4> 
+                  ..X..XXXX.....XX........................ 7       
+fcl_intClk_intCtrl/upc/out<3> 
+                  ..X..XXX......XX........................ 6       
+fcl_intClk_intCtrl/upc/out<2> 
+                  ..X..XX.......XX........................ 5       
+fcl_intClk_intCtrl/upc/out<1> 
+                  ..X..X........XX........................ 4       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*******************************  Equations  ********************************
+
+********** Mapped Logic **********
+
+
+N_PZ_323 <= ((NOT miscControls/delay_reg(17))
+	OR (NOT miscControls/delay_reg(18))
+	OR (NOT miscControls/delay_reg(11) AND 
+	NOT miscControls/delay_reg(13) AND NOT miscControls/delay_reg(14) AND 
+	NOT miscControls/delay_reg(15) AND NOT miscControls/delay_reg(16))
+	OR (NOT miscControls/delay_reg(13) AND 
+	NOT miscControls/delay_reg(12) AND NOT miscControls/delay_reg(14) AND 
+	NOT miscControls/delay_reg(15) AND NOT miscControls/delay_reg(16))
+	OR (NOT miscControls/delay_reg(10) AND 
+	NOT miscControls/delay_reg(13) AND NOT miscControls/delay_reg(14) AND 
+	NOT miscControls/delay_reg(15) AND NOT miscControls/delay_reg(9) AND 
+	NOT miscControls/delay_reg(16))
+	OR (NOT miscControls/delay_reg(10) AND 
+	NOT miscControls/delay_reg(13) AND NOT miscControls/delay_reg(7) AND 
+	NOT miscControls/delay_reg(8) AND NOT miscControls/delay_reg(14) AND 
+	NOT miscControls/delay_reg(15) AND NOT miscControls/delay_reg(16)));
+
+
+aux_out <= pgood;
+
+
+clk_out_p2 <= NOT (((NOT clk_select AND NOT ext_clk_in)
+	OR (NOT int_clk_in AND mode_select AND clk_select)
+	OR (NOT mode_select AND clk_select AND NOT clk_in_j1)));
+
+FDCPE_fcl_extClk_intCtrl/upc/out0: FDCPE port map (fcl_extClk_intCtrl/upc/out(0),fcl_extClk_intCtrl/upc/out_D(0),ext_clk_in,'0','0','1');
+fcl_extClk_intCtrl/upc/out_D(0) <= NOT ((NOT qie_reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl));
+
+FDCPE_fcl_extClk_intCtrl/upc/out1: FDCPE port map (fcl_extClk_intCtrl/upc/out(1),fcl_extClk_intCtrl/upc/out_D(1),ext_clk_in,'0','0','1');
+fcl_extClk_intCtrl/upc/out_D(1) <= ((NOT qie_reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
+	NOT fcl_extClk_intCtrl/upc/out(1))
+	OR (NOT qie_reset_out_extClk_intCtrl AND 
+	NOT fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(1)));
+
+FTCPE_fcl_extClk_intCtrl/upc/out2: FTCPE port map (fcl_extClk_intCtrl/upc/out(2),fcl_extClk_intCtrl/upc/out_T(2),ext_clk_in,'0','0','1');
+fcl_extClk_intCtrl/upc/out_T(2) <= ((qie_reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(2))
+	OR (reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(2))
+	OR (NOT qie_reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(1)));
+
+FTCPE_fcl_extClk_intCtrl/upc/out3: FTCPE port map (fcl_extClk_intCtrl/upc/out(3),fcl_extClk_intCtrl/upc/out_T(3),ext_clk_in,'0','0','1');
+fcl_extClk_intCtrl/upc/out_T(3) <= ((qie_reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(3))
+	OR (reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(3))
+	OR (NOT qie_reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(1) AND fcl_extClk_intCtrl/upc/out(2)));
+
+FTCPE_fcl_extClk_intCtrl/upc/out4: FTCPE port map (fcl_extClk_intCtrl/upc/out(4),fcl_extClk_intCtrl/upc/out_T(4),ext_clk_in,'0','0','1');
+fcl_extClk_intCtrl/upc/out_T(4) <= ((qie_reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(4))
+	OR (reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(4))
+	OR (NOT qie_reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(1) AND fcl_extClk_intCtrl/upc/out(2) AND 
+	fcl_extClk_intCtrl/upc/out(3)));
+
+FTCPE_fcl_extClk_intCtrl/upc/out5: FTCPE port map (fcl_extClk_intCtrl/upc/out(5),fcl_extClk_intCtrl/upc/out_T(5),ext_clk_in,'0','0','1');
+fcl_extClk_intCtrl/upc/out_T(5) <= ((qie_reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(5))
+	OR (reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(5))
+	OR (NOT qie_reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(1) AND fcl_extClk_intCtrl/upc/out(2) AND 
+	fcl_extClk_intCtrl/upc/out(3) AND fcl_extClk_intCtrl/upc/out(4)));
+
+FTCPE_fcl_extClk_intCtrl/upc/out6: FTCPE port map (fcl_extClk_intCtrl/upc/out(6),fcl_extClk_intCtrl/upc/out_T(6),ext_clk_in,'0','0','1');
+fcl_extClk_intCtrl/upc/out_T(6) <= ((qie_reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(6))
+	OR (reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(6))
+	OR (NOT qie_reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(1) AND fcl_extClk_intCtrl/upc/out(2) AND 
+	fcl_extClk_intCtrl/upc/out(3) AND fcl_extClk_intCtrl/upc/out(4) AND 
+	fcl_extClk_intCtrl/upc/out(5)));
+
+FTCPE_fcl_extClk_intCtrl/upc/out7: FTCPE port map (fcl_extClk_intCtrl/upc/out(7),fcl_extClk_intCtrl/upc/out_T(7),ext_clk_in,'0','0','1');
+fcl_extClk_intCtrl/upc/out_T(7) <= ((qie_reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(7))
+	OR (reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(7))
+	OR (NOT qie_reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(1) AND fcl_extClk_intCtrl/upc/out(2) AND 
+	fcl_extClk_intCtrl/upc/out(3) AND fcl_extClk_intCtrl/upc/out(4) AND 
+	fcl_extClk_intCtrl/upc/out(5) AND fcl_extClk_intCtrl/upc/out(6)));
+
+FTCPE_fcl_extClk_intCtrl/upc/out8: FTCPE port map (fcl_extClk_intCtrl/upc/out(8),fcl_extClk_intCtrl/upc/out_T(8),ext_clk_in,'0','0','1');
+fcl_extClk_intCtrl/upc/out_T(8) <= ((qie_reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(8))
+	OR (reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(8))
+	OR (NOT qie_reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(1) AND fcl_extClk_intCtrl/upc/out(2) AND 
+	fcl_extClk_intCtrl/upc/out(3) AND fcl_extClk_intCtrl/upc/out(4) AND 
+	fcl_extClk_intCtrl/upc/out(5) AND fcl_extClk_intCtrl/upc/out(6) AND 
+	fcl_extClk_intCtrl/upc/out(7)));
+
+FTCPE_fcl_extClk_intCtrl/upc/out9: FTCPE port map (fcl_extClk_intCtrl/upc/out(9),fcl_extClk_intCtrl/upc/out_T(9),ext_clk_in,'0','0','1');
+fcl_extClk_intCtrl/upc/out_T(9) <= ((qie_reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(9))
+	OR (reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(9))
+	OR (NOT qie_reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(1) AND fcl_extClk_intCtrl/upc/out(2) AND 
+	fcl_extClk_intCtrl/upc/out(3) AND fcl_extClk_intCtrl/upc/out(4) AND 
+	fcl_extClk_intCtrl/upc/out(5) AND fcl_extClk_intCtrl/upc/out(6) AND 
+	fcl_extClk_intCtrl/upc/out(7) AND fcl_extClk_intCtrl/upc/out(8)));
+
+FTCPE_fcl_extClk_intCtrl/upc/out10: FTCPE port map (fcl_extClk_intCtrl/upc/out(10),fcl_extClk_intCtrl/upc/out_T(10),ext_clk_in,'0','0','1');
+fcl_extClk_intCtrl/upc/out_T(10) <= ((qie_reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(10))
+	OR (reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(10))
+	OR (NOT qie_reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(1) AND fcl_extClk_intCtrl/upc/out(2) AND 
+	fcl_extClk_intCtrl/upc/out(3) AND fcl_extClk_intCtrl/upc/out(4) AND 
+	fcl_extClk_intCtrl/upc/out(5) AND fcl_extClk_intCtrl/upc/out(6) AND 
+	fcl_extClk_intCtrl/upc/out(7) AND fcl_extClk_intCtrl/upc/out(8) AND 
+	fcl_extClk_intCtrl/upc/out(9)));
+
+FTCPE_fcl_extClk_intCtrl/upc/out11: FTCPE port map (fcl_extClk_intCtrl/upc/out(11),fcl_extClk_intCtrl/upc/out_T(11),ext_clk_in,'0','0','1');
+fcl_extClk_intCtrl/upc/out_T(11) <= ((qie_reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(11))
+	OR (reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(11))
+	OR (NOT qie_reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(10) AND fcl_extClk_intCtrl/upc/out(1) AND 
+	fcl_extClk_intCtrl/upc/out(2) AND fcl_extClk_intCtrl/upc/out(3) AND 
+	fcl_extClk_intCtrl/upc/out(4) AND fcl_extClk_intCtrl/upc/out(5) AND 
+	fcl_extClk_intCtrl/upc/out(6) AND fcl_extClk_intCtrl/upc/out(7) AND 
+	fcl_extClk_intCtrl/upc/out(8) AND fcl_extClk_intCtrl/upc/out(9)));
+
+FDCPE_fcl_intClk_intCtrl/upc/out0: FDCPE port map (fcl_intClk_intCtrl/upc/out(0),fcl_intClk_intCtrl/upc/out_D(0),int_clk_in,'0','0','1');
+fcl_intClk_intCtrl/upc/out_D(0) <= NOT ((NOT qie_reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(0) AND NOT reset_out_intClk_intCtrl));
+
+FDCPE_fcl_intClk_intCtrl/upc/out1: FDCPE port map (fcl_intClk_intCtrl/upc/out(1),fcl_intClk_intCtrl/upc/out_D(1),int_clk_in,'0','0','1');
+fcl_intClk_intCtrl/upc/out_D(1) <= ((NOT qie_reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(0) AND NOT reset_out_intClk_intCtrl AND 
+	NOT fcl_intClk_intCtrl/upc/out(1))
+	OR (NOT qie_reset_out_intClk_intCtrl AND 
+	NOT fcl_intClk_intCtrl/upc/out(0) AND NOT reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(1)));
+
+FTCPE_fcl_intClk_intCtrl/upc/out2: FTCPE port map (fcl_intClk_intCtrl/upc/out(2),fcl_intClk_intCtrl/upc/out_T(2),int_clk_in,'0','0','1');
+fcl_intClk_intCtrl/upc/out_T(2) <= ((qie_reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(2))
+	OR (reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(2))
+	OR (NOT qie_reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(0) AND NOT reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(1)));
+
+FTCPE_fcl_intClk_intCtrl/upc/out3: FTCPE port map (fcl_intClk_intCtrl/upc/out(3),fcl_intClk_intCtrl/upc/out_T(3),int_clk_in,'0','0','1');
+fcl_intClk_intCtrl/upc/out_T(3) <= ((qie_reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(3))
+	OR (reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(3))
+	OR (NOT qie_reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(0) AND NOT reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(1) AND fcl_intClk_intCtrl/upc/out(2)));
+
+FTCPE_fcl_intClk_intCtrl/upc/out4: FTCPE port map (fcl_intClk_intCtrl/upc/out(4),fcl_intClk_intCtrl/upc/out_T(4),int_clk_in,'0','0','1');
+fcl_intClk_intCtrl/upc/out_T(4) <= ((qie_reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(4))
+	OR (reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(4))
+	OR (NOT qie_reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(0) AND NOT reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(1) AND fcl_intClk_intCtrl/upc/out(2) AND 
+	fcl_intClk_intCtrl/upc/out(3)));
+
+FTCPE_fcl_intClk_intCtrl/upc/out5: FTCPE port map (fcl_intClk_intCtrl/upc/out(5),fcl_intClk_intCtrl/upc/out_T(5),int_clk_in,'0','0','1');
+fcl_intClk_intCtrl/upc/out_T(5) <= ((qie_reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(5))
+	OR (reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(5))
+	OR (NOT qie_reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(0) AND NOT reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(1) AND fcl_intClk_intCtrl/upc/out(2) AND 
+	fcl_intClk_intCtrl/upc/out(3) AND fcl_intClk_intCtrl/upc/out(4)));
+
+FTCPE_fcl_intClk_intCtrl/upc/out6: FTCPE port map (fcl_intClk_intCtrl/upc/out(6),fcl_intClk_intCtrl/upc/out_T(6),int_clk_in,'0','0','1');
+fcl_intClk_intCtrl/upc/out_T(6) <= ((qie_reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(6))
+	OR (reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(6))
+	OR (NOT qie_reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(0) AND NOT reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(1) AND fcl_intClk_intCtrl/upc/out(2) AND 
+	fcl_intClk_intCtrl/upc/out(3) AND fcl_intClk_intCtrl/upc/out(4) AND 
+	fcl_intClk_intCtrl/upc/out(5)));
+
+FTCPE_fcl_intClk_intCtrl/upc/out7: FTCPE port map (fcl_intClk_intCtrl/upc/out(7),fcl_intClk_intCtrl/upc/out_T(7),int_clk_in,'0','0','1');
+fcl_intClk_intCtrl/upc/out_T(7) <= ((qie_reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(7))
+	OR (reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(7))
+	OR (NOT qie_reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(0) AND NOT reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(1) AND fcl_intClk_intCtrl/upc/out(2) AND 
+	fcl_intClk_intCtrl/upc/out(3) AND fcl_intClk_intCtrl/upc/out(4) AND 
+	fcl_intClk_intCtrl/upc/out(5) AND fcl_intClk_intCtrl/upc/out(6)));
+
+FTCPE_fcl_intClk_intCtrl/upc/out8: FTCPE port map (fcl_intClk_intCtrl/upc/out(8),fcl_intClk_intCtrl/upc/out_T(8),int_clk_in,'0','0','1');
+fcl_intClk_intCtrl/upc/out_T(8) <= ((qie_reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(8))
+	OR (reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(8))
+	OR (NOT qie_reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(0) AND NOT reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(1) AND fcl_intClk_intCtrl/upc/out(2) AND 
+	fcl_intClk_intCtrl/upc/out(3) AND fcl_intClk_intCtrl/upc/out(4) AND 
+	fcl_intClk_intCtrl/upc/out(5) AND fcl_intClk_intCtrl/upc/out(6) AND 
+	fcl_intClk_intCtrl/upc/out(7)));
+
+FTCPE_fcl_intClk_intCtrl/upc/out9: FTCPE port map (fcl_intClk_intCtrl/upc/out(9),fcl_intClk_intCtrl/upc/out_T(9),int_clk_in,'0','0','1');
+fcl_intClk_intCtrl/upc/out_T(9) <= ((qie_reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(9))
+	OR (reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(9))
+	OR (NOT qie_reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(0) AND NOT reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(1) AND fcl_intClk_intCtrl/upc/out(2) AND 
+	fcl_intClk_intCtrl/upc/out(3) AND fcl_intClk_intCtrl/upc/out(4) AND 
+	fcl_intClk_intCtrl/upc/out(5) AND fcl_intClk_intCtrl/upc/out(6) AND 
+	fcl_intClk_intCtrl/upc/out(7) AND fcl_intClk_intCtrl/upc/out(8)));
+
+FTCPE_fcl_intClk_intCtrl/upc/out10: FTCPE port map (fcl_intClk_intCtrl/upc/out(10),fcl_intClk_intCtrl/upc/out_T(10),int_clk_in,'0','0','1');
+fcl_intClk_intCtrl/upc/out_T(10) <= ((qie_reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(10))
+	OR (reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(10))
+	OR (NOT qie_reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(0) AND NOT reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(1) AND fcl_intClk_intCtrl/upc/out(2) AND 
+	fcl_intClk_intCtrl/upc/out(3) AND fcl_intClk_intCtrl/upc/out(4) AND 
+	fcl_intClk_intCtrl/upc/out(5) AND fcl_intClk_intCtrl/upc/out(6) AND 
+	fcl_intClk_intCtrl/upc/out(7) AND fcl_intClk_intCtrl/upc/out(8) AND 
+	fcl_intClk_intCtrl/upc/out(9)));
+
+FTCPE_fcl_intClk_intCtrl/upc/out11: FTCPE port map (fcl_intClk_intCtrl/upc/out(11),fcl_intClk_intCtrl/upc/out_T(11),int_clk_in,'0','0','1');
+fcl_intClk_intCtrl/upc/out_T(11) <= ((qie_reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(11))
+	OR (reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(11))
+	OR (NOT qie_reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(0) AND NOT reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(10) AND fcl_intClk_intCtrl/upc/out(1) AND 
+	fcl_intClk_intCtrl/upc/out(2) AND fcl_intClk_intCtrl/upc/out(3) AND 
+	fcl_intClk_intCtrl/upc/out(4) AND fcl_intClk_intCtrl/upc/out(5) AND 
+	fcl_intClk_intCtrl/upc/out(6) AND fcl_intClk_intCtrl/upc/out(7) AND 
+	fcl_intClk_intCtrl/upc/out(8) AND fcl_intClk_intCtrl/upc/out(9)));
+
+FTCPE_miscControls/delay_reg0: FTCPE port map (miscControls/delay_reg(0),miscControls/delay_reg_T(0),clk_out_p2,'0','0','1');
+miscControls/delay_reg_T(0) <= ((N_PZ_323)
+	OR (NOT miscControls/delay_reg(0) AND 
+	NOT miscControls/delay_reg(10) AND NOT miscControls/delay_reg(1) AND 
+	NOT miscControls/delay_reg(13) AND NOT miscControls/delay_reg(2) AND 
+	NOT miscControls/delay_reg(3) AND NOT miscControls/delay_reg(4) AND 
+	NOT miscControls/delay_reg(5) AND NOT miscControls/delay_reg(6) AND 
+	NOT miscControls/delay_reg(8) AND NOT miscControls/delay_reg(14) AND 
+	NOT miscControls/delay_reg(15) AND NOT miscControls/delay_reg(16)));
+
+FTCPE_miscControls/delay_reg1: FTCPE port map (miscControls/delay_reg(1),miscControls/delay_reg_T(1),clk_out_p2,'0','0','1');
+miscControls/delay_reg_T(1) <= (miscControls/delay_reg(0) AND N_PZ_323);
+
+FTCPE_miscControls/delay_reg2: FTCPE port map (miscControls/delay_reg(2),miscControls/delay_reg_T(2),clk_out_p2,'0','0','1');
+miscControls/delay_reg_T(2) <= (miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(1) AND N_PZ_323);
+
+FTCPE_miscControls/delay_reg3: FTCPE port map (miscControls/delay_reg(3),miscControls/delay_reg_T(3),clk_out_p2,'0','0','1');
+miscControls/delay_reg_T(3) <= (miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(1) AND N_PZ_323 AND miscControls/delay_reg(2));
+
+FTCPE_miscControls/delay_reg4: FTCPE port map (miscControls/delay_reg(4),miscControls/delay_reg_T(4),clk_out_p2,'0','0','1');
+miscControls/delay_reg_T(4) <= (miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(1) AND N_PZ_323 AND miscControls/delay_reg(2) AND 
+	miscControls/delay_reg(3));
+
+FTCPE_miscControls/delay_reg5: FTCPE port map (miscControls/delay_reg(5),miscControls/delay_reg_T(5),clk_out_p2,'0','0','1');
+miscControls/delay_reg_T(5) <= (miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(1) AND N_PZ_323 AND miscControls/delay_reg(2) AND 
+	miscControls/delay_reg(3) AND miscControls/delay_reg(4));
+
+FTCPE_miscControls/delay_reg6: FTCPE port map (miscControls/delay_reg(6),miscControls/delay_reg_T(6),clk_out_p2,'0','0','1');
+miscControls/delay_reg_T(6) <= (miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(1) AND N_PZ_323 AND miscControls/delay_reg(2) AND 
+	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
+	miscControls/delay_reg(5));
+
+FTCPE_miscControls/delay_reg7: FTCPE port map (miscControls/delay_reg(7),miscControls/delay_reg_T(7),clk_out_p2,'0','0','1');
+miscControls/delay_reg_T(7) <= (miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(1) AND N_PZ_323 AND miscControls/delay_reg(2) AND 
+	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
+	miscControls/delay_reg(5) AND miscControls/delay_reg(6));
+
+FTCPE_miscControls/delay_reg8: FTCPE port map (miscControls/delay_reg(8),miscControls/delay_reg_T(8),clk_out_p2,'0','0','1');
+miscControls/delay_reg_T(8) <= ((miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(1) AND miscControls/delay_reg(2) AND 
+	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
+	miscControls/delay_reg(5) AND miscControls/delay_reg(6) AND 
+	miscControls/delay_reg(7) AND NOT miscControls/delay_reg(17))
+	OR (miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(1) AND miscControls/delay_reg(2) AND 
+	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
+	miscControls/delay_reg(5) AND miscControls/delay_reg(6) AND 
+	miscControls/delay_reg(7) AND NOT miscControls/delay_reg(18))
+	OR (miscControls/delay_reg(0) AND 
+	NOT miscControls/delay_reg(11) AND miscControls/delay_reg(1) AND 
+	NOT miscControls/delay_reg(13) AND miscControls/delay_reg(2) AND 
+	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
+	miscControls/delay_reg(5) AND miscControls/delay_reg(6) AND 
+	miscControls/delay_reg(7) AND NOT miscControls/delay_reg(14) AND 
+	NOT miscControls/delay_reg(15) AND NOT miscControls/delay_reg(16))
+	OR (miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(1) AND NOT miscControls/delay_reg(13) AND 
+	NOT miscControls/delay_reg(12) AND miscControls/delay_reg(2) AND 
+	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
+	miscControls/delay_reg(5) AND miscControls/delay_reg(6) AND 
+	miscControls/delay_reg(7) AND NOT miscControls/delay_reg(14) AND 
+	NOT miscControls/delay_reg(15) AND NOT miscControls/delay_reg(16))
+	OR (miscControls/delay_reg(0) AND 
+	NOT miscControls/delay_reg(10) AND miscControls/delay_reg(1) AND 
+	NOT miscControls/delay_reg(13) AND miscControls/delay_reg(2) AND 
+	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
+	miscControls/delay_reg(5) AND miscControls/delay_reg(6) AND 
+	miscControls/delay_reg(7) AND NOT miscControls/delay_reg(14) AND 
+	NOT miscControls/delay_reg(15) AND NOT miscControls/delay_reg(9) AND 
+	NOT miscControls/delay_reg(16)));
+
+FTCPE_miscControls/delay_reg9: FTCPE port map (miscControls/delay_reg(9),miscControls/delay_reg_T(9),clk_out_p2,'0','0','1');
+miscControls/delay_reg_T(9) <= (miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(1) AND N_PZ_323 AND miscControls/delay_reg(2) AND 
+	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
+	miscControls/delay_reg(5) AND miscControls/delay_reg(6) AND 
+	miscControls/delay_reg(7) AND miscControls/delay_reg(8));
+
+FTCPE_miscControls/delay_reg10: FTCPE port map (miscControls/delay_reg(10),miscControls/delay_reg_T(10),clk_out_p2,'0','0','1');
+miscControls/delay_reg_T(10) <= ((miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(1) AND miscControls/delay_reg(2) AND 
+	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
+	miscControls/delay_reg(5) AND miscControls/delay_reg(6) AND 
+	miscControls/delay_reg(7) AND miscControls/delay_reg(8) AND 
+	NOT miscControls/delay_reg(17) AND miscControls/delay_reg(9))
+	OR (miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(1) AND miscControls/delay_reg(2) AND 
+	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
+	miscControls/delay_reg(5) AND miscControls/delay_reg(6) AND 
+	miscControls/delay_reg(7) AND miscControls/delay_reg(8) AND 
+	miscControls/delay_reg(9) AND NOT miscControls/delay_reg(18))
+	OR (miscControls/delay_reg(0) AND 
+	NOT miscControls/delay_reg(11) AND miscControls/delay_reg(1) AND 
+	NOT miscControls/delay_reg(13) AND miscControls/delay_reg(2) AND 
+	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
+	miscControls/delay_reg(5) AND miscControls/delay_reg(6) AND 
+	miscControls/delay_reg(7) AND miscControls/delay_reg(8) AND 
+	NOT miscControls/delay_reg(14) AND NOT miscControls/delay_reg(15) AND 
+	miscControls/delay_reg(9) AND NOT miscControls/delay_reg(16))
+	OR (miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(1) AND NOT miscControls/delay_reg(13) AND 
+	NOT miscControls/delay_reg(12) AND miscControls/delay_reg(2) AND 
+	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
+	miscControls/delay_reg(5) AND miscControls/delay_reg(6) AND 
+	miscControls/delay_reg(7) AND miscControls/delay_reg(8) AND 
+	NOT miscControls/delay_reg(14) AND NOT miscControls/delay_reg(15) AND 
+	miscControls/delay_reg(9) AND NOT miscControls/delay_reg(16)));
+
+FTCPE_miscControls/delay_reg11: FTCPE port map (miscControls/delay_reg(11),miscControls/delay_reg_T(11),clk_out_p2,'0','0','1');
+miscControls/delay_reg_T(11) <= (miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(10) AND miscControls/delay_reg(1) AND N_PZ_323 AND 
+	miscControls/delay_reg(2) AND miscControls/delay_reg(3) AND 
+	miscControls/delay_reg(4) AND miscControls/delay_reg(5) AND 
+	miscControls/delay_reg(6) AND miscControls/delay_reg(7) AND 
+	miscControls/delay_reg(8) AND miscControls/delay_reg(9));
+
+FTCPE_miscControls/delay_reg12: FTCPE port map (miscControls/delay_reg(12),miscControls/delay_reg_T(12),clk_out_p2,'0','0','1');
+miscControls/delay_reg_T(12) <= (miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(10) AND miscControls/delay_reg(11) AND 
+	miscControls/delay_reg(1) AND N_PZ_323 AND miscControls/delay_reg(2) AND 
+	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
+	miscControls/delay_reg(5) AND miscControls/delay_reg(6) AND 
+	miscControls/delay_reg(7) AND miscControls/delay_reg(8) AND 
+	miscControls/delay_reg(9));
+
+FTCPE_miscControls/delay_reg13: FTCPE port map (miscControls/delay_reg(13),miscControls/delay_reg_T(13),clk_out_p2,'0','0','1');
+miscControls/delay_reg_T(13) <= ((miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(10) AND miscControls/delay_reg(11) AND 
+	miscControls/delay_reg(1) AND miscControls/delay_reg(12) AND 
+	miscControls/delay_reg(2) AND miscControls/delay_reg(3) AND 
+	miscControls/delay_reg(4) AND miscControls/delay_reg(5) AND 
+	miscControls/delay_reg(6) AND miscControls/delay_reg(7) AND 
+	miscControls/delay_reg(8) AND NOT miscControls/delay_reg(17) AND 
+	miscControls/delay_reg(9))
+	OR (miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(10) AND miscControls/delay_reg(11) AND 
+	miscControls/delay_reg(1) AND miscControls/delay_reg(12) AND 
+	miscControls/delay_reg(2) AND miscControls/delay_reg(3) AND 
+	miscControls/delay_reg(4) AND miscControls/delay_reg(5) AND 
+	miscControls/delay_reg(6) AND miscControls/delay_reg(7) AND 
+	miscControls/delay_reg(8) AND miscControls/delay_reg(9) AND 
+	NOT miscControls/delay_reg(18)));
+
+FTCPE_miscControls/delay_reg14: FTCPE port map (miscControls/delay_reg(14),miscControls/delay_reg_T(14),clk_out_p2,'0','0','1');
+miscControls/delay_reg_T(14) <= ((miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(10) AND miscControls/delay_reg(11) AND 
+	miscControls/delay_reg(1) AND miscControls/delay_reg(13) AND 
+	miscControls/delay_reg(12) AND miscControls/delay_reg(2) AND 
+	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
+	miscControls/delay_reg(5) AND miscControls/delay_reg(6) AND 
+	miscControls/delay_reg(7) AND miscControls/delay_reg(8) AND 
+	NOT miscControls/delay_reg(17) AND miscControls/delay_reg(9))
+	OR (miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(10) AND miscControls/delay_reg(11) AND 
+	miscControls/delay_reg(1) AND miscControls/delay_reg(13) AND 
+	miscControls/delay_reg(12) AND miscControls/delay_reg(2) AND 
+	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
+	miscControls/delay_reg(5) AND miscControls/delay_reg(6) AND 
+	miscControls/delay_reg(7) AND miscControls/delay_reg(8) AND 
+	miscControls/delay_reg(9) AND NOT miscControls/delay_reg(18)));
+
+FTCPE_miscControls/delay_reg15: FTCPE port map (miscControls/delay_reg(15),miscControls/delay_reg_T(15),clk_out_p2,'0','0','1');
+miscControls/delay_reg_T(15) <= ((miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(10) AND miscControls/delay_reg(11) AND 
+	miscControls/delay_reg(1) AND miscControls/delay_reg(13) AND 
+	miscControls/delay_reg(12) AND miscControls/delay_reg(2) AND 
+	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
+	miscControls/delay_reg(5) AND miscControls/delay_reg(6) AND 
+	miscControls/delay_reg(7) AND miscControls/delay_reg(8) AND 
+	miscControls/delay_reg(14) AND NOT miscControls/delay_reg(17) AND 
+	miscControls/delay_reg(9))
+	OR (miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(10) AND miscControls/delay_reg(11) AND 
+	miscControls/delay_reg(1) AND miscControls/delay_reg(13) AND 
+	miscControls/delay_reg(12) AND miscControls/delay_reg(2) AND 
+	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
+	miscControls/delay_reg(5) AND miscControls/delay_reg(6) AND 
+	miscControls/delay_reg(7) AND miscControls/delay_reg(8) AND 
+	miscControls/delay_reg(14) AND miscControls/delay_reg(9) AND 
+	NOT miscControls/delay_reg(18)));
+
+FTCPE_miscControls/delay_reg16: FTCPE port map (miscControls/delay_reg(16),miscControls/delay_reg_T(16),clk_out_p2,'0','0','1');
+miscControls/delay_reg_T(16) <= ((miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(10) AND miscControls/delay_reg(11) AND 
+	miscControls/delay_reg(1) AND miscControls/delay_reg(13) AND 
+	miscControls/delay_reg(12) AND miscControls/delay_reg(2) AND 
+	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
+	miscControls/delay_reg(5) AND miscControls/delay_reg(6) AND 
+	miscControls/delay_reg(7) AND miscControls/delay_reg(8) AND 
+	miscControls/delay_reg(14) AND NOT miscControls/delay_reg(17) AND 
+	miscControls/delay_reg(15) AND miscControls/delay_reg(9))
+	OR (miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(10) AND miscControls/delay_reg(11) AND 
+	miscControls/delay_reg(1) AND miscControls/delay_reg(13) AND 
+	miscControls/delay_reg(12) AND miscControls/delay_reg(2) AND 
+	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
+	miscControls/delay_reg(5) AND miscControls/delay_reg(6) AND 
+	miscControls/delay_reg(7) AND miscControls/delay_reg(8) AND 
+	miscControls/delay_reg(14) AND miscControls/delay_reg(15) AND 
+	miscControls/delay_reg(9) AND NOT miscControls/delay_reg(18)));
+
+FTCPE_miscControls/delay_reg17: FTCPE port map (miscControls/delay_reg(17),miscControls/delay_reg_T(17),clk_out_p2,'0','0','1');
+miscControls/delay_reg_T(17) <= ((miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(10) AND miscControls/delay_reg(11) AND 
+	miscControls/delay_reg(1) AND miscControls/delay_reg(13) AND 
+	miscControls/delay_reg(12) AND miscControls/delay_reg(2) AND 
+	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
+	miscControls/delay_reg(5) AND miscControls/delay_reg(6) AND 
+	miscControls/delay_reg(7) AND miscControls/delay_reg(8) AND 
+	miscControls/delay_reg(14) AND NOT miscControls/delay_reg(17) AND 
+	miscControls/delay_reg(15) AND miscControls/delay_reg(9) AND 
+	miscControls/delay_reg(16))
+	OR (miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(10) AND miscControls/delay_reg(11) AND 
+	miscControls/delay_reg(1) AND miscControls/delay_reg(13) AND 
+	miscControls/delay_reg(12) AND miscControls/delay_reg(2) AND 
+	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
+	miscControls/delay_reg(5) AND miscControls/delay_reg(6) AND 
+	miscControls/delay_reg(7) AND miscControls/delay_reg(8) AND 
+	miscControls/delay_reg(14) AND miscControls/delay_reg(15) AND 
+	miscControls/delay_reg(9) AND NOT miscControls/delay_reg(18) AND 
+	miscControls/delay_reg(16)));
+
+FTCPE_miscControls/delay_reg18: FTCPE port map (miscControls/delay_reg(18),miscControls/delay_reg_T(18),clk_out_p2,'0','0','1');
+miscControls/delay_reg_T(18) <= (miscControls/delay_reg(0) AND 
+	miscControls/delay_reg(10) AND miscControls/delay_reg(11) AND 
+	miscControls/delay_reg(1) AND miscControls/delay_reg(13) AND 
+	miscControls/delay_reg(12) AND miscControls/delay_reg(2) AND 
+	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
+	miscControls/delay_reg(5) AND miscControls/delay_reg(6) AND 
+	miscControls/delay_reg(7) AND miscControls/delay_reg(8) AND 
+	miscControls/delay_reg(14) AND miscControls/delay_reg(17) AND 
+	miscControls/delay_reg(15) AND miscControls/delay_reg(9) AND 
+	NOT miscControls/delay_reg(18) AND miscControls/delay_reg(16));
+
+FDCPE_miscControls/penable_reg: FDCPE port map (miscControls/penable_reg,miscControls/penable_reg_D,clk_out_p2,'0','0','1');
+miscControls/penable_reg_D <= NOT (((N_PZ_323)
+	OR (NOT miscControls/delay_reg(0) AND 
+	NOT miscControls/delay_reg(10) AND NOT miscControls/delay_reg(1) AND 
+	NOT miscControls/delay_reg(13) AND NOT miscControls/delay_reg(2) AND 
+	NOT miscControls/delay_reg(3) AND NOT miscControls/delay_reg(4) AND 
+	NOT miscControls/delay_reg(5) AND NOT miscControls/delay_reg(6) AND 
+	NOT miscControls/delay_reg(8) AND NOT miscControls/delay_reg(14) AND 
+	NOT miscControls/delay_reg(15) AND NOT miscControls/delay_reg(16))));
+
+
+peltEnab1 <= aux2;
+
+
+peltEnab2 <= aux3;
+
+
+penable <= NOT (((mode_select AND NOT miscControls/penable_reg)
+	OR (NOT mode_select AND NOT aux_in)));
+
+
+qie_reset_out <= NOT (((NOT ext_clk_in AND qie_reset_source)
+	OR (NOT mode_select AND NOT qie_reset_source AND qie_reset_in)
+	OR (mode_select AND clk_select AND NOT qie_reset_source AND 
+	NOT qie_reset_out_intClk_intCtrl)
+	OR (mode_select AND NOT clk_select AND NOT qie_reset_source AND 
+	NOT qie_reset_out_extClk_intCtrl)));
+
+FDCPE_qie_reset_out_extClk_intCtrl: FDCPE port map (qie_reset_out_extClk_intCtrl,qie_reset_out_extClk_intCtrl_D,ext_clk_in,'0','0','1');
+qie_reset_out_extClk_intCtrl_D <= (NOT qie_reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(10) AND fcl_extClk_intCtrl/upc/out(1) AND 
+	NOT fcl_extClk_intCtrl/upc/out(2) AND fcl_extClk_intCtrl/upc/out(3) AND 
+	NOT fcl_extClk_intCtrl/upc/out(4) AND fcl_extClk_intCtrl/upc/out(5) AND 
+	fcl_extClk_intCtrl/upc/out(6) AND fcl_extClk_intCtrl/upc/out(7) AND 
+	fcl_extClk_intCtrl/upc/out(8) AND NOT fcl_extClk_intCtrl/upc/out(9) AND 
+	fcl_extClk_intCtrl/upc/out(11));
+
+FDCPE_qie_reset_out_intClk_intCtrl: FDCPE port map (qie_reset_out_intClk_intCtrl,qie_reset_out_intClk_intCtrl_D,int_clk_in,'0','0','1');
+qie_reset_out_intClk_intCtrl_D <= (NOT qie_reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(0) AND NOT reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(10) AND fcl_intClk_intCtrl/upc/out(1) AND 
+	NOT fcl_intClk_intCtrl/upc/out(2) AND fcl_intClk_intCtrl/upc/out(3) AND 
+	NOT fcl_intClk_intCtrl/upc/out(4) AND fcl_intClk_intCtrl/upc/out(5) AND 
+	fcl_intClk_intCtrl/upc/out(6) AND fcl_intClk_intCtrl/upc/out(7) AND 
+	fcl_intClk_intCtrl/upc/out(8) AND NOT fcl_intClk_intCtrl/upc/out(9) AND 
+	fcl_intClk_intCtrl/upc/out(11));
+
+
+reset_out <= NOT (((mode_select AND clk_select AND 
+	NOT reset_out_intClk_intCtrl)
+	OR (mode_select AND NOT clk_select AND 
+	NOT reset_out_extClk_intCtrl)
+	OR (NOT mode_select AND clk_select AND 
+	NOT reset_out_intClk_extCtrl)
+	OR (NOT mode_select AND NOT clk_select AND 
+	NOT reset_out_extClk_extCtrl)));
+
+FDCPE_reset_out_extClk_extCtrl: FDCPE port map (reset_out_extClk_extCtrl,reset_out_extClk_extCtrl_D,ext_clk_in,'0','0','1');
+reset_out_extClk_extCtrl_D <= NOT ((reset_switch AND NOT GPIO_Extra0));
+
+FDCPE_reset_out_extClk_intCtrl: FDCPE port map (reset_out_extClk_intCtrl,NOT reset_switch,ext_clk_in,'0','0','1');
+
+FDCPE_reset_out_intClk_extCtrl: FDCPE port map (reset_out_intClk_extCtrl,reset_out_intClk_extCtrl_D,clk_in_j1,'0','0','1');
+reset_out_intClk_extCtrl_D <= NOT ((reset_switch AND NOT GPIO_Extra0));
+
+FDCPE_reset_out_intClk_intCtrl: FDCPE port map (reset_out_intClk_intCtrl,NOT reset_switch,int_clk_in,'0','0','1');
+
+
+wte_out <= NOT (((NOT mode_select AND qie_reset_in)
+	OR (mode_select AND clk_select AND 
+	NOT wte_out_intClk_intCtrl)
+	OR (mode_select AND NOT clk_select AND 
+	NOT wte_out_extClk_intCtrl)));
+
+FDCPE_wte_out_extClk_intCtrl: FDCPE port map (wte_out_extClk_intCtrl,wte_out_extClk_intCtrl_D,ext_clk_in,'0','0','1');
+wte_out_extClk_intCtrl_D <= ((qie_reset_out_extClk_intCtrl AND 
+	wte_out_extClk_intCtrl)
+	OR (reset_out_extClk_intCtrl AND wte_out_extClk_intCtrl)
+	OR (NOT qie_reset_out_extClk_intCtrl AND 
+	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
+	NOT fcl_extClk_intCtrl/upc/out(10) AND fcl_extClk_intCtrl/upc/out(1) AND 
+	fcl_extClk_intCtrl/upc/out(2) AND fcl_extClk_intCtrl/upc/out(3) AND 
+	fcl_extClk_intCtrl/upc/out(4) AND fcl_extClk_intCtrl/upc/out(5) AND 
+	fcl_extClk_intCtrl/upc/out(6) AND NOT fcl_extClk_intCtrl/upc/out(7) AND 
+	NOT fcl_extClk_intCtrl/upc/out(8) AND NOT fcl_extClk_intCtrl/upc/out(9) AND 
+	NOT fcl_extClk_intCtrl/upc/out(11)));
+
+FDCPE_wte_out_intClk_intCtrl: FDCPE port map (wte_out_intClk_intCtrl,wte_out_intClk_intCtrl_D,int_clk_in,'0','0','1');
+wte_out_intClk_intCtrl_D <= ((qie_reset_out_intClk_intCtrl AND 
+	wte_out_intClk_intCtrl)
+	OR (reset_out_intClk_intCtrl AND wte_out_intClk_intCtrl)
+	OR (NOT qie_reset_out_intClk_intCtrl AND 
+	fcl_intClk_intCtrl/upc/out(0) AND NOT reset_out_intClk_intCtrl AND 
+	NOT fcl_intClk_intCtrl/upc/out(10) AND fcl_intClk_intCtrl/upc/out(1) AND 
+	fcl_intClk_intCtrl/upc/out(2) AND fcl_intClk_intCtrl/upc/out(3) AND 
+	fcl_intClk_intCtrl/upc/out(4) AND fcl_intClk_intCtrl/upc/out(5) AND 
+	fcl_intClk_intCtrl/upc/out(6) AND NOT fcl_intClk_intCtrl/upc/out(7) AND 
+	NOT fcl_intClk_intCtrl/upc/out(8) AND NOT fcl_intClk_intCtrl/upc/out(9) AND 
+	NOT fcl_intClk_intCtrl/upc/out(11)));
+
+
+Register Legend:
+ FDCPE (Q,D,C,CLR,PRE,CE); 
+ FTCPE (Q,D,C,CLR,PRE,CE); 
+ LDCP  (Q,D,G,CLR,PRE); 
+
+******************************  Device Pin Out *****************************
+
+Device : XCR3064XL-10-VQ44
+
+
+   --------------------------------  
+  /44 43 42 41 40 39 38 37 36 35 34 \
+ | 1                             33 | 
+ | 2                             32 | 
+ | 3                             31 | 
+ | 4                             30 | 
+ | 5        XCR3064XL-10-VQ44     29 | 
+ | 6                             28 | 
+ | 7                             27 | 
+ | 8                             26 | 
+ | 9                             25 | 
+ | 10                            24 | 
+ | 11                            23 | 
+ \ 12 13 14 15 16 17 18 19 20 21 22 /
+   --------------------------------  
+
+
+Pin Signal                         Pin Signal                        
+No. Name                           No. Name                          
+  1 TDI                              23 aux3                          
+  2 mode_select                      24 GND                           
+  3 reset_out                        25 reset_switch                  
+  4 PE                               26 TCK                           
+  5 qie_reset_out                    27 clk_out_p2                    
+  6 wte_out                          28 GPIO_Extra0                   
+  7 TMS                              29 VCC                           
+  8 peltEnab1                        30 pgood                         
+  9 VCC                              31 penable                       
+ 10 WPU                              32 TDO                           
+ 11 peltEnab2                        33 WPU                           
+ 12 WPU                              34 WPU                           
+ 13 WPU                              35 qie_reset_in                  
+ 14 WPU                              36 GND                           
+ 15 WPU                              37 clk_in_j1                     
+ 16 GND                              38 ext_clk_in                    
+ 17 VCC                              39 int_clk_in                    
+ 18 WPU                              40 TIE                           
+ 19 WPU                              41 VCC                           
+ 20 aux_in                           42 qie_reset_source              
+ 21 aux_out                          43 WPU                           
+ 22 aux2                             44 clk_select                    
+
+
+Legend :  NC  = Not Connected, unbonded pin
+          PE  = Port Enable pin
+         WPU  = Unused with Internal Weak Pull Up
+         TIE  = Unused I/O floating -- must tie to VCC, GND or other signal
+         VCC  = Dedicated Power Pin
+         GND  = Dedicated Ground Pin
+         TDI  = Test Data In, JTAG pin
+         TDO  = Test Data Out, JTAG pin
+         TCK  = Test Clock, JTAG pin
+         TMS  = Test Mode Select, JTAG pin
+  PROHIBITED  = User reserved pin
+****************************  Compiler Options  ****************************
+
+Following is a list of all global compiler options used by the fitter run.
+
+Device(s) Specified                         : xcr3064xl-10-VQ44
+Optimization Method                         : DENSITY
+Multi-Level Logic Optimization              : ON
+Ignore Timing Specifications                : OFF
+Default Register Power Up Value             : LOW
+Keep User Location Constraints              : ON
+What-You-See-Is-What-You-Get                : OFF
+Exhaustive Fitting                          : OFF
+Keep Unused Inputs                          : OFF
+Slew Rate                                   : FAST
+Set Unused I/O Pin Termination              : PULLUP
+Set Input-Only Termination                  : FLOAT
+Set Universal Control Term Optimization     : OFF
+Enable Foldback NANDs                       : OFF
+Reserve ISP Pins                            : ON
+Enable Input Registers                      : ON
+Function Block Fan-in Limit                 : 38
+Input Limit                                 : 32
+Pterm Limit                                 : 28
+</pre>
+<form><span class="pgRef"><table width="90%" align="center"><tr>
+<td align="left"><input type="button" onclick="javascript:parent.leftnav.showTop()" onmouseover="window.status='goto top of page'; return true;" onmouseout="window.status=''" value="back to top"></td>
+<td align="right"><input type="button" onclick="window.print()" onmouseover="window.status='print page'; return true;" onmouseout="window.status=''" value="print page"></td>
+</tr></table></span></form>
+</body></html>

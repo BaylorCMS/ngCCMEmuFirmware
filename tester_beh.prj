@@ -1,0 +1,7 @@
+verilog work "counter.v"
+verilog work "misc_controls.v"
+verilog work "fast_controls_int.v"
+verilog work "fast_controls_ext.v"
+verilog work "control_emulator.v"
+verilog work "control_test.v"
+verilog work "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

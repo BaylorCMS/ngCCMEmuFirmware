@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "uni9000_ver" -lib "aim_ver" -lib "cpld_ver" -lib "xilinxcorelib_ver" -o "C:/Users/pastika/Xilinx/test/HF_ngCCM_Control_Emulator_V2/tester_isim_beh.exe" -prj "C:/Users/pastika/Xilinx/test/HF_ngCCM_Control_Emulator_V2/tester_beh.prj" "work.tester" "work.glbl" 

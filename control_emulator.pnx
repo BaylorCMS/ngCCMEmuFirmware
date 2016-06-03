@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE ibis [
+<!ELEMENT ibis (part, pin+)>
+<!ELEMENT part EMPTY>
+<!ELEMENT pin EMPTY>
+<!ATTLIST part
+  arch   CDATA #REQUIRED
+  device CDATA #REQUIRED
+  spg    CDATA #REQUIRED
+  pkg    CDATA #REQUIRED>
+<!ATTLIST pin
+  nm     CDATA #REQUIRED
+  no     CDATA #REQUIRED
+  iostd  (TTL|LVTTL|LVCMOS2|NA) "NA"
+  sr     (SLOW|FAST|slow|fast) "SLOW"
+  dir    (BIDIR|bidir|INPUT|input|OUTPUT|output) "BIDIR">
+]>
+<ibis><part arch="xpla3" device="XCR3064XL" pkg="VQ44" spg="-10"/><pin dir="input" nm="GPIO_Extra0" no="28"/><pin dir="input" nm="aux2" no="22"/><pin dir="input" nm="aux3" no="23"/><pin dir="input" nm="aux_in" no="20"/><pin dir="input" nm="pgood" no="30"/><pin dir="input" nm="clk_in_j1" no="37"/><pin dir="input" nm="int_clk_in" no="39"/><pin dir="input" nm="mode_select" no="2"/><pin dir="input" nm="clk_select" no="44"/><pin dir="input" nm="ext_clk_in" no="38"/><pin dir="input" nm="qie_reset_in" no="35"/><pin dir="input" nm="qie_reset_source" no="42"/><pin dir="input" nm="reset_switch" no="25"/><pin dir="output" nm="aux_out" no="21" sr="fast"/><pin dir="output" nm="clk_out_p2" no="27" sr="fast"/><pin dir="output" nm="peltEnab1" no="8" sr="fast"/><pin dir="output" nm="peltEnab2" no="11" sr="fast"/><pin dir="output" nm="penable" no="31" sr="fast"/><pin dir="output" nm="qie_reset_out" no="5" sr="fast"/><pin dir="output" nm="reset_out" no="3" sr="fast"/><pin dir="output" nm="wte_out" no="6" sr="fast"/></ibis>

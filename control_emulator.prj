@@ -1,0 +1,5 @@
+verilog work "counter.v"
+verilog work "misc_controls.v"
+verilog work "fast_controls_int.v"
+verilog work "fast_controls_ext.v"
+verilog work "control_emulator.v"

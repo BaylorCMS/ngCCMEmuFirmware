@@ -1,0 +1,30 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib uni9000_ver -lib aim_ver -lib cpld_ver -lib xilinxcorelib_ver -o C:/Users/pastika/Xilinx/test/HF_ngCCM_Control_Emulator_V2/tester_isim_beh.exe -prj C:/Users/pastika/Xilinx/test/HF_ngCCM_Control_Emulator_V2/tester_beh.prj work.tester work.glbl 
+ISim P.20131013 (signature 0x8ef4fb42)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/pastika/Xilinx/test/HF_ngCCM_Control_Emulator_V2/counter.v" into library work
+Analyzing Verilog file "C:/Users/pastika/Xilinx/test/HF_ngCCM_Control_Emulator_V2/misc_controls.v" into library work
+Analyzing Verilog file "C:/Users/pastika/Xilinx/test/HF_ngCCM_Control_Emulator_V2/fast_controls_int.v" into library work
+Analyzing Verilog file "C:/Users/pastika/Xilinx/test/HF_ngCCM_Control_Emulator_V2/fast_controls_ext.v" into library work
+Analyzing Verilog file "C:/Users/pastika/Xilinx/test/HF_ngCCM_Control_Emulator_V2/control_emulator.v" into library work
+Analyzing Verilog file "C:/Users/pastika/Xilinx/test/HF_ngCCM_Control_Emulator_V2/control_test.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:1016 - "C:/Users/pastika/Xilinx/test/HF_ngCCM_Control_Emulator_V2/control_test.v" Line 50: Port aux2 is not connected to this instance
+Completed static elaboration
+Fuse Memory Usage: 122956 KB
+Fuse CPU Usage: 170 ms
+Compiling module misc_controls
+Compiling module fast_controls_ext
+Compiling module counter
+Compiling module fast_controls_int
+Compiling module control_emulator
+Compiling module tester
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 7 Verilog Units
+Built simulation executable C:/Users/pastika/Xilinx/test/HF_ngCCM_Control_Emulator_V2/tester_isim_beh.exe
+Fuse Memory Usage: 129916 KB
+Fuse CPU Usage: 280 ms
