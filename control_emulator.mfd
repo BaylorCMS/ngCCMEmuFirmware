@@ -33,20 +33,20 @@ EQ | 1 |
 MACROCELL | 0 | 9 | penable_MC
 ATTRIBUTES | 1074004738 | 0
 INPUTS | 3 | mode_select  | miscControls/penable_reg  | aux_in
-INPUTMC | 1 | 2 | 13
+INPUTMC | 1 | 3 | 14
 INPUTP | 2 | 4 | 41
 EQ | 2 | 
    !penable = mode_select & !miscControls/penable_reg
 	# !mode_select & !aux_in;	// (2 pt, 3 inp)
 
-MACROCELL | 2 | 13 | miscControls/penable_reg_MC
+MACROCELL | 3 | 14 | miscControls/penable_reg_MC
 ATTRIBUTES | 2155905792 | 0
 OUTPUTMC | 1 | 0 | 9
-INPUTS | 14 | N_PZ_323  | miscControls/delay_reg<0>  | miscControls/delay_reg<10>  | miscControls/delay_reg<1>  | miscControls/delay_reg<13>  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>  | miscControls/delay_reg<4>  | miscControls/delay_reg<5>  | miscControls/delay_reg<6>  | miscControls/delay_reg<8>  | miscControls/delay_reg<14>  | miscControls/delay_reg<15>  | miscControls/delay_reg<16>
-INPUTMC | 14 | 2 | 10 | 2 | 14 | 2 | 4 | 0 | 11 | 0 | 0 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 2 | 2 | 2 | 2 | 11 | 2 | 12 | 2 | 5
+INPUTS | 14 | N_PZ_303  | miscControls/delay_reg<0>  | miscControls/delay_reg<10>  | miscControls/delay_reg<1>  | miscControls/delay_reg<13>  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>  | miscControls/delay_reg<4>  | miscControls/delay_reg<5>  | miscControls/delay_reg<6>  | miscControls/delay_reg<8>  | miscControls/delay_reg<14>  | miscControls/delay_reg<15>  | miscControls/delay_reg<16>
+INPUTMC | 14 | 3 | 7 | 3 | 15 | 3 | 13 | 0 | 10 | 2 | 12 | 0 | 7 | 0 | 1 | 0 | 0 | 2 | 13 | 2 | 7 | 3 | 12 | 2 | 11 | 2 | 10 | 2 | 8
 UCT | 1 | 2 | Internal_Name
 EQ | 9 | 
-   !miscControls/penable_reg := N_PZ_323
+   !miscControls/penable_reg := N_PZ_303
 	# !miscControls/delay_reg<0> & 
 	!miscControls/delay_reg<10> & !miscControls/delay_reg<1> & 
 	!miscControls/delay_reg<13> & !miscControls/delay_reg<2> & 
@@ -56,14 +56,14 @@ EQ | 9 |
 	!miscControls/delay_reg<15> & !miscControls/delay_reg<16>;	// (2 pt, 14 inp)
     miscControls/penable_reg.CLK = clk_out_p2;	// UCLK	(1 pt, 1 inp)
 
-MACROCELL | 2 | 14 | miscControls/delay_reg<0>_MC
+MACROCELL | 3 | 15 | miscControls/delay_reg<0>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 20 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 2 | 0 | 13 | 0 | 10 | 2 | 5 | 2 | 7 | 2 | 12 | 2 | 6 | 2 | 11 | 2 | 2 | 0 | 1 | 0 | 0 | 0 | 11 | 0 | 7 | 2 | 4 | 2 | 14 | 2 | 13
-INPUTS | 14 | N_PZ_323  | miscControls/delay_reg<0>  | miscControls/delay_reg<10>  | miscControls/delay_reg<1>  | miscControls/delay_reg<13>  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>  | miscControls/delay_reg<4>  | miscControls/delay_reg<5>  | miscControls/delay_reg<6>  | miscControls/delay_reg<8>  | miscControls/delay_reg<14>  | miscControls/delay_reg<15>  | miscControls/delay_reg<16>
-INPUTMC | 14 | 2 | 10 | 2 | 14 | 2 | 4 | 0 | 11 | 0 | 0 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 2 | 2 | 2 | 2 | 11 | 2 | 12 | 2 | 5
+OUTPUTMC | 20 | 0 | 7 | 0 | 1 | 0 | 0 | 2 | 13 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 8 | 2 | 3 | 2 | 10 | 2 | 1 | 2 | 11 | 3 | 12 | 2 | 2 | 2 | 12 | 0 | 10 | 2 | 4 | 3 | 13 | 3 | 15 | 3 | 14
+INPUTS | 14 | N_PZ_303  | miscControls/delay_reg<0>  | miscControls/delay_reg<10>  | miscControls/delay_reg<1>  | miscControls/delay_reg<13>  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>  | miscControls/delay_reg<4>  | miscControls/delay_reg<5>  | miscControls/delay_reg<6>  | miscControls/delay_reg<8>  | miscControls/delay_reg<14>  | miscControls/delay_reg<15>  | miscControls/delay_reg<16>
+INPUTMC | 14 | 3 | 7 | 3 | 15 | 3 | 13 | 0 | 10 | 2 | 12 | 0 | 7 | 0 | 1 | 0 | 0 | 2 | 13 | 2 | 7 | 3 | 12 | 2 | 11 | 2 | 10 | 2 | 8
 UCT | 1 | 2 | Internal_Name
 EQ | 9 | 
-   miscControls/delay_reg<0>.T := N_PZ_323
+   miscControls/delay_reg<0>.T := N_PZ_303
 	# !miscControls/delay_reg<0> & 
 	!miscControls/delay_reg<10> & !miscControls/delay_reg<1> & 
 	!miscControls/delay_reg<13> & !miscControls/delay_reg<2> & 
@@ -73,11 +73,11 @@ EQ | 9 |
 	!miscControls/delay_reg<15> & !miscControls/delay_reg<16>;	// (2 pt, 14 inp)
     miscControls/delay_reg<0>.CLK = clk_out_p2;	// UCLK	(1 pt, 1 inp)
 
-MACROCELL | 2 | 4 | miscControls/delay_reg<10>_MC
+MACROCELL | 3 | 13 | miscControls/delay_reg<10>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 12 | 2 | 5 | 2 | 7 | 2 | 12 | 2 | 6 | 2 | 11 | 2 | 2 | 0 | 1 | 0 | 0 | 2 | 10 | 0 | 7 | 2 | 14 | 2 | 13
+OUTPUTMC | 12 | 2 | 8 | 2 | 3 | 2 | 10 | 2 | 1 | 2 | 11 | 3 | 12 | 2 | 2 | 2 | 12 | 3 | 7 | 2 | 4 | 3 | 15 | 3 | 14
 INPUTS | 18 | miscControls/delay_reg<0>  | miscControls/delay_reg<1>  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>  | miscControls/delay_reg<4>  | miscControls/delay_reg<5>  | miscControls/delay_reg<6>  | miscControls/delay_reg<7>  | miscControls/delay_reg<8>  | miscControls/delay_reg<17>  | miscControls/delay_reg<9>  | miscControls/delay_reg<18>  | miscControls/delay_reg<11>  | miscControls/delay_reg<13>  | miscControls/delay_reg<14>  | miscControls/delay_reg<15>  | miscControls/delay_reg<16>  | miscControls/delay_reg<12>
-INPUTMC | 18 | 2 | 14 | 0 | 11 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 2 | 0 | 13 | 2 | 2 | 2 | 6 | 0 | 10 | 2 | 7 | 0 | 7 | 0 | 0 | 2 | 11 | 2 | 12 | 2 | 5 | 0 | 1
+INPUTMC | 18 | 3 | 15 | 0 | 10 | 0 | 7 | 0 | 1 | 0 | 0 | 2 | 13 | 2 | 7 | 2 | 6 | 3 | 12 | 2 | 1 | 2 | 5 | 2 | 3 | 2 | 4 | 2 | 12 | 2 | 11 | 2 | 10 | 2 | 8 | 2 | 2
 UCT | 1 | 2 | Internal_Name
 EQ | 29 | 
    miscControls/delay_reg<10>.T := miscControls/delay_reg<0> & 
@@ -110,38 +110,38 @@ EQ | 29 |
 	miscControls/delay_reg<9> & !miscControls/delay_reg<16>;	// (4 pt, 18 inp)
     miscControls/delay_reg<10>.CLK = clk_out_p2;	// UCLK	(1 pt, 1 inp)
 
-MACROCELL | 0 | 7 | miscControls/delay_reg<11>_MC
+MACROCELL | 2 | 4 | miscControls/delay_reg<11>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 10 | 2 | 5 | 2 | 7 | 2 | 12 | 2 | 6 | 2 | 11 | 2 | 2 | 0 | 1 | 0 | 0 | 2 | 10 | 2 | 4
-INPUTS | 12 | miscControls/delay_reg<0>  | miscControls/delay_reg<10>  | miscControls/delay_reg<1>  | N_PZ_323  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>  | miscControls/delay_reg<4>  | miscControls/delay_reg<5>  | miscControls/delay_reg<6>  | miscControls/delay_reg<7>  | miscControls/delay_reg<8>  | miscControls/delay_reg<9>
-INPUTMC | 12 | 2 | 14 | 2 | 4 | 0 | 11 | 2 | 10 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 2 | 0 | 13 | 2 | 2 | 0 | 10
+OUTPUTMC | 10 | 2 | 8 | 2 | 3 | 2 | 10 | 2 | 1 | 2 | 11 | 3 | 12 | 2 | 2 | 2 | 12 | 3 | 7 | 3 | 13
+INPUTS | 12 | miscControls/delay_reg<0>  | miscControls/delay_reg<10>  | miscControls/delay_reg<1>  | N_PZ_303  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>  | miscControls/delay_reg<4>  | miscControls/delay_reg<5>  | miscControls/delay_reg<6>  | miscControls/delay_reg<7>  | miscControls/delay_reg<8>  | miscControls/delay_reg<9>
+INPUTMC | 12 | 3 | 15 | 3 | 13 | 0 | 10 | 3 | 7 | 0 | 7 | 0 | 1 | 0 | 0 | 2 | 13 | 2 | 7 | 2 | 6 | 3 | 12 | 2 | 5
 UCT | 1 | 2 | Internal_Name
 EQ | 7 | 
    miscControls/delay_reg<11>.T := miscControls/delay_reg<0> & 
-	miscControls/delay_reg<10> & miscControls/delay_reg<1> & N_PZ_323 & 
+	miscControls/delay_reg<10> & miscControls/delay_reg<1> & N_PZ_303 & 
 	miscControls/delay_reg<2> & miscControls/delay_reg<3> & 
 	miscControls/delay_reg<4> & miscControls/delay_reg<5> & 
 	miscControls/delay_reg<6> & miscControls/delay_reg<7> & 
 	miscControls/delay_reg<8> & miscControls/delay_reg<9>;	// (1 pt, 12 inp)
     miscControls/delay_reg<11>.CLK = clk_out_p2;	// UCLK	(1 pt, 1 inp)
 
-MACROCELL | 0 | 11 | miscControls/delay_reg<1>_MC
+MACROCELL | 0 | 10 | miscControls/delay_reg<1>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 19 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 2 | 0 | 13 | 0 | 10 | 2 | 5 | 2 | 7 | 2 | 12 | 2 | 6 | 2 | 11 | 2 | 2 | 0 | 1 | 0 | 0 | 0 | 7 | 2 | 4 | 2 | 14 | 2 | 13
-INPUTS | 2 | miscControls/delay_reg<0>  | N_PZ_323
-INPUTMC | 2 | 2 | 14 | 2 | 10
+OUTPUTMC | 19 | 0 | 7 | 0 | 1 | 0 | 0 | 2 | 13 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 8 | 2 | 3 | 2 | 10 | 2 | 1 | 2 | 11 | 3 | 12 | 2 | 2 | 2 | 12 | 2 | 4 | 3 | 13 | 3 | 15 | 3 | 14
+INPUTS | 2 | miscControls/delay_reg<0>  | N_PZ_303
+INPUTMC | 2 | 3 | 15 | 3 | 7
 UCT | 1 | 2 | Internal_Name
 EQ | 2 | 
-   miscControls/delay_reg<1>.T := miscControls/delay_reg<0> & N_PZ_323;	// (1 pt, 2 inp)
+   miscControls/delay_reg<1>.T := miscControls/delay_reg<0> & N_PZ_303;	// (1 pt, 2 inp)
     miscControls/delay_reg<1>.CLK = clk_out_p2;	// UCLK	(1 pt, 1 inp)
 
-MACROCELL | 2 | 10 | N_PZ_323_MC
+MACROCELL | 3 | 7 | N_PZ_303_MC
 ATTRIBUTES | 536871680 | 0
-OUTPUTMC | 12 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 2 | 0 | 13 | 0 | 10 | 0 | 1 | 0 | 11 | 0 | 7 | 2 | 14 | 2 | 13
+OUTPUTMC | 12 | 0 | 7 | 0 | 1 | 0 | 0 | 2 | 13 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 2 | 0 | 10 | 2 | 4 | 3 | 15 | 3 | 14
 INPUTS | 12 | miscControls/delay_reg<17>  | miscControls/delay_reg<18>  | miscControls/delay_reg<11>  | miscControls/delay_reg<13>  | miscControls/delay_reg<14>  | miscControls/delay_reg<15>  | miscControls/delay_reg<16>  | miscControls/delay_reg<12>  | miscControls/delay_reg<10>  | miscControls/delay_reg<9>  | miscControls/delay_reg<7>  | miscControls/delay_reg<8>
-INPUTMC | 12 | 2 | 6 | 2 | 7 | 0 | 7 | 0 | 0 | 2 | 11 | 2 | 12 | 2 | 5 | 0 | 1 | 2 | 4 | 0 | 10 | 0 | 13 | 2 | 2
+INPUTMC | 12 | 2 | 1 | 2 | 3 | 2 | 4 | 2 | 12 | 2 | 11 | 2 | 10 | 2 | 8 | 2 | 2 | 3 | 13 | 2 | 5 | 2 | 6 | 3 | 12
 EQ | 16 | 
-   N_PZ_323 = !miscControls/delay_reg<17>
+   N_PZ_303 = !miscControls/delay_reg<17>
 	# !miscControls/delay_reg<18>
 	# !miscControls/delay_reg<11> & 
 	!miscControls/delay_reg<13> & !miscControls/delay_reg<14> & 
@@ -158,11 +158,11 @@ EQ | 16 |
 	!miscControls/delay_reg<8> & !miscControls/delay_reg<14> & 
 	!miscControls/delay_reg<15> & !miscControls/delay_reg<16>;	// (6 pt, 12 inp)
 
-MACROCELL | 0 | 0 | miscControls/delay_reg<13>_MC
+MACROCELL | 2 | 12 | miscControls/delay_reg<13>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 10 | 2 | 5 | 2 | 7 | 2 | 12 | 2 | 6 | 2 | 11 | 2 | 2 | 2 | 10 | 2 | 4 | 2 | 14 | 2 | 13
+OUTPUTMC | 10 | 2 | 8 | 2 | 3 | 2 | 10 | 2 | 1 | 2 | 11 | 3 | 12 | 3 | 7 | 3 | 13 | 3 | 15 | 3 | 14
 INPUTS | 15 | miscControls/delay_reg<0>  | miscControls/delay_reg<10>  | miscControls/delay_reg<11>  | miscControls/delay_reg<1>  | miscControls/delay_reg<12>  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>  | miscControls/delay_reg<4>  | miscControls/delay_reg<5>  | miscControls/delay_reg<6>  | miscControls/delay_reg<7>  | miscControls/delay_reg<8>  | miscControls/delay_reg<17>  | miscControls/delay_reg<9>  | miscControls/delay_reg<18>
-INPUTMC | 15 | 2 | 14 | 2 | 4 | 0 | 7 | 0 | 11 | 0 | 1 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 2 | 0 | 13 | 2 | 2 | 2 | 6 | 0 | 10 | 2 | 7
+INPUTMC | 15 | 3 | 15 | 3 | 13 | 2 | 4 | 0 | 10 | 2 | 2 | 0 | 7 | 0 | 1 | 0 | 0 | 2 | 13 | 2 | 7 | 2 | 6 | 3 | 12 | 2 | 1 | 2 | 5 | 2 | 3
 UCT | 1 | 2 | Internal_Name
 EQ | 17 | 
    miscControls/delay_reg<13>.T := miscControls/delay_reg<0> & 
@@ -183,99 +183,99 @@ EQ | 17 |
 	!miscControls/delay_reg<18>;	// (2 pt, 15 inp)
     miscControls/delay_reg<13>.CLK = clk_out_p2;	// UCLK	(1 pt, 1 inp)
 
-MACROCELL | 0 | 1 | miscControls/delay_reg<12>_MC
+MACROCELL | 2 | 2 | miscControls/delay_reg<12>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 9 | 2 | 5 | 2 | 7 | 2 | 12 | 2 | 6 | 2 | 11 | 2 | 2 | 0 | 0 | 2 | 10 | 2 | 4
-INPUTS | 13 | miscControls/delay_reg<0>  | miscControls/delay_reg<10>  | miscControls/delay_reg<11>  | miscControls/delay_reg<1>  | N_PZ_323  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>  | miscControls/delay_reg<4>  | miscControls/delay_reg<5>  | miscControls/delay_reg<6>  | miscControls/delay_reg<7>  | miscControls/delay_reg<8>  | miscControls/delay_reg<9>
-INPUTMC | 13 | 2 | 14 | 2 | 4 | 0 | 7 | 0 | 11 | 2 | 10 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 2 | 0 | 13 | 2 | 2 | 0 | 10
+OUTPUTMC | 9 | 2 | 8 | 2 | 3 | 2 | 10 | 2 | 1 | 2 | 11 | 3 | 12 | 2 | 12 | 3 | 7 | 3 | 13
+INPUTS | 13 | miscControls/delay_reg<0>  | miscControls/delay_reg<10>  | miscControls/delay_reg<11>  | miscControls/delay_reg<1>  | N_PZ_303  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>  | miscControls/delay_reg<4>  | miscControls/delay_reg<5>  | miscControls/delay_reg<6>  | miscControls/delay_reg<7>  | miscControls/delay_reg<8>  | miscControls/delay_reg<9>
+INPUTMC | 13 | 3 | 15 | 3 | 13 | 2 | 4 | 0 | 10 | 3 | 7 | 0 | 7 | 0 | 1 | 0 | 0 | 2 | 13 | 2 | 7 | 2 | 6 | 3 | 12 | 2 | 5
 UCT | 1 | 2 | Internal_Name
 EQ | 8 | 
    miscControls/delay_reg<12>.T := miscControls/delay_reg<0> & 
 	miscControls/delay_reg<10> & miscControls/delay_reg<11> & 
-	miscControls/delay_reg<1> & N_PZ_323 & miscControls/delay_reg<2> & 
+	miscControls/delay_reg<1> & N_PZ_303 & miscControls/delay_reg<2> & 
 	miscControls/delay_reg<3> & miscControls/delay_reg<4> & 
 	miscControls/delay_reg<5> & miscControls/delay_reg<6> & 
 	miscControls/delay_reg<7> & miscControls/delay_reg<8> & 
 	miscControls/delay_reg<9>;	// (1 pt, 13 inp)
     miscControls/delay_reg<12>.CLK = clk_out_p2;	// UCLK	(1 pt, 1 inp)
 
-MACROCELL | 0 | 6 | miscControls/delay_reg<2>_MC
+MACROCELL | 0 | 7 | miscControls/delay_reg<2>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 18 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 2 | 0 | 13 | 0 | 10 | 2 | 5 | 2 | 7 | 2 | 12 | 2 | 6 | 2 | 11 | 2 | 2 | 0 | 1 | 0 | 0 | 0 | 7 | 2 | 4 | 2 | 14 | 2 | 13
-INPUTS | 3 | miscControls/delay_reg<0>  | miscControls/delay_reg<1>  | N_PZ_323
-INPUTMC | 3 | 2 | 14 | 0 | 11 | 2 | 10
+OUTPUTMC | 18 | 0 | 1 | 0 | 0 | 2 | 13 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 8 | 2 | 3 | 2 | 10 | 2 | 1 | 2 | 11 | 3 | 12 | 2 | 2 | 2 | 12 | 2 | 4 | 3 | 13 | 3 | 15 | 3 | 14
+INPUTS | 3 | miscControls/delay_reg<0>  | miscControls/delay_reg<1>  | N_PZ_303
+INPUTMC | 3 | 3 | 15 | 0 | 10 | 3 | 7
 UCT | 1 | 2 | Internal_Name
 EQ | 3 | 
    miscControls/delay_reg<2>.T := miscControls/delay_reg<0> & 
-	miscControls/delay_reg<1> & N_PZ_323;	// (1 pt, 3 inp)
+	miscControls/delay_reg<1> & N_PZ_303;	// (1 pt, 3 inp)
     miscControls/delay_reg<2>.CLK = clk_out_p2;	// UCLK	(1 pt, 1 inp)
 
-MACROCELL | 0 | 5 | miscControls/delay_reg<3>_MC
+MACROCELL | 0 | 1 | miscControls/delay_reg<3>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 17 | 0 | 4 | 0 | 3 | 0 | 2 | 0 | 13 | 0 | 10 | 2 | 5 | 2 | 7 | 2 | 12 | 2 | 6 | 2 | 11 | 2 | 2 | 0 | 1 | 0 | 0 | 0 | 7 | 2 | 4 | 2 | 14 | 2 | 13
-INPUTS | 4 | miscControls/delay_reg<0>  | miscControls/delay_reg<1>  | N_PZ_323  | miscControls/delay_reg<2>
-INPUTMC | 4 | 2 | 14 | 0 | 11 | 2 | 10 | 0 | 6
+OUTPUTMC | 17 | 0 | 0 | 2 | 13 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 8 | 2 | 3 | 2 | 10 | 2 | 1 | 2 | 11 | 3 | 12 | 2 | 2 | 2 | 12 | 2 | 4 | 3 | 13 | 3 | 15 | 3 | 14
+INPUTS | 4 | miscControls/delay_reg<0>  | miscControls/delay_reg<1>  | N_PZ_303  | miscControls/delay_reg<2>
+INPUTMC | 4 | 3 | 15 | 0 | 10 | 3 | 7 | 0 | 7
 UCT | 1 | 2 | Internal_Name
 EQ | 3 | 
    miscControls/delay_reg<3>.T := miscControls/delay_reg<0> & 
-	miscControls/delay_reg<1> & N_PZ_323 & miscControls/delay_reg<2>;	// (1 pt, 4 inp)
+	miscControls/delay_reg<1> & N_PZ_303 & miscControls/delay_reg<2>;	// (1 pt, 4 inp)
     miscControls/delay_reg<3>.CLK = clk_out_p2;	// UCLK	(1 pt, 1 inp)
 
-MACROCELL | 0 | 4 | miscControls/delay_reg<4>_MC
+MACROCELL | 0 | 0 | miscControls/delay_reg<4>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 16 | 0 | 3 | 0 | 2 | 0 | 13 | 0 | 10 | 2 | 5 | 2 | 7 | 2 | 12 | 2 | 6 | 2 | 11 | 2 | 2 | 0 | 1 | 0 | 0 | 0 | 7 | 2 | 4 | 2 | 14 | 2 | 13
-INPUTS | 5 | miscControls/delay_reg<0>  | miscControls/delay_reg<1>  | N_PZ_323  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>
-INPUTMC | 5 | 2 | 14 | 0 | 11 | 2 | 10 | 0 | 6 | 0 | 5
+OUTPUTMC | 16 | 2 | 13 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 8 | 2 | 3 | 2 | 10 | 2 | 1 | 2 | 11 | 3 | 12 | 2 | 2 | 2 | 12 | 2 | 4 | 3 | 13 | 3 | 15 | 3 | 14
+INPUTS | 5 | miscControls/delay_reg<0>  | miscControls/delay_reg<1>  | N_PZ_303  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>
+INPUTMC | 5 | 3 | 15 | 0 | 10 | 3 | 7 | 0 | 7 | 0 | 1
 UCT | 1 | 2 | Internal_Name
 EQ | 4 | 
    miscControls/delay_reg<4>.T := miscControls/delay_reg<0> & 
-	miscControls/delay_reg<1> & N_PZ_323 & miscControls/delay_reg<2> & 
+	miscControls/delay_reg<1> & N_PZ_303 & miscControls/delay_reg<2> & 
 	miscControls/delay_reg<3>;	// (1 pt, 5 inp)
     miscControls/delay_reg<4>.CLK = clk_out_p2;	// UCLK	(1 pt, 1 inp)
 
-MACROCELL | 0 | 3 | miscControls/delay_reg<5>_MC
+MACROCELL | 2 | 13 | miscControls/delay_reg<5>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 15 | 0 | 2 | 0 | 13 | 0 | 10 | 2 | 5 | 2 | 7 | 2 | 12 | 2 | 6 | 2 | 11 | 2 | 2 | 0 | 1 | 0 | 0 | 0 | 7 | 2 | 4 | 2 | 14 | 2 | 13
-INPUTS | 6 | miscControls/delay_reg<0>  | miscControls/delay_reg<1>  | N_PZ_323  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>  | miscControls/delay_reg<4>
-INPUTMC | 6 | 2 | 14 | 0 | 11 | 2 | 10 | 0 | 6 | 0 | 5 | 0 | 4
+OUTPUTMC | 15 | 2 | 7 | 2 | 6 | 2 | 5 | 2 | 8 | 2 | 3 | 2 | 10 | 2 | 1 | 2 | 11 | 3 | 12 | 2 | 2 | 2 | 12 | 2 | 4 | 3 | 13 | 3 | 15 | 3 | 14
+INPUTS | 6 | miscControls/delay_reg<0>  | miscControls/delay_reg<1>  | N_PZ_303  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>  | miscControls/delay_reg<4>
+INPUTMC | 6 | 3 | 15 | 0 | 10 | 3 | 7 | 0 | 7 | 0 | 1 | 0 | 0
 UCT | 1 | 2 | Internal_Name
 EQ | 4 | 
    miscControls/delay_reg<5>.T := miscControls/delay_reg<0> & 
-	miscControls/delay_reg<1> & N_PZ_323 & miscControls/delay_reg<2> & 
+	miscControls/delay_reg<1> & N_PZ_303 & miscControls/delay_reg<2> & 
 	miscControls/delay_reg<3> & miscControls/delay_reg<4>;	// (1 pt, 6 inp)
     miscControls/delay_reg<5>.CLK = clk_out_p2;	// UCLK	(1 pt, 1 inp)
 
-MACROCELL | 0 | 2 | miscControls/delay_reg<6>_MC
+MACROCELL | 2 | 7 | miscControls/delay_reg<6>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 14 | 0 | 13 | 0 | 10 | 2 | 5 | 2 | 7 | 2 | 12 | 2 | 6 | 2 | 11 | 2 | 2 | 0 | 1 | 0 | 0 | 0 | 7 | 2 | 4 | 2 | 14 | 2 | 13
-INPUTS | 7 | miscControls/delay_reg<0>  | miscControls/delay_reg<1>  | N_PZ_323  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>  | miscControls/delay_reg<4>  | miscControls/delay_reg<5>
-INPUTMC | 7 | 2 | 14 | 0 | 11 | 2 | 10 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3
+OUTPUTMC | 14 | 2 | 6 | 2 | 5 | 2 | 8 | 2 | 3 | 2 | 10 | 2 | 1 | 2 | 11 | 3 | 12 | 2 | 2 | 2 | 12 | 2 | 4 | 3 | 13 | 3 | 15 | 3 | 14
+INPUTS | 7 | miscControls/delay_reg<0>  | miscControls/delay_reg<1>  | N_PZ_303  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>  | miscControls/delay_reg<4>  | miscControls/delay_reg<5>
+INPUTMC | 7 | 3 | 15 | 0 | 10 | 3 | 7 | 0 | 7 | 0 | 1 | 0 | 0 | 2 | 13
 UCT | 1 | 2 | Internal_Name
 EQ | 5 | 
    miscControls/delay_reg<6>.T := miscControls/delay_reg<0> & 
-	miscControls/delay_reg<1> & N_PZ_323 & miscControls/delay_reg<2> & 
+	miscControls/delay_reg<1> & N_PZ_303 & miscControls/delay_reg<2> & 
 	miscControls/delay_reg<3> & miscControls/delay_reg<4> & 
 	miscControls/delay_reg<5>;	// (1 pt, 7 inp)
     miscControls/delay_reg<6>.CLK = clk_out_p2;	// UCLK	(1 pt, 1 inp)
 
-MACROCELL | 0 | 13 | miscControls/delay_reg<7>_MC
+MACROCELL | 2 | 6 | miscControls/delay_reg<7>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 12 | 0 | 10 | 2 | 5 | 2 | 7 | 2 | 12 | 2 | 6 | 2 | 11 | 2 | 2 | 0 | 1 | 0 | 0 | 2 | 10 | 0 | 7 | 2 | 4
-INPUTS | 8 | miscControls/delay_reg<0>  | miscControls/delay_reg<1>  | N_PZ_323  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>  | miscControls/delay_reg<4>  | miscControls/delay_reg<5>  | miscControls/delay_reg<6>
-INPUTMC | 8 | 2 | 14 | 0 | 11 | 2 | 10 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 2
+OUTPUTMC | 12 | 2 | 5 | 2 | 8 | 2 | 3 | 2 | 10 | 2 | 1 | 2 | 11 | 3 | 12 | 2 | 2 | 2 | 12 | 3 | 7 | 2 | 4 | 3 | 13
+INPUTS | 8 | miscControls/delay_reg<0>  | miscControls/delay_reg<1>  | N_PZ_303  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>  | miscControls/delay_reg<4>  | miscControls/delay_reg<5>  | miscControls/delay_reg<6>
+INPUTMC | 8 | 3 | 15 | 0 | 10 | 3 | 7 | 0 | 7 | 0 | 1 | 0 | 0 | 2 | 13 | 2 | 7
 UCT | 1 | 2 | Internal_Name
 EQ | 5 | 
    miscControls/delay_reg<7>.T := miscControls/delay_reg<0> & 
-	miscControls/delay_reg<1> & N_PZ_323 & miscControls/delay_reg<2> & 
+	miscControls/delay_reg<1> & N_PZ_303 & miscControls/delay_reg<2> & 
 	miscControls/delay_reg<3> & miscControls/delay_reg<4> & 
 	miscControls/delay_reg<5> & miscControls/delay_reg<6>;	// (1 pt, 8 inp)
     miscControls/delay_reg<7>.CLK = clk_out_p2;	// UCLK	(1 pt, 1 inp)
 
-MACROCELL | 2 | 2 | miscControls/delay_reg<8>_MC
+MACROCELL | 3 | 12 | miscControls/delay_reg<8>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 13 | 0 | 10 | 2 | 5 | 2 | 7 | 2 | 12 | 2 | 6 | 2 | 11 | 0 | 1 | 0 | 0 | 2 | 10 | 0 | 7 | 2 | 4 | 2 | 14 | 2 | 13
+OUTPUTMC | 13 | 2 | 5 | 2 | 8 | 2 | 3 | 2 | 10 | 2 | 1 | 2 | 11 | 2 | 2 | 2 | 12 | 3 | 7 | 2 | 4 | 3 | 13 | 3 | 15 | 3 | 14
 INPUTS | 18 | miscControls/delay_reg<0>  | miscControls/delay_reg<1>  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>  | miscControls/delay_reg<4>  | miscControls/delay_reg<5>  | miscControls/delay_reg<6>  | miscControls/delay_reg<7>  | miscControls/delay_reg<17>  | miscControls/delay_reg<18>  | miscControls/delay_reg<11>  | miscControls/delay_reg<13>  | miscControls/delay_reg<14>  | miscControls/delay_reg<15>  | miscControls/delay_reg<16>  | miscControls/delay_reg<12>  | miscControls/delay_reg<10>  | miscControls/delay_reg<9>
-INPUTMC | 18 | 2 | 14 | 0 | 11 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 2 | 0 | 13 | 2 | 6 | 2 | 7 | 0 | 7 | 0 | 0 | 2 | 11 | 2 | 12 | 2 | 5 | 0 | 1 | 2 | 4 | 0 | 10
+INPUTMC | 18 | 3 | 15 | 0 | 10 | 0 | 7 | 0 | 1 | 0 | 0 | 2 | 13 | 2 | 7 | 2 | 6 | 2 | 1 | 2 | 3 | 2 | 4 | 2 | 12 | 2 | 11 | 2 | 10 | 2 | 8 | 2 | 2 | 3 | 13 | 2 | 5
 UCT | 1 | 2 | Internal_Name
 EQ | 33 | 
    miscControls/delay_reg<8>.T := miscControls/delay_reg<0> & 
@@ -314,9 +314,9 @@ EQ | 33 |
 
 MACROCELL | 2 | 11 | miscControls/delay_reg<14>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 9 | 2 | 5 | 2 | 7 | 2 | 12 | 2 | 6 | 2 | 2 | 2 | 10 | 2 | 4 | 2 | 14 | 2 | 13
+OUTPUTMC | 9 | 2 | 8 | 2 | 3 | 2 | 10 | 2 | 1 | 3 | 12 | 3 | 7 | 3 | 13 | 3 | 15 | 3 | 14
 INPUTS | 16 | miscControls/delay_reg<0>  | miscControls/delay_reg<10>  | miscControls/delay_reg<11>  | miscControls/delay_reg<1>  | miscControls/delay_reg<13>  | miscControls/delay_reg<12>  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>  | miscControls/delay_reg<4>  | miscControls/delay_reg<5>  | miscControls/delay_reg<6>  | miscControls/delay_reg<7>  | miscControls/delay_reg<8>  | miscControls/delay_reg<17>  | miscControls/delay_reg<9>  | miscControls/delay_reg<18>
-INPUTMC | 16 | 2 | 14 | 2 | 4 | 0 | 7 | 0 | 11 | 0 | 0 | 0 | 1 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 2 | 0 | 13 | 2 | 2 | 2 | 6 | 0 | 10 | 2 | 7
+INPUTMC | 16 | 3 | 15 | 3 | 13 | 2 | 4 | 0 | 10 | 2 | 12 | 2 | 2 | 0 | 7 | 0 | 1 | 0 | 0 | 2 | 13 | 2 | 7 | 2 | 6 | 3 | 12 | 2 | 1 | 2 | 5 | 2 | 3
 UCT | 1 | 2 | Internal_Name
 EQ | 17 | 
    miscControls/delay_reg<14>.T := miscControls/delay_reg<0> & 
@@ -337,11 +337,11 @@ EQ | 17 |
 	miscControls/delay_reg<9> & !miscControls/delay_reg<18>;	// (2 pt, 16 inp)
     miscControls/delay_reg<14>.CLK = clk_out_p2;	// UCLK	(1 pt, 1 inp)
 
-MACROCELL | 2 | 6 | miscControls/delay_reg<17>_MC
+MACROCELL | 2 | 1 | miscControls/delay_reg<17>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 9 | 2 | 5 | 2 | 7 | 2 | 12 | 2 | 6 | 2 | 11 | 2 | 2 | 0 | 0 | 2 | 10 | 2 | 4
+OUTPUTMC | 9 | 2 | 8 | 2 | 3 | 2 | 10 | 2 | 1 | 2 | 11 | 3 | 12 | 2 | 12 | 3 | 7 | 3 | 13
 INPUTS | 19 | miscControls/delay_reg<0>  | miscControls/delay_reg<10>  | miscControls/delay_reg<11>  | miscControls/delay_reg<1>  | miscControls/delay_reg<13>  | miscControls/delay_reg<12>  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>  | miscControls/delay_reg<4>  | miscControls/delay_reg<5>  | miscControls/delay_reg<6>  | miscControls/delay_reg<7>  | miscControls/delay_reg<8>  | miscControls/delay_reg<14>  | miscControls/delay_reg<17>  | miscControls/delay_reg<15>  | miscControls/delay_reg<9>  | miscControls/delay_reg<16>  | miscControls/delay_reg<18>
-INPUTMC | 19 | 2 | 14 | 2 | 4 | 0 | 7 | 0 | 11 | 0 | 0 | 0 | 1 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 2 | 0 | 13 | 2 | 2 | 2 | 11 | 2 | 6 | 2 | 12 | 0 | 10 | 2 | 5 | 2 | 7
+INPUTMC | 19 | 3 | 15 | 3 | 13 | 2 | 4 | 0 | 10 | 2 | 12 | 2 | 2 | 0 | 7 | 0 | 1 | 0 | 0 | 2 | 13 | 2 | 7 | 2 | 6 | 3 | 12 | 2 | 11 | 2 | 1 | 2 | 10 | 2 | 5 | 2 | 8 | 2 | 3
 UCT | 1 | 2 | Internal_Name
 EQ | 21 | 
    miscControls/delay_reg<17>.T := miscControls/delay_reg<0> & 
@@ -366,11 +366,11 @@ EQ | 21 |
 	miscControls/delay_reg<16>;	// (2 pt, 19 inp)
     miscControls/delay_reg<17>.CLK = clk_out_p2;	// UCLK	(1 pt, 1 inp)
 
-MACROCELL | 2 | 12 | miscControls/delay_reg<15>_MC
+MACROCELL | 2 | 10 | miscControls/delay_reg<15>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 8 | 2 | 5 | 2 | 7 | 2 | 6 | 2 | 2 | 2 | 10 | 2 | 4 | 2 | 14 | 2 | 13
+OUTPUTMC | 8 | 2 | 8 | 2 | 3 | 2 | 1 | 3 | 12 | 3 | 7 | 3 | 13 | 3 | 15 | 3 | 14
 INPUTS | 17 | miscControls/delay_reg<0>  | miscControls/delay_reg<10>  | miscControls/delay_reg<11>  | miscControls/delay_reg<1>  | miscControls/delay_reg<13>  | miscControls/delay_reg<12>  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>  | miscControls/delay_reg<4>  | miscControls/delay_reg<5>  | miscControls/delay_reg<6>  | miscControls/delay_reg<7>  | miscControls/delay_reg<8>  | miscControls/delay_reg<14>  | miscControls/delay_reg<17>  | miscControls/delay_reg<9>  | miscControls/delay_reg<18>
-INPUTMC | 17 | 2 | 14 | 2 | 4 | 0 | 7 | 0 | 11 | 0 | 0 | 0 | 1 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 2 | 0 | 13 | 2 | 2 | 2 | 11 | 2 | 6 | 0 | 10 | 2 | 7
+INPUTMC | 17 | 3 | 15 | 3 | 13 | 2 | 4 | 0 | 10 | 2 | 12 | 2 | 2 | 0 | 7 | 0 | 1 | 0 | 0 | 2 | 13 | 2 | 7 | 2 | 6 | 3 | 12 | 2 | 11 | 2 | 1 | 2 | 5 | 2 | 3
 UCT | 1 | 2 | Internal_Name
 EQ | 19 | 
    miscControls/delay_reg<15>.T := miscControls/delay_reg<0> & 
@@ -393,25 +393,25 @@ EQ | 19 |
 	!miscControls/delay_reg<18>;	// (2 pt, 17 inp)
     miscControls/delay_reg<15>.CLK = clk_out_p2;	// UCLK	(1 pt, 1 inp)
 
-MACROCELL | 0 | 10 | miscControls/delay_reg<9>_MC
+MACROCELL | 2 | 5 | miscControls/delay_reg<9>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 11 | 2 | 5 | 2 | 7 | 2 | 12 | 2 | 6 | 2 | 11 | 2 | 2 | 0 | 1 | 0 | 0 | 2 | 10 | 0 | 7 | 2 | 4
-INPUTS | 10 | miscControls/delay_reg<0>  | miscControls/delay_reg<1>  | N_PZ_323  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>  | miscControls/delay_reg<4>  | miscControls/delay_reg<5>  | miscControls/delay_reg<6>  | miscControls/delay_reg<7>  | miscControls/delay_reg<8>
-INPUTMC | 10 | 2 | 14 | 0 | 11 | 2 | 10 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 2 | 0 | 13 | 2 | 2
+OUTPUTMC | 11 | 2 | 8 | 2 | 3 | 2 | 10 | 2 | 1 | 2 | 11 | 3 | 12 | 2 | 2 | 2 | 12 | 3 | 7 | 2 | 4 | 3 | 13
+INPUTS | 10 | miscControls/delay_reg<0>  | miscControls/delay_reg<1>  | N_PZ_303  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>  | miscControls/delay_reg<4>  | miscControls/delay_reg<5>  | miscControls/delay_reg<6>  | miscControls/delay_reg<7>  | miscControls/delay_reg<8>
+INPUTMC | 10 | 3 | 15 | 0 | 10 | 3 | 7 | 0 | 7 | 0 | 1 | 0 | 0 | 2 | 13 | 2 | 7 | 2 | 6 | 3 | 12
 UCT | 1 | 2 | Internal_Name
 EQ | 6 | 
    miscControls/delay_reg<9>.T := miscControls/delay_reg<0> & 
-	miscControls/delay_reg<1> & N_PZ_323 & miscControls/delay_reg<2> & 
+	miscControls/delay_reg<1> & N_PZ_303 & miscControls/delay_reg<2> & 
 	miscControls/delay_reg<3> & miscControls/delay_reg<4> & 
 	miscControls/delay_reg<5> & miscControls/delay_reg<6> & 
 	miscControls/delay_reg<7> & miscControls/delay_reg<8>;	// (1 pt, 10 inp)
     miscControls/delay_reg<9>.CLK = clk_out_p2;	// UCLK	(1 pt, 1 inp)
 
-MACROCELL | 2 | 7 | miscControls/delay_reg<18>_MC
+MACROCELL | 2 | 3 | miscControls/delay_reg<18>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 9 | 2 | 5 | 2 | 7 | 2 | 12 | 2 | 6 | 2 | 11 | 2 | 2 | 0 | 0 | 2 | 10 | 2 | 4
+OUTPUTMC | 9 | 2 | 8 | 2 | 3 | 2 | 10 | 2 | 1 | 2 | 11 | 3 | 12 | 2 | 12 | 3 | 7 | 3 | 13
 INPUTS | 19 | miscControls/delay_reg<0>  | miscControls/delay_reg<10>  | miscControls/delay_reg<11>  | miscControls/delay_reg<1>  | miscControls/delay_reg<13>  | miscControls/delay_reg<12>  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>  | miscControls/delay_reg<4>  | miscControls/delay_reg<5>  | miscControls/delay_reg<6>  | miscControls/delay_reg<7>  | miscControls/delay_reg<8>  | miscControls/delay_reg<14>  | miscControls/delay_reg<17>  | miscControls/delay_reg<15>  | miscControls/delay_reg<9>  | miscControls/delay_reg<18>  | miscControls/delay_reg<16>
-INPUTMC | 19 | 2 | 14 | 2 | 4 | 0 | 7 | 0 | 11 | 0 | 0 | 0 | 1 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 2 | 0 | 13 | 2 | 2 | 2 | 11 | 2 | 6 | 2 | 12 | 0 | 10 | 2 | 7 | 2 | 5
+INPUTMC | 19 | 3 | 15 | 3 | 13 | 2 | 4 | 0 | 10 | 2 | 12 | 2 | 2 | 0 | 7 | 0 | 1 | 0 | 0 | 2 | 13 | 2 | 7 | 2 | 6 | 3 | 12 | 2 | 11 | 2 | 1 | 2 | 10 | 2 | 5 | 2 | 3 | 2 | 8
 UCT | 1 | 2 | Internal_Name
 EQ | 11 | 
    miscControls/delay_reg<18>.T := miscControls/delay_reg<0> & 
@@ -426,11 +426,11 @@ EQ | 11 |
 	!miscControls/delay_reg<18> & miscControls/delay_reg<16>;	// (1 pt, 19 inp)
     miscControls/delay_reg<18>.CLK = clk_out_p2;	// UCLK	(1 pt, 1 inp)
 
-MACROCELL | 2 | 5 | miscControls/delay_reg<16>_MC
+MACROCELL | 2 | 8 | miscControls/delay_reg<16>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 7 | 2 | 7 | 2 | 6 | 2 | 2 | 2 | 10 | 2 | 4 | 2 | 14 | 2 | 13
+OUTPUTMC | 7 | 2 | 3 | 2 | 1 | 3 | 12 | 3 | 7 | 3 | 13 | 3 | 15 | 3 | 14
 INPUTS | 18 | miscControls/delay_reg<0>  | miscControls/delay_reg<10>  | miscControls/delay_reg<11>  | miscControls/delay_reg<1>  | miscControls/delay_reg<13>  | miscControls/delay_reg<12>  | miscControls/delay_reg<2>  | miscControls/delay_reg<3>  | miscControls/delay_reg<4>  | miscControls/delay_reg<5>  | miscControls/delay_reg<6>  | miscControls/delay_reg<7>  | miscControls/delay_reg<8>  | miscControls/delay_reg<14>  | miscControls/delay_reg<17>  | miscControls/delay_reg<15>  | miscControls/delay_reg<9>  | miscControls/delay_reg<18>
-INPUTMC | 18 | 2 | 14 | 2 | 4 | 0 | 7 | 0 | 11 | 0 | 0 | 0 | 1 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 2 | 0 | 13 | 2 | 2 | 2 | 11 | 2 | 6 | 2 | 12 | 0 | 10 | 2 | 7
+INPUTMC | 18 | 3 | 15 | 3 | 13 | 2 | 4 | 0 | 10 | 2 | 12 | 2 | 2 | 0 | 7 | 0 | 1 | 0 | 0 | 2 | 13 | 2 | 7 | 2 | 6 | 3 | 12 | 2 | 11 | 2 | 1 | 2 | 10 | 2 | 5 | 2 | 3
 UCT | 1 | 2 | Internal_Name
 EQ | 19 | 
    miscControls/delay_reg<16>.T := miscControls/delay_reg<0> & 
@@ -455,255 +455,23 @@ EQ | 19 |
 
 MACROCELL | 1 | 13 | qie_reset_out_MC
 ATTRIBUTES | 1074004738 | 0
-INPUTS | 7 | ext_clk_in  | qie_reset_source  | mode_select  | qie_reset_in  | clk_select  | qie_reset_out_intClk_intCtrl  | qie_reset_out_extClk_intCtrl
-INPUTMC | 2 | 3 | 9 | 1 | 15
-INPUTP | 5 | 76 | 81 | 4 | 72 | 83
-EQ | 6 | 
-   !qie_reset_out = !ext_clk_in & qie_reset_source
-	# !mode_select & !qie_reset_source & qie_reset_in
-	# mode_select & clk_select & !qie_reset_source & 
-	!qie_reset_out_intClk_intCtrl
-	# mode_select & !clk_select & !qie_reset_source & 
-	!qie_reset_out_extClk_intCtrl;	// (4 pt, 7 inp)
-
-MACROCELL | 1 | 15 | qie_reset_out_extClk_intCtrl_MC
-ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 15 | 2 | 15 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 13 | 1 | 8
-INPUTS | 14 | qie_reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<0>  | reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<10>  | fcl_extClk_intCtrl/upc/out<1>  | fcl_extClk_intCtrl/upc/out<2>  | fcl_extClk_intCtrl/upc/out<3>  | fcl_extClk_intCtrl/upc/out<4>  | fcl_extClk_intCtrl/upc/out<5>  | fcl_extClk_intCtrl/upc/out<6>  | fcl_extClk_intCtrl/upc/out<7>  | fcl_extClk_intCtrl/upc/out<8>  | fcl_extClk_intCtrl/upc/out<9>  | fcl_extClk_intCtrl/upc/out<11>
-INPUTMC | 14 | 1 | 15 | 2 | 15 | 0 | 8 | 1 | 11 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 12
-EQ | 9 | 
-   qie_reset_out_extClk_intCtrl := !qie_reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<0> & !reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<10> & fcl_extClk_intCtrl/upc/out<1> & 
-	!fcl_extClk_intCtrl/upc/out<2> & fcl_extClk_intCtrl/upc/out<3> & 
-	!fcl_extClk_intCtrl/upc/out<4> & fcl_extClk_intCtrl/upc/out<5> & 
-	fcl_extClk_intCtrl/upc/out<6> & fcl_extClk_intCtrl/upc/out<7> & 
-	fcl_extClk_intCtrl/upc/out<8> & !fcl_extClk_intCtrl/upc/out<9> & 
-	fcl_extClk_intCtrl/upc/out<11>;	// (1 pt, 14 inp)
-   qie_reset_out_extClk_intCtrl.CLK  =  ext_clk_in;	// GCK	(0 pt, 0 inp)
-GLOBALS | 1 | 2 | ext_clk_in
-
-MACROCELL | 2 | 15 | fcl_extClk_intCtrl/upc/out<0>_MC
-ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 14 | 2 | 15 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 8
-INPUTS | 3 | qie_reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<0>  | reset_out_extClk_intCtrl
-INPUTMC | 3 | 1 | 15 | 2 | 15 | 0 | 8
-EQ | 3 | 
-   !fcl_extClk_intCtrl/upc/out<0> := !qie_reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<0> & !reset_out_extClk_intCtrl;	// (1 pt, 3 inp)
-   fcl_extClk_intCtrl/upc/out<0>.CLK  =  ext_clk_in;	// GCK	(0 pt, 0 inp)
-GLOBALS | 1 | 2 | ext_clk_in
-
-MACROCELL | 0 | 8 | reset_out_extClk_intCtrl_MC
-ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 15 | 2 | 15 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 10 | 1 | 8
-INPUTS | 1 | reset_switch
-INPUTP | 1 | 52
-EQ | 2 | 
-   reset_out_extClk_intCtrl := !reset_switch;	// (1 pt, 1 inp)
-   reset_out_extClk_intCtrl.CLK  =  ext_clk_in;	// GCK	(0 pt, 0 inp)
-GLOBALS | 1 | 2 | ext_clk_in
-
-MACROCELL | 1 | 11 | fcl_extClk_intCtrl/upc/out<10>_MC
-ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 4 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 8
-INPUTS | 13 | qie_reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<10>  | reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<0>  | fcl_extClk_intCtrl/upc/out<1>  | fcl_extClk_intCtrl/upc/out<2>  | fcl_extClk_intCtrl/upc/out<3>  | fcl_extClk_intCtrl/upc/out<4>  | fcl_extClk_intCtrl/upc/out<5>  | fcl_extClk_intCtrl/upc/out<6>  | fcl_extClk_intCtrl/upc/out<7>  | fcl_extClk_intCtrl/upc/out<8>  | fcl_extClk_intCtrl/upc/out<9>
-INPUTMC | 13 | 1 | 15 | 1 | 11 | 0 | 8 | 2 | 15 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7
-EQ | 12 | 
-   fcl_extClk_intCtrl/upc/out<10>.T := qie_reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<10>
-	# reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<10>
-	# !qie_reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<0> & !reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<1> & fcl_extClk_intCtrl/upc/out<2> & 
-	fcl_extClk_intCtrl/upc/out<3> & fcl_extClk_intCtrl/upc/out<4> & 
-	fcl_extClk_intCtrl/upc/out<5> & fcl_extClk_intCtrl/upc/out<6> & 
-	fcl_extClk_intCtrl/upc/out<7> & fcl_extClk_intCtrl/upc/out<8> & 
-	fcl_extClk_intCtrl/upc/out<9>;	// (3 pt, 13 inp)
-   fcl_extClk_intCtrl/upc/out<10>.CLK  =  ext_clk_in;	// GCK	(0 pt, 0 inp)
-GLOBALS | 1 | 2 | ext_clk_in
-
-MACROCELL | 1 | 0 | fcl_extClk_intCtrl/upc/out<1>_MC
-ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 13 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 8
-INPUTS | 4 | qie_reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<0>  | reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<1>
-INPUTMC | 4 | 1 | 15 | 2 | 15 | 0 | 8 | 1 | 0
+INPUTS | 7 | ext_clk_in  | qie_reset_source  | mode_select  | clk_select  | qie_reset_out_intClk_intCtrl  | qie_reset_out_intClk_extCtrl  | qie_reset_out_extClk_extCtrl
+INPUTMC | 3 | 1 | 15 | 0 | 4 | 0 | 6
+INPUTP | 4 | 76 | 81 | 4 | 83
 EQ | 7 | 
-   fcl_extClk_intCtrl/upc/out<1> := !qie_reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<0> & !reset_out_extClk_intCtrl & 
-	!fcl_extClk_intCtrl/upc/out<1>
-	# !qie_reset_out_extClk_intCtrl & 
-	!fcl_extClk_intCtrl/upc/out<0> & !reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<1>;	// (2 pt, 4 inp)
-   fcl_extClk_intCtrl/upc/out<1>.CLK  =  ext_clk_in;	// GCK	(0 pt, 0 inp)
-GLOBALS | 1 | 2 | ext_clk_in
+   qie_reset_out = ext_clk_in & qie_reset_source
+	# mode_select & clk_select & !qie_reset_source & 
+	qie_reset_out_intClk_intCtrl
+	# !mode_select & clk_select & !qie_reset_source & 
+	qie_reset_out_intClk_extCtrl
+	# !mode_select & !clk_select & !qie_reset_source & 
+	!qie_reset_out_extClk_extCtrl;	// (4 pt, 7 inp)
 
-MACROCELL | 1 | 1 | fcl_extClk_intCtrl/upc/out<2>_MC
-ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 12 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 8
-INPUTS | 5 | qie_reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<2>  | reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<0>  | fcl_extClk_intCtrl/upc/out<1>
-INPUTMC | 5 | 1 | 15 | 1 | 1 | 0 | 8 | 2 | 15 | 1 | 0
-EQ | 8 | 
-   fcl_extClk_intCtrl/upc/out<2>.T := qie_reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<2>
-	# reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<2>
-	# !qie_reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<0> & !reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<1>;	// (3 pt, 5 inp)
-   fcl_extClk_intCtrl/upc/out<2>.CLK  =  ext_clk_in;	// GCK	(0 pt, 0 inp)
-GLOBALS | 1 | 2 | ext_clk_in
-
-MACROCELL | 1 | 2 | fcl_extClk_intCtrl/upc/out<3>_MC
-ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 11 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 8
-INPUTS | 6 | qie_reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<3>  | reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<0>  | fcl_extClk_intCtrl/upc/out<1>  | fcl_extClk_intCtrl/upc/out<2>
-INPUTMC | 6 | 1 | 15 | 1 | 2 | 0 | 8 | 2 | 15 | 1 | 0 | 1 | 1
-EQ | 8 | 
-   fcl_extClk_intCtrl/upc/out<3>.T := qie_reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<3>
-	# reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<3>
-	# !qie_reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<0> & !reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<1> & fcl_extClk_intCtrl/upc/out<2>;	// (3 pt, 6 inp)
-   fcl_extClk_intCtrl/upc/out<3>.CLK  =  ext_clk_in;	// GCK	(0 pt, 0 inp)
-GLOBALS | 1 | 2 | ext_clk_in
-
-MACROCELL | 1 | 9 | fcl_extClk_intCtrl/upc/out<4>_MC
-ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 10 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 8
-INPUTS | 7 | qie_reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<4>  | reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<0>  | fcl_extClk_intCtrl/upc/out<1>  | fcl_extClk_intCtrl/upc/out<2>  | fcl_extClk_intCtrl/upc/out<3>
-INPUTMC | 7 | 1 | 15 | 1 | 9 | 0 | 8 | 2 | 15 | 1 | 0 | 1 | 1 | 1 | 2
-EQ | 9 | 
-   fcl_extClk_intCtrl/upc/out<4>.T := qie_reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<4>
-	# reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<4>
-	# !qie_reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<0> & !reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<1> & fcl_extClk_intCtrl/upc/out<2> & 
-	fcl_extClk_intCtrl/upc/out<3>;	// (3 pt, 7 inp)
-   fcl_extClk_intCtrl/upc/out<4>.CLK  =  ext_clk_in;	// GCK	(0 pt, 0 inp)
-GLOBALS | 1 | 2 | ext_clk_in
-
-MACROCELL | 1 | 3 | fcl_extClk_intCtrl/upc/out<5>_MC
-ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 8
-INPUTS | 8 | qie_reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<5>  | reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<0>  | fcl_extClk_intCtrl/upc/out<1>  | fcl_extClk_intCtrl/upc/out<2>  | fcl_extClk_intCtrl/upc/out<3>  | fcl_extClk_intCtrl/upc/out<4>
-INPUTMC | 8 | 1 | 15 | 1 | 3 | 0 | 8 | 2 | 15 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9
-EQ | 9 | 
-   fcl_extClk_intCtrl/upc/out<5>.T := qie_reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<5>
-	# reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<5>
-	# !qie_reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<0> & !reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<1> & fcl_extClk_intCtrl/upc/out<2> & 
-	fcl_extClk_intCtrl/upc/out<3> & fcl_extClk_intCtrl/upc/out<4>;	// (3 pt, 8 inp)
-   fcl_extClk_intCtrl/upc/out<5>.CLK  =  ext_clk_in;	// GCK	(0 pt, 0 inp)
-GLOBALS | 1 | 2 | ext_clk_in
-
-MACROCELL | 1 | 4 | fcl_extClk_intCtrl/upc/out<6>_MC
-ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 8 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 8
-INPUTS | 9 | qie_reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<6>  | reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<0>  | fcl_extClk_intCtrl/upc/out<1>  | fcl_extClk_intCtrl/upc/out<2>  | fcl_extClk_intCtrl/upc/out<3>  | fcl_extClk_intCtrl/upc/out<4>  | fcl_extClk_intCtrl/upc/out<5>
-INPUTMC | 9 | 1 | 15 | 1 | 4 | 0 | 8 | 2 | 15 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3
-EQ | 10 | 
-   fcl_extClk_intCtrl/upc/out<6>.T := qie_reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<6>
-	# reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<6>
-	# !qie_reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<0> & !reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<1> & fcl_extClk_intCtrl/upc/out<2> & 
-	fcl_extClk_intCtrl/upc/out<3> & fcl_extClk_intCtrl/upc/out<4> & 
-	fcl_extClk_intCtrl/upc/out<5>;	// (3 pt, 9 inp)
-   fcl_extClk_intCtrl/upc/out<6>.CLK  =  ext_clk_in;	// GCK	(0 pt, 0 inp)
-GLOBALS | 1 | 2 | ext_clk_in
-
-MACROCELL | 1 | 5 | fcl_extClk_intCtrl/upc/out<7>_MC
-ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 7 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 8
-INPUTS | 10 | qie_reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<7>  | reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<0>  | fcl_extClk_intCtrl/upc/out<1>  | fcl_extClk_intCtrl/upc/out<2>  | fcl_extClk_intCtrl/upc/out<3>  | fcl_extClk_intCtrl/upc/out<4>  | fcl_extClk_intCtrl/upc/out<5>  | fcl_extClk_intCtrl/upc/out<6>
-INPUTMC | 10 | 1 | 15 | 1 | 5 | 0 | 8 | 2 | 15 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4
-EQ | 10 | 
-   fcl_extClk_intCtrl/upc/out<7>.T := qie_reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<7>
-	# reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<7>
-	# !qie_reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<0> & !reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<1> & fcl_extClk_intCtrl/upc/out<2> & 
-	fcl_extClk_intCtrl/upc/out<3> & fcl_extClk_intCtrl/upc/out<4> & 
-	fcl_extClk_intCtrl/upc/out<5> & fcl_extClk_intCtrl/upc/out<6>;	// (3 pt, 10 inp)
-   fcl_extClk_intCtrl/upc/out<7>.CLK  =  ext_clk_in;	// GCK	(0 pt, 0 inp)
-GLOBALS | 1 | 2 | ext_clk_in
-
-MACROCELL | 1 | 6 | fcl_extClk_intCtrl/upc/out<8>_MC
-ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 6 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 8
-INPUTS | 11 | qie_reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<8>  | reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<0>  | fcl_extClk_intCtrl/upc/out<1>  | fcl_extClk_intCtrl/upc/out<2>  | fcl_extClk_intCtrl/upc/out<3>  | fcl_extClk_intCtrl/upc/out<4>  | fcl_extClk_intCtrl/upc/out<5>  | fcl_extClk_intCtrl/upc/out<6>  | fcl_extClk_intCtrl/upc/out<7>
-INPUTMC | 11 | 1 | 15 | 1 | 6 | 0 | 8 | 2 | 15 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5
-EQ | 11 | 
-   fcl_extClk_intCtrl/upc/out<8>.T := qie_reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<8>
-	# reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<8>
-	# !qie_reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<0> & !reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<1> & fcl_extClk_intCtrl/upc/out<2> & 
-	fcl_extClk_intCtrl/upc/out<3> & fcl_extClk_intCtrl/upc/out<4> & 
-	fcl_extClk_intCtrl/upc/out<5> & fcl_extClk_intCtrl/upc/out<6> & 
-	fcl_extClk_intCtrl/upc/out<7>;	// (3 pt, 11 inp)
-   fcl_extClk_intCtrl/upc/out<8>.CLK  =  ext_clk_in;	// GCK	(0 pt, 0 inp)
-GLOBALS | 1 | 2 | ext_clk_in
-
-MACROCELL | 1 | 7 | fcl_extClk_intCtrl/upc/out<9>_MC
-ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 5 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 8
-INPUTS | 12 | qie_reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<9>  | reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<0>  | fcl_extClk_intCtrl/upc/out<1>  | fcl_extClk_intCtrl/upc/out<2>  | fcl_extClk_intCtrl/upc/out<3>  | fcl_extClk_intCtrl/upc/out<4>  | fcl_extClk_intCtrl/upc/out<5>  | fcl_extClk_intCtrl/upc/out<6>  | fcl_extClk_intCtrl/upc/out<7>  | fcl_extClk_intCtrl/upc/out<8>
-INPUTMC | 12 | 1 | 15 | 1 | 7 | 0 | 8 | 2 | 15 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6
-EQ | 11 | 
-   fcl_extClk_intCtrl/upc/out<9>.T := qie_reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<9>
-	# reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<9>
-	# !qie_reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<0> & !reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<1> & fcl_extClk_intCtrl/upc/out<2> & 
-	fcl_extClk_intCtrl/upc/out<3> & fcl_extClk_intCtrl/upc/out<4> & 
-	fcl_extClk_intCtrl/upc/out<5> & fcl_extClk_intCtrl/upc/out<6> & 
-	fcl_extClk_intCtrl/upc/out<7> & fcl_extClk_intCtrl/upc/out<8>;	// (3 pt, 12 inp)
-   fcl_extClk_intCtrl/upc/out<9>.CLK  =  ext_clk_in;	// GCK	(0 pt, 0 inp)
-GLOBALS | 1 | 2 | ext_clk_in
-
-MACROCELL | 1 | 12 | fcl_extClk_intCtrl/upc/out<11>_MC
-ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 3 | 1 | 12 | 1 | 15 | 1 | 8
-INPUTS | 14 | qie_reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<11>  | reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<0>  | fcl_extClk_intCtrl/upc/out<10>  | fcl_extClk_intCtrl/upc/out<1>  | fcl_extClk_intCtrl/upc/out<2>  | fcl_extClk_intCtrl/upc/out<3>  | fcl_extClk_intCtrl/upc/out<4>  | fcl_extClk_intCtrl/upc/out<5>  | fcl_extClk_intCtrl/upc/out<6>  | fcl_extClk_intCtrl/upc/out<7>  | fcl_extClk_intCtrl/upc/out<8>  | fcl_extClk_intCtrl/upc/out<9>
-INPUTMC | 14 | 1 | 15 | 1 | 12 | 0 | 8 | 2 | 15 | 1 | 11 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7
-EQ | 12 | 
-   fcl_extClk_intCtrl/upc/out<11>.T := qie_reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<11>
-	# reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<11>
-	# !qie_reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<0> & !reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<10> & fcl_extClk_intCtrl/upc/out<1> & 
-	fcl_extClk_intCtrl/upc/out<2> & fcl_extClk_intCtrl/upc/out<3> & 
-	fcl_extClk_intCtrl/upc/out<4> & fcl_extClk_intCtrl/upc/out<5> & 
-	fcl_extClk_intCtrl/upc/out<6> & fcl_extClk_intCtrl/upc/out<7> & 
-	fcl_extClk_intCtrl/upc/out<8> & fcl_extClk_intCtrl/upc/out<9>;	// (3 pt, 14 inp)
-   fcl_extClk_intCtrl/upc/out<11>.CLK  =  ext_clk_in;	// GCK	(0 pt, 0 inp)
-GLOBALS | 1 | 2 | ext_clk_in
-
-MACROCELL | 3 | 9 | qie_reset_out_intClk_intCtrl_MC
+MACROCELL | 1 | 15 | qie_reset_out_intClk_intCtrl_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 15 | 3 | 0 | 3 | 15 | 3 | 14 | 3 | 13 | 3 | 12 | 3 | 7 | 3 | 6 | 3 | 5 | 3 | 2 | 3 | 11 | 3 | 10 | 3 | 8 | 3 | 9 | 1 | 13 | 3 | 3
+OUTPUTMC | 15 | 2 | 14 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 13 | 1 | 8
 INPUTS | 14 | qie_reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<0>  | reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<10>  | fcl_intClk_intCtrl/upc/out<1>  | fcl_intClk_intCtrl/upc/out<2>  | fcl_intClk_intCtrl/upc/out<3>  | fcl_intClk_intCtrl/upc/out<4>  | fcl_intClk_intCtrl/upc/out<5>  | fcl_intClk_intCtrl/upc/out<6>  | fcl_intClk_intCtrl/upc/out<7>  | fcl_intClk_intCtrl/upc/out<8>  | fcl_intClk_intCtrl/upc/out<9>  | fcl_intClk_intCtrl/upc/out<11>
-INPUTMC | 14 | 3 | 9 | 3 | 0 | 0 | 15 | 3 | 10 | 3 | 15 | 3 | 14 | 3 | 13 | 3 | 12 | 3 | 7 | 3 | 6 | 3 | 5 | 3 | 2 | 3 | 11 | 3 | 8
+INPUTMC | 14 | 1 | 15 | 2 | 14 | 2 | 0 | 1 | 11 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 12
 EQ | 9 | 
    qie_reset_out_intClk_intCtrl := !qie_reset_out_intClk_intCtrl & 
 	fcl_intClk_intCtrl/upc/out<0> & !reset_out_intClk_intCtrl & 
@@ -716,20 +484,20 @@ EQ | 9 |
    qie_reset_out_intClk_intCtrl.CLK  =  int_clk_in;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | int_clk_in
 
-MACROCELL | 3 | 0 | fcl_intClk_intCtrl/upc/out<0>_MC
+MACROCELL | 2 | 14 | fcl_intClk_intCtrl/upc/out<0>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 14 | 3 | 0 | 3 | 15 | 3 | 14 | 3 | 13 | 3 | 12 | 3 | 7 | 3 | 6 | 3 | 5 | 3 | 2 | 3 | 11 | 3 | 10 | 3 | 8 | 3 | 9 | 3 | 3
+OUTPUTMC | 14 | 2 | 14 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 8
 INPUTS | 3 | qie_reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<0>  | reset_out_intClk_intCtrl
-INPUTMC | 3 | 3 | 9 | 3 | 0 | 0 | 15
+INPUTMC | 3 | 1 | 15 | 2 | 14 | 2 | 0
 EQ | 3 | 
    !fcl_intClk_intCtrl/upc/out<0> := !qie_reset_out_intClk_intCtrl & 
 	fcl_intClk_intCtrl/upc/out<0> & !reset_out_intClk_intCtrl;	// (1 pt, 3 inp)
    fcl_intClk_intCtrl/upc/out<0>.CLK  =  int_clk_in;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | int_clk_in
 
-MACROCELL | 0 | 15 | reset_out_intClk_intCtrl_MC
+MACROCELL | 2 | 0 | reset_out_intClk_intCtrl_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 15 | 3 | 0 | 3 | 15 | 3 | 14 | 3 | 13 | 3 | 12 | 3 | 7 | 3 | 6 | 3 | 5 | 3 | 2 | 3 | 11 | 3 | 10 | 3 | 8 | 3 | 9 | 1 | 10 | 3 | 3
+OUTPUTMC | 15 | 2 | 14 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 10 | 1 | 8
 INPUTS | 1 | reset_switch
 INPUTP | 1 | 52
 EQ | 2 | 
@@ -737,11 +505,11 @@ EQ | 2 |
    reset_out_intClk_intCtrl.CLK  =  int_clk_in;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | int_clk_in
 
-MACROCELL | 3 | 10 | fcl_intClk_intCtrl/upc/out<10>_MC
+MACROCELL | 1 | 11 | fcl_intClk_intCtrl/upc/out<10>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 4 | 3 | 10 | 3 | 8 | 3 | 9 | 3 | 3
+OUTPUTMC | 4 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 8
 INPUTS | 13 | qie_reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<10>  | reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<0>  | fcl_intClk_intCtrl/upc/out<1>  | fcl_intClk_intCtrl/upc/out<2>  | fcl_intClk_intCtrl/upc/out<3>  | fcl_intClk_intCtrl/upc/out<4>  | fcl_intClk_intCtrl/upc/out<5>  | fcl_intClk_intCtrl/upc/out<6>  | fcl_intClk_intCtrl/upc/out<7>  | fcl_intClk_intCtrl/upc/out<8>  | fcl_intClk_intCtrl/upc/out<9>
-INPUTMC | 13 | 3 | 9 | 3 | 10 | 0 | 15 | 3 | 0 | 3 | 15 | 3 | 14 | 3 | 13 | 3 | 12 | 3 | 7 | 3 | 6 | 3 | 5 | 3 | 2 | 3 | 11
+INPUTMC | 13 | 1 | 15 | 1 | 11 | 2 | 0 | 2 | 14 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7
 EQ | 12 | 
    fcl_intClk_intCtrl/upc/out<10>.T := qie_reset_out_intClk_intCtrl & 
 	fcl_intClk_intCtrl/upc/out<10>
@@ -757,11 +525,11 @@ EQ | 12 |
    fcl_intClk_intCtrl/upc/out<10>.CLK  =  int_clk_in;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | int_clk_in
 
-MACROCELL | 3 | 15 | fcl_intClk_intCtrl/upc/out<1>_MC
+MACROCELL | 1 | 0 | fcl_intClk_intCtrl/upc/out<1>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 13 | 3 | 15 | 3 | 14 | 3 | 13 | 3 | 12 | 3 | 7 | 3 | 6 | 3 | 5 | 3 | 2 | 3 | 11 | 3 | 10 | 3 | 8 | 3 | 9 | 3 | 3
+OUTPUTMC | 13 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 8
 INPUTS | 4 | qie_reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<0>  | reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<1>
-INPUTMC | 4 | 3 | 9 | 3 | 0 | 0 | 15 | 3 | 15
+INPUTMC | 4 | 1 | 15 | 2 | 14 | 2 | 0 | 1 | 0
 EQ | 7 | 
    fcl_intClk_intCtrl/upc/out<1> := !qie_reset_out_intClk_intCtrl & 
 	fcl_intClk_intCtrl/upc/out<0> & !reset_out_intClk_intCtrl & 
@@ -772,11 +540,11 @@ EQ | 7 |
    fcl_intClk_intCtrl/upc/out<1>.CLK  =  int_clk_in;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | int_clk_in
 
-MACROCELL | 3 | 14 | fcl_intClk_intCtrl/upc/out<2>_MC
+MACROCELL | 1 | 1 | fcl_intClk_intCtrl/upc/out<2>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 12 | 3 | 14 | 3 | 13 | 3 | 12 | 3 | 7 | 3 | 6 | 3 | 5 | 3 | 2 | 3 | 11 | 3 | 10 | 3 | 8 | 3 | 9 | 3 | 3
+OUTPUTMC | 12 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 8
 INPUTS | 5 | qie_reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<2>  | reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<0>  | fcl_intClk_intCtrl/upc/out<1>
-INPUTMC | 5 | 3 | 9 | 3 | 14 | 0 | 15 | 3 | 0 | 3 | 15
+INPUTMC | 5 | 1 | 15 | 1 | 1 | 2 | 0 | 2 | 14 | 1 | 0
 EQ | 8 | 
    fcl_intClk_intCtrl/upc/out<2>.T := qie_reset_out_intClk_intCtrl & 
 	fcl_intClk_intCtrl/upc/out<2>
@@ -788,11 +556,11 @@ EQ | 8 |
    fcl_intClk_intCtrl/upc/out<2>.CLK  =  int_clk_in;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | int_clk_in
 
-MACROCELL | 3 | 13 | fcl_intClk_intCtrl/upc/out<3>_MC
+MACROCELL | 1 | 2 | fcl_intClk_intCtrl/upc/out<3>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 11 | 3 | 13 | 3 | 12 | 3 | 7 | 3 | 6 | 3 | 5 | 3 | 2 | 3 | 11 | 3 | 10 | 3 | 8 | 3 | 9 | 3 | 3
+OUTPUTMC | 11 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 8
 INPUTS | 6 | qie_reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<3>  | reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<0>  | fcl_intClk_intCtrl/upc/out<1>  | fcl_intClk_intCtrl/upc/out<2>
-INPUTMC | 6 | 3 | 9 | 3 | 13 | 0 | 15 | 3 | 0 | 3 | 15 | 3 | 14
+INPUTMC | 6 | 1 | 15 | 1 | 2 | 2 | 0 | 2 | 14 | 1 | 0 | 1 | 1
 EQ | 8 | 
    fcl_intClk_intCtrl/upc/out<3>.T := qie_reset_out_intClk_intCtrl & 
 	fcl_intClk_intCtrl/upc/out<3>
@@ -804,11 +572,11 @@ EQ | 8 |
    fcl_intClk_intCtrl/upc/out<3>.CLK  =  int_clk_in;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | int_clk_in
 
-MACROCELL | 3 | 12 | fcl_intClk_intCtrl/upc/out<4>_MC
+MACROCELL | 1 | 9 | fcl_intClk_intCtrl/upc/out<4>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 10 | 3 | 12 | 3 | 7 | 3 | 6 | 3 | 5 | 3 | 2 | 3 | 11 | 3 | 10 | 3 | 8 | 3 | 9 | 3 | 3
+OUTPUTMC | 10 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 8
 INPUTS | 7 | qie_reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<4>  | reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<0>  | fcl_intClk_intCtrl/upc/out<1>  | fcl_intClk_intCtrl/upc/out<2>  | fcl_intClk_intCtrl/upc/out<3>
-INPUTMC | 7 | 3 | 9 | 3 | 12 | 0 | 15 | 3 | 0 | 3 | 15 | 3 | 14 | 3 | 13
+INPUTMC | 7 | 1 | 15 | 1 | 9 | 2 | 0 | 2 | 14 | 1 | 0 | 1 | 1 | 1 | 2
 EQ | 9 | 
    fcl_intClk_intCtrl/upc/out<4>.T := qie_reset_out_intClk_intCtrl & 
 	fcl_intClk_intCtrl/upc/out<4>
@@ -821,11 +589,11 @@ EQ | 9 |
    fcl_intClk_intCtrl/upc/out<4>.CLK  =  int_clk_in;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | int_clk_in
 
-MACROCELL | 3 | 7 | fcl_intClk_intCtrl/upc/out<5>_MC
+MACROCELL | 1 | 3 | fcl_intClk_intCtrl/upc/out<5>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 9 | 3 | 7 | 3 | 6 | 3 | 5 | 3 | 2 | 3 | 11 | 3 | 10 | 3 | 8 | 3 | 9 | 3 | 3
+OUTPUTMC | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 8
 INPUTS | 8 | qie_reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<5>  | reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<0>  | fcl_intClk_intCtrl/upc/out<1>  | fcl_intClk_intCtrl/upc/out<2>  | fcl_intClk_intCtrl/upc/out<3>  | fcl_intClk_intCtrl/upc/out<4>
-INPUTMC | 8 | 3 | 9 | 3 | 7 | 0 | 15 | 3 | 0 | 3 | 15 | 3 | 14 | 3 | 13 | 3 | 12
+INPUTMC | 8 | 1 | 15 | 1 | 3 | 2 | 0 | 2 | 14 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9
 EQ | 9 | 
    fcl_intClk_intCtrl/upc/out<5>.T := qie_reset_out_intClk_intCtrl & 
 	fcl_intClk_intCtrl/upc/out<5>
@@ -838,11 +606,11 @@ EQ | 9 |
    fcl_intClk_intCtrl/upc/out<5>.CLK  =  int_clk_in;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | int_clk_in
 
-MACROCELL | 3 | 6 | fcl_intClk_intCtrl/upc/out<6>_MC
+MACROCELL | 1 | 4 | fcl_intClk_intCtrl/upc/out<6>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 8 | 3 | 6 | 3 | 5 | 3 | 2 | 3 | 11 | 3 | 10 | 3 | 8 | 3 | 9 | 3 | 3
+OUTPUTMC | 8 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 8
 INPUTS | 9 | qie_reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<6>  | reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<0>  | fcl_intClk_intCtrl/upc/out<1>  | fcl_intClk_intCtrl/upc/out<2>  | fcl_intClk_intCtrl/upc/out<3>  | fcl_intClk_intCtrl/upc/out<4>  | fcl_intClk_intCtrl/upc/out<5>
-INPUTMC | 9 | 3 | 9 | 3 | 6 | 0 | 15 | 3 | 0 | 3 | 15 | 3 | 14 | 3 | 13 | 3 | 12 | 3 | 7
+INPUTMC | 9 | 1 | 15 | 1 | 4 | 2 | 0 | 2 | 14 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3
 EQ | 10 | 
    fcl_intClk_intCtrl/upc/out<6>.T := qie_reset_out_intClk_intCtrl & 
 	fcl_intClk_intCtrl/upc/out<6>
@@ -856,11 +624,11 @@ EQ | 10 |
    fcl_intClk_intCtrl/upc/out<6>.CLK  =  int_clk_in;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | int_clk_in
 
-MACROCELL | 3 | 5 | fcl_intClk_intCtrl/upc/out<7>_MC
+MACROCELL | 1 | 5 | fcl_intClk_intCtrl/upc/out<7>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 7 | 3 | 5 | 3 | 2 | 3 | 11 | 3 | 10 | 3 | 8 | 3 | 9 | 3 | 3
+OUTPUTMC | 7 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 8
 INPUTS | 10 | qie_reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<7>  | reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<0>  | fcl_intClk_intCtrl/upc/out<1>  | fcl_intClk_intCtrl/upc/out<2>  | fcl_intClk_intCtrl/upc/out<3>  | fcl_intClk_intCtrl/upc/out<4>  | fcl_intClk_intCtrl/upc/out<5>  | fcl_intClk_intCtrl/upc/out<6>
-INPUTMC | 10 | 3 | 9 | 3 | 5 | 0 | 15 | 3 | 0 | 3 | 15 | 3 | 14 | 3 | 13 | 3 | 12 | 3 | 7 | 3 | 6
+INPUTMC | 10 | 1 | 15 | 1 | 5 | 2 | 0 | 2 | 14 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4
 EQ | 10 | 
    fcl_intClk_intCtrl/upc/out<7>.T := qie_reset_out_intClk_intCtrl & 
 	fcl_intClk_intCtrl/upc/out<7>
@@ -874,11 +642,11 @@ EQ | 10 |
    fcl_intClk_intCtrl/upc/out<7>.CLK  =  int_clk_in;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | int_clk_in
 
-MACROCELL | 3 | 2 | fcl_intClk_intCtrl/upc/out<8>_MC
+MACROCELL | 1 | 6 | fcl_intClk_intCtrl/upc/out<8>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 6 | 3 | 2 | 3 | 11 | 3 | 10 | 3 | 8 | 3 | 9 | 3 | 3
+OUTPUTMC | 6 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 8
 INPUTS | 11 | qie_reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<8>  | reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<0>  | fcl_intClk_intCtrl/upc/out<1>  | fcl_intClk_intCtrl/upc/out<2>  | fcl_intClk_intCtrl/upc/out<3>  | fcl_intClk_intCtrl/upc/out<4>  | fcl_intClk_intCtrl/upc/out<5>  | fcl_intClk_intCtrl/upc/out<6>  | fcl_intClk_intCtrl/upc/out<7>
-INPUTMC | 11 | 3 | 9 | 3 | 2 | 0 | 15 | 3 | 0 | 3 | 15 | 3 | 14 | 3 | 13 | 3 | 12 | 3 | 7 | 3 | 6 | 3 | 5
+INPUTMC | 11 | 1 | 15 | 1 | 6 | 2 | 0 | 2 | 14 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5
 EQ | 11 | 
    fcl_intClk_intCtrl/upc/out<8>.T := qie_reset_out_intClk_intCtrl & 
 	fcl_intClk_intCtrl/upc/out<8>
@@ -893,11 +661,11 @@ EQ | 11 |
    fcl_intClk_intCtrl/upc/out<8>.CLK  =  int_clk_in;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | int_clk_in
 
-MACROCELL | 3 | 11 | fcl_intClk_intCtrl/upc/out<9>_MC
+MACROCELL | 1 | 7 | fcl_intClk_intCtrl/upc/out<9>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 5 | 3 | 11 | 3 | 10 | 3 | 8 | 3 | 9 | 3 | 3
+OUTPUTMC | 5 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 8
 INPUTS | 12 | qie_reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<9>  | reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<0>  | fcl_intClk_intCtrl/upc/out<1>  | fcl_intClk_intCtrl/upc/out<2>  | fcl_intClk_intCtrl/upc/out<3>  | fcl_intClk_intCtrl/upc/out<4>  | fcl_intClk_intCtrl/upc/out<5>  | fcl_intClk_intCtrl/upc/out<6>  | fcl_intClk_intCtrl/upc/out<7>  | fcl_intClk_intCtrl/upc/out<8>
-INPUTMC | 12 | 3 | 9 | 3 | 11 | 0 | 15 | 3 | 0 | 3 | 15 | 3 | 14 | 3 | 13 | 3 | 12 | 3 | 7 | 3 | 6 | 3 | 5 | 3 | 2
+INPUTMC | 12 | 1 | 15 | 1 | 7 | 2 | 0 | 2 | 14 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6
 EQ | 11 | 
    fcl_intClk_intCtrl/upc/out<9>.T := qie_reset_out_intClk_intCtrl & 
 	fcl_intClk_intCtrl/upc/out<9>
@@ -912,11 +680,11 @@ EQ | 11 |
    fcl_intClk_intCtrl/upc/out<9>.CLK  =  int_clk_in;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | int_clk_in
 
-MACROCELL | 3 | 8 | fcl_intClk_intCtrl/upc/out<11>_MC
+MACROCELL | 1 | 12 | fcl_intClk_intCtrl/upc/out<11>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 3 | 3 | 8 | 3 | 9 | 3 | 3
+OUTPUTMC | 3 | 1 | 12 | 1 | 15 | 1 | 8
 INPUTS | 14 | qie_reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<11>  | reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<0>  | fcl_intClk_intCtrl/upc/out<10>  | fcl_intClk_intCtrl/upc/out<1>  | fcl_intClk_intCtrl/upc/out<2>  | fcl_intClk_intCtrl/upc/out<3>  | fcl_intClk_intCtrl/upc/out<4>  | fcl_intClk_intCtrl/upc/out<5>  | fcl_intClk_intCtrl/upc/out<6>  | fcl_intClk_intCtrl/upc/out<7>  | fcl_intClk_intCtrl/upc/out<8>  | fcl_intClk_intCtrl/upc/out<9>
-INPUTMC | 14 | 3 | 9 | 3 | 8 | 0 | 15 | 3 | 0 | 3 | 10 | 3 | 15 | 3 | 14 | 3 | 13 | 3 | 12 | 3 | 7 | 3 | 6 | 3 | 5 | 3 | 2 | 3 | 11
+INPUTMC | 14 | 1 | 15 | 1 | 12 | 2 | 0 | 2 | 14 | 1 | 11 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7
 EQ | 12 | 
    fcl_intClk_intCtrl/upc/out<11>.T := qie_reset_out_intClk_intCtrl & 
 	fcl_intClk_intCtrl/upc/out<11>
@@ -932,22 +700,142 @@ EQ | 12 |
    fcl_intClk_intCtrl/upc/out<11>.CLK  =  int_clk_in;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | int_clk_in
 
+MACROCELL | 0 | 6 | qie_reset_out_extClk_extCtrl_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 2 | 0 | 6 | 1 | 13
+INPUTS | 6 | qie_reset_in  | fcl_extClk_extCtrl/hold<0>  | fcl_extClk_extCtrl/hold<1>  | fcl_extClk_extCtrl/hold<2>  | fcl_extClk_extCtrl/hold<3>  | qie_reset_out_extClk_extCtrl
+INPUTMC | 5 | 0 | 11 | 0 | 8 | 0 | 15 | 0 | 12 | 0 | 6
+INPUTP | 1 | 72
+EQ | 7 | 
+   qie_reset_out_extClk_extCtrl := !qie_reset_in & !fcl_extClk_extCtrl/hold<0> & 
+	!fcl_extClk_extCtrl/hold<1> & !fcl_extClk_extCtrl/hold<2> & 
+	!fcl_extClk_extCtrl/hold<3>
+	# qie_reset_out_extClk_extCtrl & qie_reset_in & 
+	!fcl_extClk_extCtrl/hold<0> & !fcl_extClk_extCtrl/hold<1> & 
+	!fcl_extClk_extCtrl/hold<2> & !fcl_extClk_extCtrl/hold<3>;	// (2 pt, 6 inp)
+   qie_reset_out_extClk_extCtrl.CLK  =  ext_clk_in;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | ext_clk_in
+
+MACROCELL | 0 | 11 | fcl_extClk_extCtrl/hold<0>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 5 | 0 | 8 | 0 | 15 | 0 | 12 | 0 | 11 | 0 | 6
+INPUTS | 5 | qie_reset_in  | fcl_extClk_extCtrl/hold<0>  | fcl_extClk_extCtrl/hold<1>  | fcl_extClk_extCtrl/hold<2>  | fcl_extClk_extCtrl/hold<3>
+INPUTMC | 4 | 0 | 11 | 0 | 8 | 0 | 15 | 0 | 12
+INPUTP | 1 | 72
+EQ | 4 | 
+   !fcl_extClk_extCtrl/hold<0>.T := qie_reset_in & !fcl_extClk_extCtrl/hold<0> & 
+	!fcl_extClk_extCtrl/hold<1> & !fcl_extClk_extCtrl/hold<2> & 
+	!fcl_extClk_extCtrl/hold<3>;	// (1 pt, 5 inp)
+   fcl_extClk_extCtrl/hold<0>.CLK  =  ext_clk_in;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | ext_clk_in
+
+MACROCELL | 0 | 8 | fcl_extClk_extCtrl/hold<1>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 4 | 0 | 15 | 0 | 12 | 0 | 11 | 0 | 6
+INPUTS | 1 | fcl_extClk_extCtrl/hold<0>
+INPUTMC | 1 | 0 | 11
+EQ | 2 | 
+   fcl_extClk_extCtrl/hold<1>.T := fcl_extClk_extCtrl/hold<0>;	// (1 pt, 1 inp)
+   fcl_extClk_extCtrl/hold<1>.CLK  =  ext_clk_in;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | ext_clk_in
+
+MACROCELL | 0 | 15 | fcl_extClk_extCtrl/hold<2>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 3 | 0 | 12 | 0 | 11 | 0 | 6
+INPUTS | 2 | fcl_extClk_extCtrl/hold<0>  | fcl_extClk_extCtrl/hold<1>
+INPUTMC | 2 | 0 | 11 | 0 | 8
+EQ | 3 | 
+   fcl_extClk_extCtrl/hold<2>.T := fcl_extClk_extCtrl/hold<0> & 
+	fcl_extClk_extCtrl/hold<1>;	// (1 pt, 2 inp)
+   fcl_extClk_extCtrl/hold<2>.CLK  =  ext_clk_in;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | ext_clk_in
+
+MACROCELL | 0 | 12 | fcl_extClk_extCtrl/hold<3>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 2 | 0 | 11 | 0 | 6
+INPUTS | 3 | fcl_extClk_extCtrl/hold<0>  | fcl_extClk_extCtrl/hold<1>  | fcl_extClk_extCtrl/hold<2>
+INPUTMC | 3 | 0 | 11 | 0 | 8 | 0 | 15
+EQ | 3 | 
+   fcl_extClk_extCtrl/hold<3>.T := fcl_extClk_extCtrl/hold<0> & 
+	fcl_extClk_extCtrl/hold<1> & fcl_extClk_extCtrl/hold<2>;	// (1 pt, 3 inp)
+   fcl_extClk_extCtrl/hold<3>.CLK  =  ext_clk_in;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | ext_clk_in
+
+MACROCELL | 0 | 4 | qie_reset_out_intClk_extCtrl_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 2 | 0 | 4 | 1 | 13
+INPUTS | 6 | qie_reset_in  | fcl_intClk_extCtrl/hold<0>  | fcl_intClk_extCtrl/hold<1>  | fcl_intClk_extCtrl/hold<2>  | fcl_intClk_extCtrl/hold<3>  | qie_reset_out_intClk_extCtrl
+INPUTMC | 5 | 0 | 5 | 0 | 13 | 0 | 2 | 0 | 3 | 0 | 4
+INPUTP | 1 | 72
+EQ | 7 | 
+   qie_reset_out_intClk_extCtrl := !qie_reset_in & !fcl_intClk_extCtrl/hold<0> & 
+	!fcl_intClk_extCtrl/hold<1> & !fcl_intClk_extCtrl/hold<2> & 
+	!fcl_intClk_extCtrl/hold<3>
+	# qie_reset_in & qie_reset_out_intClk_extCtrl & 
+	!fcl_intClk_extCtrl/hold<0> & !fcl_intClk_extCtrl/hold<1> & 
+	!fcl_intClk_extCtrl/hold<2> & !fcl_intClk_extCtrl/hold<3>;	// (2 pt, 6 inp)
+   qie_reset_out_intClk_extCtrl.CLK  =  clk_in_j1;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_in_j1
+
+MACROCELL | 0 | 5 | fcl_intClk_extCtrl/hold<0>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 5 | 0 | 13 | 0 | 2 | 0 | 3 | 0 | 5 | 0 | 4
+INPUTS | 5 | qie_reset_in  | fcl_intClk_extCtrl/hold<0>  | fcl_intClk_extCtrl/hold<1>  | fcl_intClk_extCtrl/hold<2>  | fcl_intClk_extCtrl/hold<3>
+INPUTMC | 4 | 0 | 5 | 0 | 13 | 0 | 2 | 0 | 3
+INPUTP | 1 | 72
+EQ | 4 | 
+   !fcl_intClk_extCtrl/hold<0>.T := qie_reset_in & !fcl_intClk_extCtrl/hold<0> & 
+	!fcl_intClk_extCtrl/hold<1> & !fcl_intClk_extCtrl/hold<2> & 
+	!fcl_intClk_extCtrl/hold<3>;	// (1 pt, 5 inp)
+   fcl_intClk_extCtrl/hold<0>.CLK  =  clk_in_j1;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_in_j1
+
+MACROCELL | 0 | 13 | fcl_intClk_extCtrl/hold<1>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 4 | 0 | 2 | 0 | 3 | 0 | 5 | 0 | 4
+INPUTS | 1 | fcl_intClk_extCtrl/hold<0>
+INPUTMC | 1 | 0 | 5
+EQ | 2 | 
+   fcl_intClk_extCtrl/hold<1>.T := fcl_intClk_extCtrl/hold<0>;	// (1 pt, 1 inp)
+   fcl_intClk_extCtrl/hold<1>.CLK  =  clk_in_j1;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_in_j1
+
+MACROCELL | 0 | 2 | fcl_intClk_extCtrl/hold<2>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 3 | 0 | 3 | 0 | 5 | 0 | 4
+INPUTS | 2 | fcl_intClk_extCtrl/hold<0>  | fcl_intClk_extCtrl/hold<1>
+INPUTMC | 2 | 0 | 5 | 0 | 13
+EQ | 3 | 
+   fcl_intClk_extCtrl/hold<2>.T := fcl_intClk_extCtrl/hold<0> & 
+	fcl_intClk_extCtrl/hold<1>;	// (1 pt, 2 inp)
+   fcl_intClk_extCtrl/hold<2>.CLK  =  clk_in_j1;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_in_j1
+
+MACROCELL | 0 | 3 | fcl_intClk_extCtrl/hold<3>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 2 | 0 | 5 | 0 | 4
+INPUTS | 3 | fcl_intClk_extCtrl/hold<0>  | fcl_intClk_extCtrl/hold<1>  | fcl_intClk_extCtrl/hold<2>
+INPUTMC | 3 | 0 | 5 | 0 | 13 | 0 | 2
+EQ | 3 | 
+   fcl_intClk_extCtrl/hold<3>.T := fcl_intClk_extCtrl/hold<0> & 
+	fcl_intClk_extCtrl/hold<1> & fcl_intClk_extCtrl/hold<2>;	// (1 pt, 3 inp)
+   fcl_intClk_extCtrl/hold<3>.CLK  =  clk_in_j1;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_in_j1
+
 MACROCELL | 1 | 10 | reset_out_MC
 ATTRIBUTES | 1074004738 | 0
-INPUTS | 6 | mode_select  | clk_select  | reset_out_intClk_intCtrl  | reset_out_extClk_intCtrl  | reset_out_intClk_extCtrl  | reset_out_extClk_extCtrl
-INPUTMC | 4 | 0 | 15 | 0 | 8 | 2 | 0 | 0 | 12
+INPUTS | 5 | mode_select  | clk_select  | reset_out_intClk_intCtrl  | reset_out_intClk_extCtrl  | reset_out_extClk_extCtrl
+INPUTMC | 3 | 2 | 0 | 3 | 0 | 2 | 15
 INPUTP | 2 | 4 | 83
-EQ | 8 | 
-   !reset_out = mode_select & clk_select & 
-	!reset_out_intClk_intCtrl
-	# mode_select & !clk_select & 
-	!reset_out_extClk_intCtrl
+EQ | 6 | 
+   reset_out = mode_select & clk_select & 
+	reset_out_intClk_intCtrl
 	# !mode_select & clk_select & 
-	!reset_out_intClk_extCtrl
+	reset_out_intClk_extCtrl
 	# !mode_select & !clk_select & 
-	!reset_out_extClk_extCtrl;	// (4 pt, 6 inp)
+	reset_out_extClk_extCtrl;	// (3 pt, 5 inp)
 
-MACROCELL | 0 | 12 | reset_out_extClk_extCtrl_MC
+MACROCELL | 2 | 15 | reset_out_extClk_extCtrl_MC
 ATTRIBUTES | 2155905792 | 0
 OUTPUTMC | 1 | 1 | 10
 INPUTS | 2 | reset_switch  | GPIO_Extra0
@@ -957,7 +845,7 @@ EQ | 2 |
    reset_out_extClk_extCtrl.CLK  =  ext_clk_in;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | ext_clk_in
 
-MACROCELL | 2 | 0 | reset_out_intClk_extCtrl_MC
+MACROCELL | 3 | 0 | reset_out_intClk_extCtrl_MC
 ATTRIBUTES | 2155905792 | 0
 OUTPUTMC | 1 | 1 | 10
 INPUTS | 2 | reset_switch  | GPIO_Extra0
@@ -969,41 +857,19 @@ GLOBALS | 1 | 2 | clk_in_j1
 
 MACROCELL | 1 | 14 | wte_out_MC
 ATTRIBUTES | 1074004738 | 0
-INPUTS | 5 | mode_select  | qie_reset_in  | clk_select  | wte_out_intClk_intCtrl  | wte_out_extClk_intCtrl
-INPUTMC | 2 | 3 | 3 | 1 | 8
+INPUTS | 4 | mode_select  | qie_reset_in  | clk_select  | wte_out_intClk_intCtrl
+INPUTMC | 1 | 1 | 8
 INPUTP | 3 | 4 | 72 | 83
-EQ | 5 | 
-   !wte_out = !mode_select & qie_reset_in
+EQ | 3 | 
+   wte_out = !mode_select & !qie_reset_in
 	# mode_select & clk_select & 
-	!wte_out_intClk_intCtrl
-	# mode_select & !clk_select & 
-	!wte_out_extClk_intCtrl;	// (3 pt, 5 inp)
+	wte_out_intClk_intCtrl;	// (2 pt, 4 inp)
 
-MACROCELL | 1 | 8 | wte_out_extClk_intCtrl_MC
+MACROCELL | 1 | 8 | wte_out_intClk_intCtrl_MC
 ATTRIBUTES | 2155905792 | 0
 OUTPUTMC | 2 | 1 | 8 | 1 | 14
-INPUTS | 15 | qie_reset_out_extClk_intCtrl  | wte_out_extClk_intCtrl  | reset_out_extClk_intCtrl  | fcl_extClk_intCtrl/upc/out<0>  | fcl_extClk_intCtrl/upc/out<10>  | fcl_extClk_intCtrl/upc/out<1>  | fcl_extClk_intCtrl/upc/out<2>  | fcl_extClk_intCtrl/upc/out<3>  | fcl_extClk_intCtrl/upc/out<4>  | fcl_extClk_intCtrl/upc/out<5>  | fcl_extClk_intCtrl/upc/out<6>  | fcl_extClk_intCtrl/upc/out<7>  | fcl_extClk_intCtrl/upc/out<8>  | fcl_extClk_intCtrl/upc/out<9>  | fcl_extClk_intCtrl/upc/out<11>
-INPUTMC | 15 | 1 | 15 | 1 | 8 | 0 | 8 | 2 | 15 | 1 | 11 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 12
-EQ | 12 | 
-   wte_out_extClk_intCtrl := qie_reset_out_extClk_intCtrl & 
-	wte_out_extClk_intCtrl
-	# reset_out_extClk_intCtrl & wte_out_extClk_intCtrl
-	# !qie_reset_out_extClk_intCtrl & 
-	fcl_extClk_intCtrl/upc/out<0> & !reset_out_extClk_intCtrl & 
-	!fcl_extClk_intCtrl/upc/out<10> & fcl_extClk_intCtrl/upc/out<1> & 
-	fcl_extClk_intCtrl/upc/out<2> & fcl_extClk_intCtrl/upc/out<3> & 
-	fcl_extClk_intCtrl/upc/out<4> & fcl_extClk_intCtrl/upc/out<5> & 
-	fcl_extClk_intCtrl/upc/out<6> & !fcl_extClk_intCtrl/upc/out<7> & 
-	!fcl_extClk_intCtrl/upc/out<8> & !fcl_extClk_intCtrl/upc/out<9> & 
-	!fcl_extClk_intCtrl/upc/out<11>;	// (3 pt, 15 inp)
-   wte_out_extClk_intCtrl.CLK  =  ext_clk_in;	// GCK	(0 pt, 0 inp)
-GLOBALS | 1 | 2 | ext_clk_in
-
-MACROCELL | 3 | 3 | wte_out_intClk_intCtrl_MC
-ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 2 | 3 | 3 | 1 | 14
 INPUTS | 15 | qie_reset_out_intClk_intCtrl  | wte_out_intClk_intCtrl  | reset_out_intClk_intCtrl  | fcl_intClk_intCtrl/upc/out<0>  | fcl_intClk_intCtrl/upc/out<10>  | fcl_intClk_intCtrl/upc/out<1>  | fcl_intClk_intCtrl/upc/out<2>  | fcl_intClk_intCtrl/upc/out<3>  | fcl_intClk_intCtrl/upc/out<4>  | fcl_intClk_intCtrl/upc/out<5>  | fcl_intClk_intCtrl/upc/out<6>  | fcl_intClk_intCtrl/upc/out<7>  | fcl_intClk_intCtrl/upc/out<8>  | fcl_intClk_intCtrl/upc/out<9>  | fcl_intClk_intCtrl/upc/out<11>
-INPUTMC | 15 | 3 | 9 | 3 | 3 | 0 | 15 | 3 | 0 | 3 | 10 | 3 | 15 | 3 | 14 | 3 | 13 | 3 | 12 | 3 | 7 | 3 | 6 | 3 | 5 | 3 | 2 | 3 | 11 | 3 | 8
+INPUTMC | 15 | 1 | 15 | 1 | 8 | 2 | 0 | 2 | 14 | 1 | 11 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 12
 EQ | 12 | 
    wte_out_intClk_intCtrl := qie_reset_out_intClk_intCtrl & 
 	wte_out_intClk_intCtrl
@@ -1019,19 +885,19 @@ EQ | 12 |
    wte_out_intClk_intCtrl.CLK  =  int_clk_in;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | int_clk_in
 
-PIN | GPIO_Extra0 | 64 | 0 | N/A | 56 | 2 | 0 | 12 | 2 | 0
+PIN | GPIO_Extra0 | 64 | 0 | N/A | 56 | 2 | 2 | 15 | 3 | 0
 PIN | aux2 | 64 | 0 | N/A | 43 | 1 | 3 | 1
 PIN | aux3 | 64 | 0 | N/A | 49 | 1 | 3 | 4
 PIN | aux_in | 64 | 0 | N/A | 41 | 1 | 0 | 9
 PIN | pgood | 64 | 0 | N/A | 60 | 1 | 2 | 9
-PIN | clk_in_j1 | 32832 | 0 | N/A | 75 | 2 | 0 | 14 | 2 | 0
-PIN | int_clk_in | 8256 | 0 | N/A | 77 | 16 | 0 | 14 | 0 | 15 | 3 | 0 | 3 | 15 | 3 | 14 | 3 | 13 | 3 | 12 | 3 | 7 | 3 | 6 | 3 | 5 | 3 | 2 | 3 | 11 | 3 | 10 | 3 | 8 | 3 | 9 | 3 | 3
+PIN | clk_in_j1 | 32832 | 0 | N/A | 75 | 7 | 0 | 14 | 0 | 13 | 0 | 2 | 0 | 3 | 0 | 5 | 0 | 4 | 3 | 0
+PIN | int_clk_in | 8256 | 0 | N/A | 77 | 16 | 0 | 14 | 2 | 0 | 2 | 14 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 1 | 8
 PIN | mode_select | 64 | 0 | N/A | 4 | 5 | 0 | 14 | 0 | 9 | 1 | 13 | 1 | 10 | 1 | 14
 PIN | clk_select | 64 | 0 | N/A | 83 | 4 | 0 | 14 | 1 | 13 | 1 | 10 | 1 | 14
-PIN | ext_clk_in | 16448 | 0 | N/A | 76 | 18 | 0 | 14 | 1 | 13 | 0 | 8 | 2 | 15 | 1 | 0 | 1 | 1 | 1 | 2 | 1 | 9 | 1 | 3 | 1 | 4 | 1 | 5 | 1 | 6 | 1 | 7 | 1 | 11 | 1 | 12 | 1 | 15 | 0 | 12 | 1 | 8
-PIN | qie_reset_in | 64 | 0 | N/A | 72 | 2 | 1 | 13 | 1 | 14
+PIN | ext_clk_in | 16448 | 0 | N/A | 76 | 8 | 0 | 14 | 1 | 13 | 0 | 8 | 0 | 15 | 0 | 12 | 0 | 11 | 0 | 6 | 2 | 15
+PIN | qie_reset_in | 64 | 0 | N/A | 72 | 5 | 0 | 11 | 0 | 6 | 0 | 5 | 0 | 4 | 1 | 14
 PIN | qie_reset_source | 64 | 0 | N/A | 81 | 1 | 1 | 13
-PIN | reset_switch | 64 | 0 | N/A | 52 | 4 | 0 | 8 | 0 | 15 | 0 | 12 | 2 | 0
+PIN | reset_switch | 64 | 0 | N/A | 52 | 3 | 2 | 0 | 2 | 15 | 3 | 0
 PIN | aux_out | 536871040 | 0 | N/A | 42
 PIN | clk_out_p2 | 536871040 | 0 | N/A | 55
 PIN | peltEnab1 | 536871040 | 0 | N/A | 13

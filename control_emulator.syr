@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> Reading design: control_emulator.prj
 
@@ -147,7 +147,11 @@ Unit <misc_controls> synthesized.
 Synthesizing Unit <fast_controls_ext>.
     Related source file is "fast_controls_ext.v".
 WARNING:Xst:647 - Input <wte_in> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <qie_reset_out>.
     Found 1-bit register for signal <reset_out>.
+    Found 4-bit up counter for signal <hold>.
+    Summary:
+	inferred   1 Counter(s).
 Unit <fast_controls_ext> synthesized.
 
 
@@ -174,6 +178,9 @@ WARNING:Xst:647 - Input <GPIO_Extra1> is never used. This port will be preserved
 WARNING:Xst:647 - Input <alt1> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <alt2> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <reset_in> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <wte_out_extClk_intCtrl> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:653 - Signal <reset_out_extClk_intCtrl> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:653 - Signal <qie_reset_out_extClk_intCtrl> is used but never assigned. This sourceless signal will be automatically connected to value 0.
 Unit <control_emulator> synthesized.
 
 
@@ -181,11 +188,12 @@ Unit <control_emulator> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Counters                                             : 3
- 12-bit up counter                                     : 2
+# Counters                                             : 4
+ 12-bit up counter                                     : 1
  19-bit up counter                                     : 1
-# Registers                                            : 9
- 1-bit register                                        : 9
+ 4-bit up counter                                      : 2
+# Registers                                            : 8
+ 1-bit register                                        : 8
 # Comparators                                          : 1
  19-bit comparator lessequal                           : 1
 
@@ -200,11 +208,12 @@ Macro Statistics
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Counters                                             : 3
- 12-bit up counter                                     : 2
+# Counters                                             : 4
+ 12-bit up counter                                     : 1
  19-bit up counter                                     : 1
-# Registers                                            : 2
- Flip-Flops                                            : 2
+ 4-bit up counter                                      : 2
+# Registers                                            : 1
+ Flip-Flops                                            : 1
 
 =========================================================================
 
@@ -214,9 +223,14 @@ Macro Statistics
 
 Optimizing unit <control_emulator> ...
 
-Optimizing unit <fast_controls_ext> ...
-
 Optimizing unit <misc_controls> ...
+
+Optimizing unit <fast_controls_ext> ...
+  implementation constraint: INIT=r	 : qie_reset_out
+  implementation constraint: INIT=r	 : hold_3
+  implementation constraint: INIT=r	 : hold_2
+  implementation constraint: INIT=r	 : hold_1
+  implementation constraint: INIT=r	 : hold_0
 
 Optimizing unit <counter> ...
 
@@ -252,34 +266,34 @@ Design Statistics
 # IOs                              : 26
 
 Cell Usage :
-# BELS                             : 245
-#      AND2                        : 99
-#      AND3                        : 3
-#      AND4                        : 6
+# BELS                             : 216
+#      AND2                        : 76
+#      AND3                        : 5
+#      AND4                        : 5
 #      AND7                        : 1
-#      AND8                        : 2
-#      GND                         : 3
-#      INV                         : 68
-#      OR2                         : 21
+#      AND8                        : 1
+#      GND                         : 4
+#      INV                         : 71
+#      OR2                         : 16
 #      OR3                         : 2
-#      XOR2                        : 40
-# FlipFlops/Latches                : 52
-#      FD                          : 29
-#      FDCE                        : 23
+#      XOR2                        : 35
+# FlipFlops/Latches                : 47
+#      FD                          : 16
+#      FDCE                        : 31
 # IO Buffers                       : 21
 #      IBUF                        : 13
 #      OBUF                        : 8
 =========================================================================
 
 
-Total REAL time to Xst completion: 2.00 secs
-Total CPU time to Xst completion: 2.47 secs
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 2.41 secs
  
 --> 
 
-Total memory usage is 214760 kilobytes
+Total memory usage is 217804 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    5 (   0 filtered)
+Number of warnings :    8 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

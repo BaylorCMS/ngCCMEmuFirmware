@@ -6,7 +6,7 @@
 ********** Mapped Logic **********
 </td></tr><tr><td>
 </td></tr><tr><td>
-N_PZ_323 <= ((NOT miscControls/delay_reg(17))
+N_PZ_303 <= ((NOT miscControls/delay_reg(17))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT miscControls/delay_reg(18))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT miscControls/delay_reg(11) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT miscControls/delay_reg(13) AND NOT miscControls/delay_reg(14) AND 
@@ -31,127 +31,35 @@ clk_out_p2 <= NOT (((NOT clk_select AND NOT ext_clk_in)
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT int_clk_in AND mode_select AND clk_select)
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT mode_select AND clk_select AND NOT clk_in_j1)));
 </td></tr><tr><td>
-FDCPE_fcl_extClk_intCtrl/upc/out0: FDCPE port map (fcl_extClk_intCtrl/upc/out(0),fcl_extClk_intCtrl/upc/out_D(0),ext_clk_in,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fcl_extClk_intCtrl/upc/out_D(0) <= NOT ((NOT qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl));
+FTCPE_fcl_extClk_extCtrl/hold0: FTCPE port map (fcl_extClk_extCtrl/hold(0),fcl_extClk_extCtrl/hold_T(0),ext_clk_in,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fcl_extClk_extCtrl/hold_T(0) <= NOT ((qie_reset_in AND NOT fcl_extClk_extCtrl/hold(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT fcl_extClk_extCtrl/hold(1) AND NOT fcl_extClk_extCtrl/hold(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT fcl_extClk_extCtrl/hold(3)));
 </td></tr><tr><td>
-FDCPE_fcl_extClk_intCtrl/upc/out1: FDCPE port map (fcl_extClk_intCtrl/upc/out(1),fcl_extClk_intCtrl/upc/out_D(1),ext_clk_in,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fcl_extClk_intCtrl/upc/out_D(1) <= ((NOT qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT fcl_extClk_intCtrl/upc/out(1))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(1)));
+FTCPE_fcl_extClk_extCtrl/hold1: FTCPE port map (fcl_extClk_extCtrl/hold(1),fcl_extClk_extCtrl/hold(0),ext_clk_in,'0','0','1');
 </td></tr><tr><td>
-FTCPE_fcl_extClk_intCtrl/upc/out2: FTCPE port map (fcl_extClk_intCtrl/upc/out(2),fcl_extClk_intCtrl/upc/out_T(2),ext_clk_in,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fcl_extClk_intCtrl/upc/out_T(2) <= ((qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(2))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(2))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(1)));
+FTCPE_fcl_extClk_extCtrl/hold2: FTCPE port map (fcl_extClk_extCtrl/hold(2),fcl_extClk_extCtrl/hold_T(2),ext_clk_in,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fcl_extClk_extCtrl/hold_T(2) <= (fcl_extClk_extCtrl/hold(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_extCtrl/hold(1));
 </td></tr><tr><td>
-FTCPE_fcl_extClk_intCtrl/upc/out3: FTCPE port map (fcl_extClk_intCtrl/upc/out(3),fcl_extClk_intCtrl/upc/out_T(3),ext_clk_in,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fcl_extClk_intCtrl/upc/out_T(3) <= ((qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(3))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(3))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(1) AND fcl_extClk_intCtrl/upc/out(2)));
+FTCPE_fcl_extClk_extCtrl/hold3: FTCPE port map (fcl_extClk_extCtrl/hold(3),fcl_extClk_extCtrl/hold_T(3),ext_clk_in,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fcl_extClk_extCtrl/hold_T(3) <= (fcl_extClk_extCtrl/hold(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_extCtrl/hold(1) AND fcl_extClk_extCtrl/hold(2));
 </td></tr><tr><td>
-FTCPE_fcl_extClk_intCtrl/upc/out4: FTCPE port map (fcl_extClk_intCtrl/upc/out(4),fcl_extClk_intCtrl/upc/out_T(4),ext_clk_in,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fcl_extClk_intCtrl/upc/out_T(4) <= ((qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(4))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(4))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(1) AND fcl_extClk_intCtrl/upc/out(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(3)));
+FTCPE_fcl_intClk_extCtrl/hold0: FTCPE port map (fcl_intClk_extCtrl/hold(0),fcl_intClk_extCtrl/hold_T(0),clk_in_j1,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fcl_intClk_extCtrl/hold_T(0) <= NOT ((qie_reset_in AND NOT fcl_intClk_extCtrl/hold(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT fcl_intClk_extCtrl/hold(1) AND NOT fcl_intClk_extCtrl/hold(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT fcl_intClk_extCtrl/hold(3)));
 </td></tr><tr><td>
-FTCPE_fcl_extClk_intCtrl/upc/out5: FTCPE port map (fcl_extClk_intCtrl/upc/out(5),fcl_extClk_intCtrl/upc/out_T(5),ext_clk_in,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fcl_extClk_intCtrl/upc/out_T(5) <= ((qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(5))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(5))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(1) AND fcl_extClk_intCtrl/upc/out(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(3) AND fcl_extClk_intCtrl/upc/out(4)));
+FTCPE_fcl_intClk_extCtrl/hold1: FTCPE port map (fcl_intClk_extCtrl/hold(1),fcl_intClk_extCtrl/hold(0),clk_in_j1,'0','0','1');
 </td></tr><tr><td>
-FTCPE_fcl_extClk_intCtrl/upc/out6: FTCPE port map (fcl_extClk_intCtrl/upc/out(6),fcl_extClk_intCtrl/upc/out_T(6),ext_clk_in,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fcl_extClk_intCtrl/upc/out_T(6) <= ((qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(6))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(6))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(1) AND fcl_extClk_intCtrl/upc/out(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(3) AND fcl_extClk_intCtrl/upc/out(4) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(5)));
+FTCPE_fcl_intClk_extCtrl/hold2: FTCPE port map (fcl_intClk_extCtrl/hold(2),fcl_intClk_extCtrl/hold_T(2),clk_in_j1,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fcl_intClk_extCtrl/hold_T(2) <= (fcl_intClk_extCtrl/hold(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_intClk_extCtrl/hold(1));
 </td></tr><tr><td>
-FTCPE_fcl_extClk_intCtrl/upc/out7: FTCPE port map (fcl_extClk_intCtrl/upc/out(7),fcl_extClk_intCtrl/upc/out_T(7),ext_clk_in,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fcl_extClk_intCtrl/upc/out_T(7) <= ((qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(7))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(7))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(1) AND fcl_extClk_intCtrl/upc/out(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(3) AND fcl_extClk_intCtrl/upc/out(4) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(5) AND fcl_extClk_intCtrl/upc/out(6)));
-</td></tr><tr><td>
-FTCPE_fcl_extClk_intCtrl/upc/out8: FTCPE port map (fcl_extClk_intCtrl/upc/out(8),fcl_extClk_intCtrl/upc/out_T(8),ext_clk_in,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fcl_extClk_intCtrl/upc/out_T(8) <= ((qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(8))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(8))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(1) AND fcl_extClk_intCtrl/upc/out(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(3) AND fcl_extClk_intCtrl/upc/out(4) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(5) AND fcl_extClk_intCtrl/upc/out(6) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(7)));
-</td></tr><tr><td>
-FTCPE_fcl_extClk_intCtrl/upc/out9: FTCPE port map (fcl_extClk_intCtrl/upc/out(9),fcl_extClk_intCtrl/upc/out_T(9),ext_clk_in,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fcl_extClk_intCtrl/upc/out_T(9) <= ((qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(9))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(9))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(1) AND fcl_extClk_intCtrl/upc/out(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(3) AND fcl_extClk_intCtrl/upc/out(4) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(5) AND fcl_extClk_intCtrl/upc/out(6) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(7) AND fcl_extClk_intCtrl/upc/out(8)));
-</td></tr><tr><td>
-FTCPE_fcl_extClk_intCtrl/upc/out10: FTCPE port map (fcl_extClk_intCtrl/upc/out(10),fcl_extClk_intCtrl/upc/out_T(10),ext_clk_in,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fcl_extClk_intCtrl/upc/out_T(10) <= ((qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(10))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(10))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(1) AND fcl_extClk_intCtrl/upc/out(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(3) AND fcl_extClk_intCtrl/upc/out(4) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(5) AND fcl_extClk_intCtrl/upc/out(6) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(7) AND fcl_extClk_intCtrl/upc/out(8) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(9)));
-</td></tr><tr><td>
-FTCPE_fcl_extClk_intCtrl/upc/out11: FTCPE port map (fcl_extClk_intCtrl/upc/out(11),fcl_extClk_intCtrl/upc/out_T(11),ext_clk_in,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fcl_extClk_intCtrl/upc/out_T(11) <= ((qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(11))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(11))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(10) AND fcl_extClk_intCtrl/upc/out(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(2) AND fcl_extClk_intCtrl/upc/out(3) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(4) AND fcl_extClk_intCtrl/upc/out(5) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(6) AND fcl_extClk_intCtrl/upc/out(7) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(8) AND fcl_extClk_intCtrl/upc/out(9)));
+FTCPE_fcl_intClk_extCtrl/hold3: FTCPE port map (fcl_intClk_extCtrl/hold(3),fcl_intClk_extCtrl/hold_T(3),clk_in_j1,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fcl_intClk_extCtrl/hold_T(3) <= (fcl_intClk_extCtrl/hold(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_intClk_extCtrl/hold(1) AND fcl_intClk_extCtrl/hold(2));
 </td></tr><tr><td>
 FDCPE_fcl_intClk_intCtrl/upc/out0: FDCPE port map (fcl_intClk_intCtrl/upc/out(0),fcl_intClk_intCtrl/upc/out_D(0),int_clk_in,'0','0','1');
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fcl_intClk_intCtrl/upc/out_D(0) <= NOT ((NOT qie_reset_out_intClk_intCtrl AND 
@@ -276,7 +184,7 @@ FTCPE_fcl_intClk_intCtrl/upc/out11: FTCPE port map (fcl_intClk_intCtrl/upc/out(1
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_intClk_intCtrl/upc/out(8) AND fcl_intClk_intCtrl/upc/out(9)));
 </td></tr><tr><td>
 FTCPE_miscControls/delay_reg0: FTCPE port map (miscControls/delay_reg(0),miscControls/delay_reg_T(0),clk_out_p2,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;miscControls/delay_reg_T(0) <= ((N_PZ_323)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;miscControls/delay_reg_T(0) <= ((N_PZ_303)
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT miscControls/delay_reg(0) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT miscControls/delay_reg(10) AND NOT miscControls/delay_reg(1) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT miscControls/delay_reg(13) AND NOT miscControls/delay_reg(2) AND 
@@ -286,35 +194,35 @@ FTCPE_miscControls/delay_reg0: FTCPE port map (miscControls/delay_reg(0),miscCon
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT miscControls/delay_reg(15) AND NOT miscControls/delay_reg(16)));
 </td></tr><tr><td>
 FTCPE_miscControls/delay_reg1: FTCPE port map (miscControls/delay_reg(1),miscControls/delay_reg_T(1),clk_out_p2,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;miscControls/delay_reg_T(1) <= (miscControls/delay_reg(0) AND N_PZ_323);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;miscControls/delay_reg_T(1) <= (miscControls/delay_reg(0) AND N_PZ_303);
 </td></tr><tr><td>
 FTCPE_miscControls/delay_reg2: FTCPE port map (miscControls/delay_reg(2),miscControls/delay_reg_T(2),clk_out_p2,'0','0','1');
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;miscControls/delay_reg_T(2) <= (miscControls/delay_reg(0) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(1) AND N_PZ_323);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(1) AND N_PZ_303);
 </td></tr><tr><td>
 FTCPE_miscControls/delay_reg3: FTCPE port map (miscControls/delay_reg(3),miscControls/delay_reg_T(3),clk_out_p2,'0','0','1');
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;miscControls/delay_reg_T(3) <= (miscControls/delay_reg(0) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(1) AND N_PZ_323 AND miscControls/delay_reg(2));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(1) AND N_PZ_303 AND miscControls/delay_reg(2));
 </td></tr><tr><td>
 FTCPE_miscControls/delay_reg4: FTCPE port map (miscControls/delay_reg(4),miscControls/delay_reg_T(4),clk_out_p2,'0','0','1');
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;miscControls/delay_reg_T(4) <= (miscControls/delay_reg(0) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(1) AND N_PZ_323 AND miscControls/delay_reg(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(1) AND N_PZ_303 AND miscControls/delay_reg(2) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(3));
 </td></tr><tr><td>
 FTCPE_miscControls/delay_reg5: FTCPE port map (miscControls/delay_reg(5),miscControls/delay_reg_T(5),clk_out_p2,'0','0','1');
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;miscControls/delay_reg_T(5) <= (miscControls/delay_reg(0) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(1) AND N_PZ_323 AND miscControls/delay_reg(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(1) AND N_PZ_303 AND miscControls/delay_reg(2) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(3) AND miscControls/delay_reg(4));
 </td></tr><tr><td>
 FTCPE_miscControls/delay_reg6: FTCPE port map (miscControls/delay_reg(6),miscControls/delay_reg_T(6),clk_out_p2,'0','0','1');
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;miscControls/delay_reg_T(6) <= (miscControls/delay_reg(0) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(1) AND N_PZ_323 AND miscControls/delay_reg(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(1) AND N_PZ_303 AND miscControls/delay_reg(2) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(5));
 </td></tr><tr><td>
 FTCPE_miscControls/delay_reg7: FTCPE port map (miscControls/delay_reg(7),miscControls/delay_reg_T(7),clk_out_p2,'0','0','1');
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;miscControls/delay_reg_T(7) <= (miscControls/delay_reg(0) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(1) AND N_PZ_323 AND miscControls/delay_reg(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(1) AND N_PZ_303 AND miscControls/delay_reg(2) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(5) AND miscControls/delay_reg(6));
 </td></tr><tr><td>
@@ -354,7 +262,7 @@ FTCPE_miscControls/delay_reg8: FTCPE port map (miscControls/delay_reg(8),miscCon
 </td></tr><tr><td>
 FTCPE_miscControls/delay_reg9: FTCPE port map (miscControls/delay_reg(9),miscControls/delay_reg_T(9),clk_out_p2,'0','0','1');
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;miscControls/delay_reg_T(9) <= (miscControls/delay_reg(0) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(1) AND N_PZ_323 AND miscControls/delay_reg(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(1) AND N_PZ_303 AND miscControls/delay_reg(2) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(5) AND miscControls/delay_reg(6) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(7) AND miscControls/delay_reg(8));
@@ -391,7 +299,7 @@ FTCPE_miscControls/delay_reg10: FTCPE port map (miscControls/delay_reg(10),miscC
 </td></tr><tr><td>
 FTCPE_miscControls/delay_reg11: FTCPE port map (miscControls/delay_reg(11),miscControls/delay_reg_T(11),clk_out_p2,'0','0','1');
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;miscControls/delay_reg_T(11) <= (miscControls/delay_reg(0) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(10) AND miscControls/delay_reg(1) AND N_PZ_323 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(10) AND miscControls/delay_reg(1) AND N_PZ_303 AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(2) AND miscControls/delay_reg(3) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(4) AND miscControls/delay_reg(5) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(6) AND miscControls/delay_reg(7) AND 
@@ -400,7 +308,7 @@ FTCPE_miscControls/delay_reg11: FTCPE port map (miscControls/delay_reg(11),miscC
 FTCPE_miscControls/delay_reg12: FTCPE port map (miscControls/delay_reg(12),miscControls/delay_reg_T(12),clk_out_p2,'0','0','1');
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;miscControls/delay_reg_T(12) <= (miscControls/delay_reg(0) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(10) AND miscControls/delay_reg(11) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(1) AND N_PZ_323 AND miscControls/delay_reg(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(1) AND N_PZ_303 AND miscControls/delay_reg(2) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(3) AND miscControls/delay_reg(4) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(5) AND miscControls/delay_reg(6) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	miscControls/delay_reg(7) AND miscControls/delay_reg(8) AND 
@@ -517,7 +425,7 @@ FTCPE_miscControls/delay_reg18: FTCPE port map (miscControls/delay_reg(18),miscC
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT miscControls/delay_reg(18) AND miscControls/delay_reg(16));
 </td></tr><tr><td>
 FDCPE_miscControls/penable_reg: FDCPE port map (miscControls/penable_reg,miscControls/penable_reg_D,clk_out_p2,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;miscControls/penable_reg_D <= NOT (((N_PZ_323)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;miscControls/penable_reg_D <= NOT (((N_PZ_303)
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT miscControls/delay_reg(0) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT miscControls/delay_reg(10) AND NOT miscControls/delay_reg(1) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT miscControls/delay_reg(13) AND NOT miscControls/delay_reg(2) AND 
@@ -537,22 +445,29 @@ penable <= NOT (((mode_select AND NOT miscControls/penable_reg)
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT mode_select AND NOT aux_in)));
 </td></tr><tr><td>
 </td></tr><tr><td>
-qie_reset_out <= NOT (((NOT ext_clk_in AND qie_reset_source)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT mode_select AND NOT qie_reset_source AND qie_reset_in)
+qie_reset_out <= ((ext_clk_in AND qie_reset_source)
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (mode_select AND clk_select AND NOT qie_reset_source AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT qie_reset_out_intClk_intCtrl)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (mode_select AND NOT clk_select AND NOT qie_reset_source AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT qie_reset_out_extClk_intCtrl)));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	qie_reset_out_intClk_intCtrl)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT mode_select AND clk_select AND NOT qie_reset_source AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	qie_reset_out_intClk_extCtrl)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT mode_select AND NOT clk_select AND NOT qie_reset_source AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT qie_reset_out_extClk_extCtrl));
 </td></tr><tr><td>
-FDCPE_qie_reset_out_extClk_intCtrl: FDCPE port map (qie_reset_out_extClk_intCtrl,qie_reset_out_extClk_intCtrl_D,ext_clk_in,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;qie_reset_out_extClk_intCtrl_D <= (NOT qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(10) AND fcl_extClk_intCtrl/upc/out(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT fcl_extClk_intCtrl/upc/out(2) AND fcl_extClk_intCtrl/upc/out(3) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT fcl_extClk_intCtrl/upc/out(4) AND fcl_extClk_intCtrl/upc/out(5) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(6) AND fcl_extClk_intCtrl/upc/out(7) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(8) AND NOT fcl_extClk_intCtrl/upc/out(9) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(11));
+FDCPE_qie_reset_out_extClk_extCtrl: FDCPE port map (qie_reset_out_extClk_extCtrl,qie_reset_out_extClk_extCtrl_D,ext_clk_in,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;qie_reset_out_extClk_extCtrl_D <= ((NOT qie_reset_in AND NOT fcl_extClk_extCtrl/hold(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT fcl_extClk_extCtrl/hold(1) AND NOT fcl_extClk_extCtrl/hold(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT fcl_extClk_extCtrl/hold(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (qie_reset_out_extClk_extCtrl AND qie_reset_in AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT fcl_extClk_extCtrl/hold(0) AND NOT fcl_extClk_extCtrl/hold(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT fcl_extClk_extCtrl/hold(2) AND NOT fcl_extClk_extCtrl/hold(3)));
+</td></tr><tr><td>
+FDCPE_qie_reset_out_intClk_extCtrl: FDCPE port map (qie_reset_out_intClk_extCtrl,qie_reset_out_intClk_extCtrl_D,clk_in_j1,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;qie_reset_out_intClk_extCtrl_D <= ((NOT qie_reset_in AND NOT fcl_intClk_extCtrl/hold(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT fcl_intClk_extCtrl/hold(1) AND NOT fcl_intClk_extCtrl/hold(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT fcl_intClk_extCtrl/hold(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (qie_reset_in AND qie_reset_out_intClk_extCtrl AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT fcl_intClk_extCtrl/hold(0) AND NOT fcl_intClk_extCtrl/hold(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT fcl_intClk_extCtrl/hold(2) AND NOT fcl_intClk_extCtrl/hold(3)));
 </td></tr><tr><td>
 FDCPE_qie_reset_out_intClk_intCtrl: FDCPE port map (qie_reset_out_intClk_intCtrl,qie_reset_out_intClk_intCtrl_D,int_clk_in,'0','0','1');
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;qie_reset_out_intClk_intCtrl_D <= (NOT qie_reset_out_intClk_intCtrl AND 
@@ -565,19 +480,15 @@ FDCPE_qie_reset_out_intClk_intCtrl: FDCPE port map (qie_reset_out_intClk_intCtrl
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_intClk_intCtrl/upc/out(11));
 </td></tr><tr><td>
 </td></tr><tr><td>
-reset_out <= NOT (((mode_select AND clk_select AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT reset_out_intClk_intCtrl)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (mode_select AND NOT clk_select AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT reset_out_extClk_intCtrl)
+reset_out <= ((mode_select AND clk_select AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	reset_out_intClk_intCtrl)
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT mode_select AND clk_select AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT reset_out_intClk_extCtrl)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	reset_out_intClk_extCtrl)
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT mode_select AND NOT clk_select AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT reset_out_extClk_extCtrl)));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	reset_out_extClk_extCtrl));
 </td></tr><tr><td>
 FDCPE_reset_out_extClk_extCtrl: FDCPE port map (reset_out_extClk_extCtrl,reset_out_extClk_extCtrl_D,ext_clk_in,'0','0','1');
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reset_out_extClk_extCtrl_D <= NOT ((reset_switch AND NOT GPIO_Extra0));
-</td></tr><tr><td>
-FDCPE_reset_out_extClk_intCtrl: FDCPE port map (reset_out_extClk_intCtrl,NOT reset_switch,ext_clk_in,'0','0','1');
 </td></tr><tr><td>
 FDCPE_reset_out_intClk_extCtrl: FDCPE port map (reset_out_intClk_extCtrl,reset_out_intClk_extCtrl_D,clk_in_j1,'0','0','1');
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reset_out_intClk_extCtrl_D <= NOT ((reset_switch AND NOT GPIO_Extra0));
@@ -585,24 +496,9 @@ FDCPE_reset_out_intClk_extCtrl: FDCPE port map (reset_out_intClk_extCtrl,reset_o
 FDCPE_reset_out_intClk_intCtrl: FDCPE port map (reset_out_intClk_intCtrl,NOT reset_switch,int_clk_in,'0','0','1');
 </td></tr><tr><td>
 </td></tr><tr><td>
-wte_out <= NOT (((NOT mode_select AND qie_reset_in)
+wte_out <= ((NOT mode_select AND NOT qie_reset_in)
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (mode_select AND clk_select AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT wte_out_intClk_intCtrl)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (mode_select AND NOT clk_select AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT wte_out_extClk_intCtrl)));
-</td></tr><tr><td>
-FDCPE_wte_out_extClk_intCtrl: FDCPE port map (wte_out_extClk_intCtrl,wte_out_extClk_intCtrl_D,ext_clk_in,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wte_out_extClk_intCtrl_D <= ((qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	wte_out_extClk_intCtrl)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (reset_out_extClk_intCtrl AND wte_out_extClk_intCtrl)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT qie_reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(0) AND NOT reset_out_extClk_intCtrl AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT fcl_extClk_intCtrl/upc/out(10) AND fcl_extClk_intCtrl/upc/out(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(2) AND fcl_extClk_intCtrl/upc/out(3) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(4) AND fcl_extClk_intCtrl/upc/out(5) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	fcl_extClk_intCtrl/upc/out(6) AND NOT fcl_extClk_intCtrl/upc/out(7) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT fcl_extClk_intCtrl/upc/out(8) AND NOT fcl_extClk_intCtrl/upc/out(9) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT fcl_extClk_intCtrl/upc/out(11)));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	wte_out_intClk_intCtrl));
 </td></tr><tr><td>
 FDCPE_wte_out_intClk_intCtrl: FDCPE port map (wte_out_intClk_intCtrl,wte_out_intClk_intCtrl_D,int_clk_in,'0','0','1');
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wte_out_intClk_intCtrl_D <= ((qie_reset_out_intClk_intCtrl AND 

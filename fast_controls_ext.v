@@ -26,21 +26,31 @@ module fast_controls_ext(
     input qie_reset_in,
     output wire wte_out,
     output reg reset_out,
-    output wire qie_reset_out
+    output reg qie_reset_out = 1'b0
     );
 	
 	//takes clock/fast controls from RJ-45
-	assign qie_reset_out = qie_reset_in;
+	//assign qie_reset_out = qie_reset_in;
 	assign wte_out = qie_reset_in;//wte_in;
 	//assign reset_out = reset_in;
 	// (re)syncronize the QIE_RESET
-	//always @(posedge clk)
-	//begin
-	//	if(qie_reset_in == 1'b1 && qie_reset_out == 1'b0)
-	//		qie_reset_out <= 1'b1;
-	//	else
-	//		qie_reset_out <= 1'b0;
-	//end
+	reg [3:0] hold = 4'b0;
+	always @(posedge clk)
+	begin
+		if(hold == 4'b0)
+		begin
+			if(qie_reset_in == 1'b0)
+			begin
+				qie_reset_out <= 1'b1;
+				hold <= 4'b1;
+			end
+		end
+		else
+		begin
+			hold <= hold + 1;
+			qie_reset_out <= 1'b0;
+		end
+	end
 
 	// set the reset syncronusly with clock based on aux in or manual switch
 	always @(posedge clk)

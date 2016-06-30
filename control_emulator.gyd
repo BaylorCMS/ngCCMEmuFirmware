@@ -27,25 +27,24 @@ wte_out S:PIN6
 ;The remaining section of the .gyd file is for documentation purposes only.
 ;It shows where your internal equations were placed in the last successful fit.
 
-PARTITION FB1_1 miscControls/delay_reg<13> miscControls/delay_reg<12> miscControls/delay_reg<6> miscControls/delay_reg<5>
-		 miscControls/delay_reg<4> miscControls/delay_reg<3> miscControls/delay_reg<2> miscControls/delay_reg<11>
-		 reset_out_extClk_intCtrl penable miscControls/delay_reg<9> miscControls/delay_reg<1>
-		 reset_out_extClk_extCtrl miscControls/delay_reg<7> clk_out_p2 reset_out_intClk_intCtrl
+PARTITION FB1_1 miscControls/delay_reg<4> miscControls/delay_reg<3> fcl_intClk_extCtrl/hold<2> fcl_intClk_extCtrl/hold<3>
+		 qie_reset_out_intClk_extCtrl fcl_intClk_extCtrl/hold<0> qie_reset_out_extClk_extCtrl miscControls/delay_reg<2>
+		 fcl_extClk_extCtrl/hold<1> penable miscControls/delay_reg<1> fcl_extClk_extCtrl/hold<0>
+		 fcl_extClk_extCtrl/hold<3> fcl_intClk_extCtrl/hold<1> clk_out_p2 fcl_extClk_extCtrl/hold<2>
 		
-PARTITION FB2_1 fcl_extClk_intCtrl/upc/out<1> fcl_extClk_intCtrl/upc/out<2> fcl_extClk_intCtrl/upc/out<3> fcl_extClk_intCtrl/upc/out<5>
-		 fcl_extClk_intCtrl/upc/out<6> fcl_extClk_intCtrl/upc/out<7> fcl_extClk_intCtrl/upc/out<8> fcl_extClk_intCtrl/upc/out<9>
-		 wte_out_extClk_intCtrl fcl_extClk_intCtrl/upc/out<4> reset_out fcl_extClk_intCtrl/upc/out<10>
-		 fcl_extClk_intCtrl/upc/out<11> qie_reset_out wte_out qie_reset_out_extClk_intCtrl
+PARTITION FB2_1 fcl_intClk_intCtrl/upc/out<1> fcl_intClk_intCtrl/upc/out<2> fcl_intClk_intCtrl/upc/out<3> fcl_intClk_intCtrl/upc/out<5>
+		 fcl_intClk_intCtrl/upc/out<6> fcl_intClk_intCtrl/upc/out<7> fcl_intClk_intCtrl/upc/out<8> fcl_intClk_intCtrl/upc/out<9>
+		 wte_out_intClk_intCtrl fcl_intClk_intCtrl/upc/out<4> reset_out fcl_intClk_intCtrl/upc/out<10>
+		 fcl_intClk_intCtrl/upc/out<11> qie_reset_out wte_out qie_reset_out_intClk_intCtrl
 		
-PARTITION FB3_1 reset_out_intClk_extCtrl
-PARTITION FB3_3 miscControls/delay_reg<8>
-PARTITION FB3_5 miscControls/delay_reg<10> miscControls/delay_reg<16> miscControls/delay_reg<17> miscControls/delay_reg<18>
+PARTITION FB3_1 reset_out_intClk_intCtrl miscControls/delay_reg<17> miscControls/delay_reg<12> miscControls/delay_reg<18>
+		 miscControls/delay_reg<11> miscControls/delay_reg<9> miscControls/delay_reg<7> miscControls/delay_reg<6>
+		 miscControls/delay_reg<16> aux_out miscControls/delay_reg<15> miscControls/delay_reg<14>
+		 miscControls/delay_reg<13> miscControls/delay_reg<5> fcl_intClk_intCtrl/upc/out<0> reset_out_extClk_extCtrl
 		
-PARTITION FB3_10 aux_out N_PZ_323 miscControls/delay_reg<14> miscControls/delay_reg<15>
-		 miscControls/penable_reg miscControls/delay_reg<0> fcl_extClk_intCtrl/upc/out<0>
-PARTITION FB4_1 fcl_intClk_intCtrl/upc/out<0> peltEnab1 fcl_intClk_intCtrl/upc/out<8> wte_out_intClk_intCtrl
-		 peltEnab2 fcl_intClk_intCtrl/upc/out<7> fcl_intClk_intCtrl/upc/out<6> fcl_intClk_intCtrl/upc/out<5>
-		 fcl_intClk_intCtrl/upc/out<11> qie_reset_out_intClk_intCtrl fcl_intClk_intCtrl/upc/out<10> fcl_intClk_intCtrl/upc/out<9>
-		 fcl_intClk_intCtrl/upc/out<4> fcl_intClk_intCtrl/upc/out<3> fcl_intClk_intCtrl/upc/out<2> fcl_intClk_intCtrl/upc/out<1>
+PARTITION FB4_1 reset_out_intClk_extCtrl peltEnab1
+PARTITION FB4_5 peltEnab2
+PARTITION FB4_8 N_PZ_303
+PARTITION FB4_13 miscControls/delay_reg<8> miscControls/delay_reg<10> miscControls/penable_reg miscControls/delay_reg<0>
 		
 

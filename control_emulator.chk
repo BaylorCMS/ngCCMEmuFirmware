@@ -5,121 +5,114 @@
 0 Group(s)
 
 ClkInput[3]: clk_in_j1(37, sclk) ext_clk_in(38, sclk) int_clk_in(39, sclk) 
-GACLK: 125
+GACLK: 98
 ----------------- B l o c k 0 ------------------
-PLApt(21/48), Fanin(26/38), Clk(2/2), Bct(1/8), Pin(5/8), Mcell(16/16), FbNand(0/0)
-PLApts[21/39] 4 5 6 7 95 109 119 125 () () 136 () 132 () 131 () 130 () 129 () 128 () 135 () 2 () () () 134 () 
-              127 () 11 () 133 () () () 2
-Fanins[26] clk_out_p2.n N_PZ_323.n miscControls/delay_reg<0>.n miscControls/delay_reg<10>.n 
-           miscControls/delay_reg<11>.n miscControls/delay_reg<12>.n miscControls/delay_reg<17>.n 
-           miscControls/delay_reg<18>.n miscControls/delay_reg<1>.n miscControls/delay_reg<2>.n 
-           miscControls/delay_reg<3>.n miscControls/delay_reg<4>.n miscControls/delay_reg<5>.n 
-           miscControls/delay_reg<6>.n miscControls/delay_reg<7>.n miscControls/delay_reg<8>.n 
-           miscControls/delay_reg<9>.n miscControls/penable_reg.n GPIO_Extra0.p aux_in.p clk_in_j1.p 
-           clk_select.p ext_clk_in.p int_clk_in.p mode_select.p reset_switch.p
-clk[2/2] int_clk_in ext_clk_in 
-BCTpts[1] ct0:-999 ct1:-999 ct2:-999 ct3:-999 ct4:-999 ct5:-999 ct6:-999 ct7:125 
+PLApt(22/48), Fanin(24/38), Clk(2/2), Bct(1/8), Pin(5/8), Mcell(16/16), FbNand(0/0)
+PLApts[22/39] 3 4 5 8 68 21 25 98 103 23 102 28 18 () 19 () () () 22 () () () 101 () 14 () () () 100 () 20 () 
+              17 () 15 () () () 16
+Fanins[24] clk_out_p2.n N_PZ_303.n fcl_extClk_extCtrl/hold<0>.n fcl_extClk_extCtrl/hold<1>.n 
+           fcl_extClk_extCtrl/hold<2>.n fcl_extClk_extCtrl/hold<3>.n fcl_intClk_extCtrl/hold<0>.n 
+           fcl_intClk_extCtrl/hold<1>.n fcl_intClk_extCtrl/hold<2>.n fcl_intClk_extCtrl/hold<3>.n 
+           miscControls/delay_reg<0>.n miscControls/delay_reg<1>.n miscControls/delay_reg<2>.n 
+           miscControls/delay_reg<3>.n miscControls/penable_reg.n qie_reset_out_extClk_extCtrl.n 
+           qie_reset_out_intClk_extCtrl.n aux_in.p clk_in_j1.p clk_select.p ext_clk_in.p int_clk_in.p 
+           mode_select.p qie_reset_in.p
+clk[2/2] ext_clk_in clk_in_j1 
+BCTpts[1] ct0:-999 ct1:-999 ct2:-999 ct3:-999 ct4:-999 ct5:-999 ct6:-999 ct7:98 
 Signal[19] [clk_out_p2(59),clk_out_p2(27)] [penable(54),penable(31)] [GPIO_Extra0(28)] [pgood(30)]  
-           [qie_reset_in(35)] [reset_out_extClk_intCtrl(53)] [reset_out_intClk_intCtrl(60)]  
-           [reset_out_extClk_extCtrl(57)] [miscControls/delay_reg<1>(56)] [miscControls/delay_reg<2>(51)]  
-           [miscControls/delay_reg<3>(50)] [miscControls/delay_reg<4>(49)] [miscControls/delay_reg<5>(48)]  
-           [miscControls/delay_reg<6>(47)] [miscControls/delay_reg<7>(58)] [miscControls/delay_reg<9>(55)]  
-           [miscControls/delay_reg<11>(52)] [miscControls/delay_reg<12>(46)]  
-           [miscControls/delay_reg<13>(45)] 
-Signal[19] [ 0: miscControls/delay_reg<13>(45) qie_reset_in(35)  ][ 1: miscControls/delay_reg<12>(46) (34)  ] 
-           [ 2: miscControls/delay_reg<6>(47)  ][ 3: miscControls/delay_reg<5>(48)  ][ 4:  
-           miscControls/delay_reg<4>(49)  ][ 5: miscControls/delay_reg<3>(50)  ][ 6:  
-           miscControls/delay_reg<2>(51)  ][ 7: miscControls/delay_reg<11>(52) (33)  ][ 8:  
-           reset_out_extClk_intCtrl(53) (32)  ][ 9: penable(54) penable(31)  ][ 10:  
-           miscControls/delay_reg<9>(55) pgood(30)  ][ 11: miscControls/delay_reg<1>(56)  ][ 12:  
-           reset_out_extClk_extCtrl(57)  ][ 13: miscControls/delay_reg<7>(58) GPIO_Extra0(28)  ][ 14:  
-           clk_out_p2(59) clk_out_p2(27)  ][ 15: reset_out_intClk_intCtrl(60)  ]
+           [qie_reset_in(35)] [fcl_extClk_extCtrl/hold<1>(53)] [fcl_extClk_extCtrl/hold<2>(60)]  
+           [fcl_extClk_extCtrl/hold<3>(57)] [fcl_extClk_extCtrl/hold<0>(56)]  
+           [qie_reset_out_extClk_extCtrl(51)] [fcl_intClk_extCtrl/hold<0>(50)]  
+           [qie_reset_out_intClk_extCtrl(49)] [fcl_intClk_extCtrl/hold<3>(48)]  
+           [fcl_intClk_extCtrl/hold<2>(47)] [fcl_intClk_extCtrl/hold<1>(58)] [miscControls/delay_reg<1>(55)]  
+           [miscControls/delay_reg<2>(52)] [miscControls/delay_reg<3>(46)] [miscControls/delay_reg<4>(45)] 
+Signal[19] [ 0: miscControls/delay_reg<4>(45) qie_reset_in(35)  ][ 1: miscControls/delay_reg<3>(46) (34)  ] 
+           [ 2: fcl_intClk_extCtrl/hold<2>(47)  ][ 3: fcl_intClk_extCtrl/hold<3>(48)  ][ 4:  
+           qie_reset_out_intClk_extCtrl(49)  ][ 5: fcl_intClk_extCtrl/hold<0>(50)  ][ 6:  
+           qie_reset_out_extClk_extCtrl(51)  ][ 7: miscControls/delay_reg<2>(52) (33)  ][ 8:  
+           fcl_extClk_extCtrl/hold<1>(53) (32)  ][ 9: penable(54) penable(31)  ][ 10:  
+           miscControls/delay_reg<1>(55) pgood(30)  ][ 11: fcl_extClk_extCtrl/hold<0>(56)  ][ 12:  
+           fcl_extClk_extCtrl/hold<3>(57)  ][ 13: fcl_intClk_extCtrl/hold<1>(58) GPIO_Extra0(28)  ][ 14:  
+           clk_out_p2(59) clk_out_p2(27)  ][ 15: fcl_extClk_extCtrl/hold<2>(60)  ]
 FbNand[ 0] 
 ----------------- B l o c k 1 ------------------
-PLApt(47/48), Fanin(25/38), Clk(1/2), Bct(0/8), Pin(6/8), Mcell(16/16), FbNand(0/0)
-PLApts[47/47] 8 10 15 16 52 79 96 97 9 18 20 17 41 67 39 51 65 21 42 64 29 50 63 28 49 62 27 48 61 26 47 60 
-              25 46 59 24 45 58 66 23 44 57 22 43 54 55 56
-Fanins[25] fcl_extClk_intCtrl/upc/out<0>.n fcl_extClk_intCtrl/upc/out<10>.n fcl_extClk_intCtrl/upc/out<11>.n 
-           fcl_extClk_intCtrl/upc/out<1>.n fcl_extClk_intCtrl/upc/out<2>.n fcl_extClk_intCtrl/upc/out<3>.n 
-           fcl_extClk_intCtrl/upc/out<4>.n fcl_extClk_intCtrl/upc/out<5>.n fcl_extClk_intCtrl/upc/out<6>.n 
-           fcl_extClk_intCtrl/upc/out<7>.n fcl_extClk_intCtrl/upc/out<8>.n fcl_extClk_intCtrl/upc/out<9>.n 
-           qie_reset_out_extClk_intCtrl.n qie_reset_out_intClk_intCtrl.n reset_out_extClk_extCtrl.n 
-           reset_out_extClk_intCtrl.n reset_out_intClk_extCtrl.n reset_out_intClk_intCtrl.n 
-           wte_out_extClk_intCtrl.n wte_out_intClk_intCtrl.n clk_select.p ext_clk_in.p mode_select.p 
-           qie_reset_in.p qie_reset_source.p
-clk[1/1] ext_clk_in 
+PLApt(45/48), Fanin(24/38), Clk(1/2), Bct(0/8), Pin(6/8), Mcell(16/16), FbNand(0/0)
+PLApts[45/45] 9 24 26 27 41 69 70 6 29 30 42 67 40 52 65 31 43 64 39 51 63 38 50 62 37 49 61 36 48 60 35 47 
+              59 34 46 58 33 45 66 57 32 44 54 55 56
+Fanins[24] fcl_intClk_intCtrl/upc/out<0>.n fcl_intClk_intCtrl/upc/out<10>.n fcl_intClk_intCtrl/upc/out<11>.n 
+           fcl_intClk_intCtrl/upc/out<1>.n fcl_intClk_intCtrl/upc/out<2>.n fcl_intClk_intCtrl/upc/out<3>.n 
+           fcl_intClk_intCtrl/upc/out<4>.n fcl_intClk_intCtrl/upc/out<5>.n fcl_intClk_intCtrl/upc/out<6>.n 
+           fcl_intClk_intCtrl/upc/out<7>.n fcl_intClk_intCtrl/upc/out<8>.n fcl_intClk_intCtrl/upc/out<9>.n 
+           qie_reset_out_extClk_extCtrl.n qie_reset_out_intClk_extCtrl.n qie_reset_out_intClk_intCtrl.n 
+           reset_out_extClk_extCtrl.n reset_out_intClk_extCtrl.n reset_out_intClk_intCtrl.n 
+           wte_out_intClk_intCtrl.n clk_select.p ext_clk_in.p mode_select.p qie_reset_in.p qie_reset_source.p
+clk[1/2] GND int_clk_in 
 BCTpts[0] ct0:-999 ct1:-999 ct2:-999 ct3:-999 ct4:-999 ct5:-999 ct6:-999 ct7:-999 
 Signal[19] [qie_reset_out(74),qie_reset_out(5)] [reset_out(71),reset_out(3)] [wte_out(75),wte_out(6)]  
-           [clk_select(44)] [mode_select(2)] [qie_reset_source(42)] [wte_out_extClk_intCtrl(69)]  
-           [qie_reset_out_extClk_intCtrl(76)] [fcl_extClk_intCtrl/upc/out<11>(73)]  
-           [fcl_extClk_intCtrl/upc/out<10>(72)] [fcl_extClk_intCtrl/upc/out<9>(68)]  
-           [fcl_extClk_intCtrl/upc/out<8>(67)] [fcl_extClk_intCtrl/upc/out<7>(66)]  
-           [fcl_extClk_intCtrl/upc/out<6>(65)] [fcl_extClk_intCtrl/upc/out<5>(64)]  
-           [fcl_extClk_intCtrl/upc/out<4>(70)] [fcl_extClk_intCtrl/upc/out<3>(63)]  
-           [fcl_extClk_intCtrl/upc/out<2>(62)] [fcl_extClk_intCtrl/upc/out<1>(61)] 
-Signal[19] [ 0: fcl_extClk_intCtrl/upc/out<1>(61) qie_reset_source(42)  ][ 1:  
-           fcl_extClk_intCtrl/upc/out<2>(62) (43)  ][ 2: fcl_extClk_intCtrl/upc/out<3>(63) clk_select(44)  ] 
-           [ 3: fcl_extClk_intCtrl/upc/out<5>(64)  ][ 4: fcl_extClk_intCtrl/upc/out<6>(65)  ][ 5:  
-           fcl_extClk_intCtrl/upc/out<7>(66)  ][ 6: fcl_extClk_intCtrl/upc/out<8>(67)  ][ 7:  
-           fcl_extClk_intCtrl/upc/out<9>(68)  ][ 8: wte_out_extClk_intCtrl(69) (1)  ][ 9:  
-           fcl_extClk_intCtrl/upc/out<4>(70) mode_select(2)  ][ 10: reset_out(71) reset_out(3)  ][ 11:  
-           fcl_extClk_intCtrl/upc/out<10>(72)  ][ 12: fcl_extClk_intCtrl/upc/out<11>(73)  ][ 13:  
+           [clk_select(44)] [mode_select(2)] [qie_reset_source(42)] [wte_out_intClk_intCtrl(69)]  
+           [qie_reset_out_intClk_intCtrl(76)] [fcl_intClk_intCtrl/upc/out<11>(73)]  
+           [fcl_intClk_intCtrl/upc/out<10>(72)] [fcl_intClk_intCtrl/upc/out<9>(68)]  
+           [fcl_intClk_intCtrl/upc/out<8>(67)] [fcl_intClk_intCtrl/upc/out<7>(66)]  
+           [fcl_intClk_intCtrl/upc/out<6>(65)] [fcl_intClk_intCtrl/upc/out<5>(64)]  
+           [fcl_intClk_intCtrl/upc/out<4>(70)] [fcl_intClk_intCtrl/upc/out<3>(63)]  
+           [fcl_intClk_intCtrl/upc/out<2>(62)] [fcl_intClk_intCtrl/upc/out<1>(61)] 
+Signal[19] [ 0: fcl_intClk_intCtrl/upc/out<1>(61) qie_reset_source(42)  ][ 1:  
+           fcl_intClk_intCtrl/upc/out<2>(62) (43)  ][ 2: fcl_intClk_intCtrl/upc/out<3>(63) clk_select(44)  ] 
+           [ 3: fcl_intClk_intCtrl/upc/out<5>(64)  ][ 4: fcl_intClk_intCtrl/upc/out<6>(65)  ][ 5:  
+           fcl_intClk_intCtrl/upc/out<7>(66)  ][ 6: fcl_intClk_intCtrl/upc/out<8>(67)  ][ 7:  
+           fcl_intClk_intCtrl/upc/out<9>(68)  ][ 8: wte_out_intClk_intCtrl(69) (1)  ][ 9:  
+           fcl_intClk_intCtrl/upc/out<4>(70) mode_select(2)  ][ 10: reset_out(71) reset_out(3)  ][ 11:  
+           fcl_intClk_intCtrl/upc/out<10>(72)  ][ 12: fcl_intClk_intCtrl/upc/out<11>(73)  ][ 13:  
            qie_reset_out(74) qie_reset_out(5)  ][ 14: wte_out(75) wte_out(6)  ][ 15:  
-           qie_reset_out_extClk_intCtrl(76)  ]
+           qie_reset_out_intClk_intCtrl(76)  ]
 FbNand[ 0] 
 ----------------- B l o c k 2 ------------------
-PLApt(29/48), Fanin(26/38), Clk(2/2), Bct(0/8), Pin(5/8), Mcell(13/16), FbNand(0/0)
-PLApts[29/39] 104 126 113 123 112 122 106 107 11 108 118 101 102 103 115 117 111 121 110 120 98 99 124 100 
-              105 114 14 116 () () () () () () () () () () 53
-Fanins[26] N_PZ_323.n fcl_extClk_intCtrl/upc/out<0>.n miscControls/delay_reg<0>.n 
+PLApt(21/48), Fanin(26/38), Clk(2/2), Bct(0/8), Pin(5/8), Mcell(16/16), FbNand(0/0)
+PLApts[21/39] 82 92 83 93 84 94 85 95 7 86 96 () 109 () 97 () 108 () 107 () 106 () 105 () () () 13 () () () 
+              () () () () 104 () 53 () 10
+Fanins[26] N_PZ_303.n fcl_intClk_intCtrl/upc/out<0>.n miscControls/delay_reg<0>.n 
            miscControls/delay_reg<10>.n miscControls/delay_reg<11>.n miscControls/delay_reg<12>.n 
            miscControls/delay_reg<13>.n miscControls/delay_reg<14>.n miscControls/delay_reg<15>.n 
            miscControls/delay_reg<16>.n miscControls/delay_reg<17>.n miscControls/delay_reg<18>.n 
            miscControls/delay_reg<1>.n miscControls/delay_reg<2>.n miscControls/delay_reg<3>.n 
            miscControls/delay_reg<4>.n miscControls/delay_reg<5>.n miscControls/delay_reg<6>.n 
            miscControls/delay_reg<7>.n miscControls/delay_reg<8>.n miscControls/delay_reg<9>.n 
-           qie_reset_out_extClk_intCtrl.n reset_out_extClk_intCtrl.n GPIO_Extra0.p pgood.p reset_switch.p
-clk[2/2] ext_clk_in clk_in_j1 
+           qie_reset_out_intClk_intCtrl.n reset_out_intClk_intCtrl.n GPIO_Extra0.p pgood.p reset_switch.p
+clk[2/2] int_clk_in ext_clk_in 
 BCTpts[0] ct0:-999 ct1:-999 ct2:-999 ct3:-999 ct4:-999 ct5:-999 ct6:-999 ct7:-999 
-Signal[17] [aux_out(86),aux_out(21)] [aux2(22)] [aux3(23)] [aux_in(20)] [reset_switch(25)]  
-           [reset_out_intClk_extCtrl(77)] [fcl_extClk_intCtrl/upc/out<0>(92)]  
-           [miscControls/delay_reg<0>(91)] [miscControls/penable_reg(90)] [miscControls/delay_reg<18>(84)]  
-           [miscControls/delay_reg<17>(83)] [miscControls/delay_reg<16>(82)]  
-           [miscControls/delay_reg<10>(81)] [miscControls/delay_reg<8>(79)] [miscControls/delay_reg<15>(89)]  
-           [miscControls/delay_reg<14>(88)] [N_PZ_323(87)] 
-Signal[17] [ 0: reset_out_intClk_extCtrl(77) (26)  ][ 1: reset_switch(25)  ][ 2:  
-           miscControls/delay_reg<8>(79)  ][ 3: aux3(23)  ][ 4: miscControls/delay_reg<10>(81)  ][ 5:  
-           miscControls/delay_reg<16>(82)  ][ 6: miscControls/delay_reg<17>(83)  ][ 7:  
-           miscControls/delay_reg<18>(84)  ][ 8: aux2(22)  ][ 9: aux_out(86) aux_out(21)  ][ 10:  
-           N_PZ_323(87) aux_in(20)  ][ 11: miscControls/delay_reg<14>(88) (19)  ][ 12:  
-           miscControls/delay_reg<15>(89) (18)  ][ 13: miscControls/penable_reg(90)  ][ 14:  
-           miscControls/delay_reg<0>(91)  ][ 15: fcl_extClk_intCtrl/upc/out<0>(92)  ]
+Signal[20] [aux_out(86),aux_out(21)] [aux2(22)] [aux3(23)] [aux_in(20)] [reset_switch(25)]  
+           [reset_out_intClk_intCtrl(77)] [reset_out_extClk_extCtrl(92)] [fcl_intClk_intCtrl/upc/out<0>(91)]  
+           [miscControls/delay_reg<5>(90)] [miscControls/delay_reg<6>(84)] [miscControls/delay_reg<7>(83)]  
+           [miscControls/delay_reg<9>(82)] [miscControls/delay_reg<11>(81)] [miscControls/delay_reg<12>(79)]  
+           [miscControls/delay_reg<13>(89)] [miscControls/delay_reg<14>(88)]  
+           [miscControls/delay_reg<15>(87)] [miscControls/delay_reg<16>(85)]  
+           [miscControls/delay_reg<18>(80)] [miscControls/delay_reg<17>(78)] 
+Signal[20] [ 0: reset_out_intClk_intCtrl(77) (26)  ][ 1: miscControls/delay_reg<17>(78) reset_switch(25)  ] 
+           [ 2: miscControls/delay_reg<12>(79)  ][ 3: miscControls/delay_reg<18>(80) aux3(23)  ][ 4:  
+           miscControls/delay_reg<11>(81)  ][ 5: miscControls/delay_reg<9>(82)  ][ 6:  
+           miscControls/delay_reg<7>(83)  ][ 7: miscControls/delay_reg<6>(84)  ][ 8:  
+           miscControls/delay_reg<16>(85) aux2(22)  ][ 9: aux_out(86) aux_out(21)  ][ 10:  
+           miscControls/delay_reg<15>(87) aux_in(20)  ][ 11: miscControls/delay_reg<14>(88) (19)  ][ 12:  
+           miscControls/delay_reg<13>(89) (18)  ][ 13: miscControls/delay_reg<5>(90)  ][ 14:  
+           fcl_intClk_intCtrl/upc/out<0>(91)  ][ 15: reset_out_extClk_extCtrl(92)  ]
 FbNand[ 0] 
 ----------------- B l o c k 3 ------------------
-PLApt(39/48), Fanin(17/38), Clk(1/2), Bct(0/8), Pin(2/8), Mcell(16/16), FbNand(0/0)
-PLApts[39/39] 82 83 31 70 81 32 71 84 80 33 12 72 85 34 73 86 13 35 74 87 36 75 88 37 76 89 93 38 77 90 30 69 
-              91 40 78 92 19 68 94
-Fanins[17] fcl_intClk_intCtrl/upc/out<0>.n fcl_intClk_intCtrl/upc/out<10>.n fcl_intClk_intCtrl/upc/out<11>.n 
-           fcl_intClk_intCtrl/upc/out<1>.n fcl_intClk_intCtrl/upc/out<2>.n fcl_intClk_intCtrl/upc/out<3>.n 
-           fcl_intClk_intCtrl/upc/out<4>.n fcl_intClk_intCtrl/upc/out<5>.n fcl_intClk_intCtrl/upc/out<6>.n 
-           fcl_intClk_intCtrl/upc/out<7>.n fcl_intClk_intCtrl/upc/out<8>.n fcl_intClk_intCtrl/upc/out<9>.n 
-           qie_reset_out_intClk_intCtrl.n reset_out_intClk_intCtrl.n wte_out_intClk_intCtrl.n aux2.p aux3.p
-clk[1/2] GND int_clk_in 
+PLApt(20/48), Fanin(24/38), Clk(1/2), Bct(0/8), Pin(2/8), Mcell(8/16), FbNand(0/0)
+PLApts[20/20] 77 99 79 80 81 91 74 75 10 76 11 88 90 71 72 73 12 78 87 89
+Fanins[24] N_PZ_303.n miscControls/delay_reg<0>.n miscControls/delay_reg<10>.n miscControls/delay_reg<11>.n 
+           miscControls/delay_reg<12>.n miscControls/delay_reg<13>.n miscControls/delay_reg<14>.n 
+           miscControls/delay_reg<15>.n miscControls/delay_reg<16>.n miscControls/delay_reg<17>.n 
+           miscControls/delay_reg<18>.n miscControls/delay_reg<1>.n miscControls/delay_reg<2>.n 
+           miscControls/delay_reg<3>.n miscControls/delay_reg<4>.n miscControls/delay_reg<5>.n 
+           miscControls/delay_reg<6>.n miscControls/delay_reg<7>.n miscControls/delay_reg<8>.n 
+           miscControls/delay_reg<9>.n GPIO_Extra0.p aux2.p aux3.p reset_switch.p
+clk[1/2] GND clk_in_j1 
 BCTpts[0] ct0:-999 ct1:-999 ct2:-999 ct3:-999 ct4:-999 ct5:-999 ct6:-999 ct7:-999 
-Signal[16] [peltEnab1(94),peltEnab1(8)] [peltEnab2(97),peltEnab2(11)] [fcl_intClk_intCtrl/upc/out<0>(93)]  
-           [fcl_intClk_intCtrl/upc/out<1>(108)] [fcl_intClk_intCtrl/upc/out<2>(107)]  
-           [fcl_intClk_intCtrl/upc/out<3>(106)] [fcl_intClk_intCtrl/upc/out<4>(105)]  
-           [fcl_intClk_intCtrl/upc/out<5>(100)] [fcl_intClk_intCtrl/upc/out<6>(99)]  
-           [fcl_intClk_intCtrl/upc/out<7>(98)] [fcl_intClk_intCtrl/upc/out<8>(95)]  
-           [fcl_intClk_intCtrl/upc/out<9>(104)] [fcl_intClk_intCtrl/upc/out<10>(103)]  
-           [qie_reset_out_intClk_intCtrl(102)] [fcl_intClk_intCtrl/upc/out<11>(101)]  
-           [wte_out_intClk_intCtrl(96)] 
-Signal[16] [ 0: fcl_intClk_intCtrl/upc/out<0>(93) (7)  ][ 1: peltEnab1(94) peltEnab1(8)  ][ 2:  
-           fcl_intClk_intCtrl/upc/out<8>(95)  ][ 3: wte_out_intClk_intCtrl(96) (10)  ][ 4: peltEnab2(97)  
-           peltEnab2(11)  ][ 5: fcl_intClk_intCtrl/upc/out<7>(98)  ][ 6: fcl_intClk_intCtrl/upc/out<6>(99)  ] 
-           [ 7: fcl_intClk_intCtrl/upc/out<5>(100)  ][ 8: fcl_intClk_intCtrl/upc/out<11>(101) (12)  ][ 9:  
-           qie_reset_out_intClk_intCtrl(102) (13)  ][ 10: fcl_intClk_intCtrl/upc/out<10>(103) (14)  ][ 11:  
-           fcl_intClk_intCtrl/upc/out<9>(104) (15)  ][ 12: fcl_intClk_intCtrl/upc/out<4>(105)  ][ 13:  
-           fcl_intClk_intCtrl/upc/out<3>(106)  ][ 14: fcl_intClk_intCtrl/upc/out<2>(107)  ][ 15:  
-           fcl_intClk_intCtrl/upc/out<1>(108)  ]
+Signal[ 8] [peltEnab1(94),peltEnab1(8)] [peltEnab2(97),peltEnab2(11)] [reset_out_intClk_extCtrl(93)]  
+           [miscControls/delay_reg<0>(108)] [miscControls/penable_reg(107)]  
+           [miscControls/delay_reg<10>(106)] [miscControls/delay_reg<8>(105)] [N_PZ_303(100)] 
+Signal[ 8] [ 0: reset_out_intClk_extCtrl(93) (7)  ][ 1: peltEnab1(94) peltEnab1(8)  ][ 2:  ][ 3: (10)  ][ 4:  
+           peltEnab2(97) peltEnab2(11)  ][ 5:  ][ 6:  ][ 7: N_PZ_303(100)  ][ 8: (12)  ][ 9: (13)  ][ 10:  
+           (14)  ][ 11: (15)  ][ 12: miscControls/delay_reg<8>(105)  ][ 13: miscControls/delay_reg<10>(106)  
+            ][ 14: miscControls/penable_reg(107)  ][ 15: miscControls/delay_reg<0>(108)  ]
 FbNand[ 0] 

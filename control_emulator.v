@@ -65,7 +65,7 @@ module control_emulator(
 	// mode select: 0 - fast controls (QIE reset and WTE) come from RJ-45, 1 - fast controls generated internally from clk signal
 	// clock select: 0 - external clock (BNC), 1 - "internal clock" from RJ-45 in mode 0, U1 in mode 1
 	assign wte_out           = (clk_select) ? ((mode_select) ?       wte_out_intClk_intCtrl :       !wte_out_intClk_extCtrl) : ((mode_select) ?       wte_out_extClk_intCtrl :       !wte_out_extClk_extCtrl);
-	assign qie_reset_out_tmp = (clk_select) ? ((mode_select) ? qie_reset_out_intClk_intCtrl : !qie_reset_out_intClk_extCtrl) : ((mode_select) ? qie_reset_out_extClk_intCtrl : !qie_reset_out_extClk_extCtrl);
+	assign qie_reset_out_tmp = (clk_select) ? ((mode_select) ? qie_reset_out_intClk_intCtrl : qie_reset_out_intClk_extCtrl) : ((mode_select) ? qie_reset_out_extClk_intCtrl : !qie_reset_out_extClk_extCtrl);
 	assign reset_out         = (clk_select) ? ((mode_select) ?     reset_out_intClk_intCtrl :      reset_out_intClk_extCtrl) : ((mode_select) ?     reset_out_extClk_intCtrl :      reset_out_extClk_extCtrl);
 	
 	// Switch to take QIE_RESET from BNC (set Extra to 1 to activate this mode)
@@ -81,6 +81,6 @@ module control_emulator(
 	fast_controls_int fcl_intClk_intCtrl(int_clk_in,                  reset_switch,               wte_out_intClk_intCtrl, reset_out_intClk_intCtrl, qie_reset_out_intClk_intCtrl);
 	
 	// fast controls generated from internal logic, clock from external source  
-	fast_controls_int fcl_extClk_intCtrl(ext_clk_in,                  reset_switch,               wte_out_extClk_intCtrl, reset_out_extClk_intCtrl, qie_reset_out_extClk_intCtrl);
+	//fast_controls_int fcl_extClk_intCtrl(ext_clk_in,                  reset_switch,               wte_out_extClk_intCtrl, reset_out_extClk_intCtrl, qie_reset_out_extClk_intCtrl);
 	
 endmodule
